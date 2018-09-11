@@ -7,17 +7,48 @@
 //
 
 import UIKit
+import ESTabBarController
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        setupTab()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+    func setupTab(){
+        let tabBarController: ESTabBarController = ESTabBarController(tabIconNames: ["home", "game", "account"])
+        tabBarController.selectedColor = UIColor(displayP3Red: 26 / 255, green: 12 / 255, blue: 0 / 255, alpha: 1)
+        tabBarController.buttonsBackgroundColor = UIColor(displayP3Red: 13 / 255, green: 104 / 255, blue: 5 / 255, alpha: 1)
+        tabBarController.selectionIndicatorHeight = 3
+        
+        addChildViewController(tabBarController)
+        let tabBarView = tabBarController.view!
+        tabBarView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(tabBarView)
+        let safeArea = view.safeAreaLayoutGuide
+        NSLayoutConstraint.activate([tabBarView.topAnchor.constraint(equalTo: safeArea.topAnchor), tabBarView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor), tabBarView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor), tabBarView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor)])
+        tabBarController.didMove(toParentViewController: self)
+        let homeViewController = storyboard?.instantiateViewController(withIdentifier: "Home")
+        let accountViewController = storyboard?.instantiateViewController(withIdentifier: "Account")
+        
+        tabBarController.setView(homeViewController, at: 0)
+        tabBarController.setView(accountViewController, at: 2)
+        
+        tabBarController.highlightButton(at: 1)
+        tabBarController.setAction({
+            let gameViewController = self.storyboard?.instantiateViewController(withIdentifier: "Game")
+            self.present(gameViewController!, animated: true, completion: nil)
+        }, at: 1)
+        
+        
     }
 
 
