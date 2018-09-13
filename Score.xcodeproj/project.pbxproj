@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F101367214A4C1300DD99CD /* Situation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F101366214A4C1300DD99CD /* Situation.swift */; };
 		6CFF2AB6300448F0D18E2744 /* Pods_Score.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13C3A51E8C994D0D26D1D580 /* Pods_Score.framework */; };
 		8737B32D21436035000A628B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8737B32C21436035000A628B /* AppDelegate.swift */; };
 		8737B32F21436035000A628B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8737B32E21436035000A628B /* ViewController.swift */; };
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		13C3A51E8C994D0D26D1D580 /* Pods_Score.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Score.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3514983F308F4F9137D55D58 /* Pods-Score.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Score.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Score/Pods-Score.debug.xcconfig"; sourceTree = "<group>"; };
+		5F101366214A4C1300DD99CD /* Situation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Situation.swift; sourceTree = "<group>"; };
 		8737B32921436035000A628B /* Score.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Score.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8737B32C21436035000A628B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8737B32E21436035000A628B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 				8737B33521436039000A628B /* LaunchScreen.storyboard */,
 				8737B33821436039000A628B /* Info.plist */,
 				873D319C214794C3007A1EE8 /* GoogleService-Info.plist */,
+				5F101366214A4C1300DD99CD /* Situation.swift */,
 			);
 			path = Score;
 			sourceTree = "<group>";
@@ -235,6 +238,7 @@
 				873D319B21479296007A1EE8 /* ResultViewController.swift in Sources */,
 				873D3199214790BB007A1EE8 /* FIRPlayer.swift in Sources */,
 				8737B32F21436035000A628B /* ViewController.swift in Sources */,
+				5F101367214A4C1300DD99CD /* Situation.swift in Sources */,
 				873D319721478B26007A1EE8 /* GameViewController.swift in Sources */,
 				8737B32D21436035000A628B /* AppDelegate.swift in Sources */,
 				873D319F2147B07F007A1EE8 /* HomeViewController.swift in Sources */,
