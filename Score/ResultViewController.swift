@@ -7,9 +7,18 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
+import PageMenu
 
 class ResultViewController: UIViewController {
     
+    var playerArray: [FIRPlayer] = []
+    var playerRef: DatabaseReference?
+    
+    override func viewWillAppear(_ animated: Bool) {
+        playerRef = Database.database().reference()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,15 +30,11 @@ class ResultViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func sendRessult(){
+        playerArray[battingOrder].results.insert("捕飛", at: 0)
+        let results = ["results": playerArray[battingOrder].results]
+        playerRef.child("player").child(playerArray[battingOrder].id!).updateChildValues(results)
     }
-    */
+    
 
 }

@@ -11,6 +11,7 @@ import Firebase
 import FirebaseDatabase
 
 class GameViewController: UIViewController {
+    //imageView消すの忘れない
     
     var playerArray: [FIRPlayer] = []
     let playerRef = Database.database().reference()
