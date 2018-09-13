@@ -9,5 +9,5 @@
 import UIKit
 
 class Situation: NSObject {
-
+    static var outCounts:Int = 0
 }
