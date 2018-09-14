@@ -19,7 +19,6 @@
 		873D319B21479296007A1EE8 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873D319A21479296007A1EE8 /* ResultViewController.swift */; };
 		873D319D214794C3007A1EE8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 873D319C214794C3007A1EE8 /* GoogleService-Info.plist */; };
 		873D319F2147B07F007A1EE8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873D319E2147B07F007A1EE8 /* HomeViewController.swift */; };
-		873D31C3214A5000007A1EE8 /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873D31C2214A5000007A1EE8 /* test.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,7 +37,6 @@
 		873D319A21479296007A1EE8 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		873D319C214794C3007A1EE8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		873D319E2147B07F007A1EE8 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		873D31C2214A5000007A1EE8 /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
 		B7CF9664941F544554C97741 /* Pods-Score.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Score.release.xcconfig"; path = "Pods/Target Support Files/Pods-Score/Pods-Score.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,7 +79,6 @@
 				873D319E2147B07F007A1EE8 /* HomeViewController.swift */,
 				873D319621478B26007A1EE8 /* GameViewController.swift */,
 				873D319A21479296007A1EE8 /* ResultViewController.swift */,
-				873D31C2214A5000007A1EE8 /* test.swift */,
 				873D3198214790BB007A1EE8 /* FIRPlayer.swift */,
 				8737B33321436039000A628B /* Assets.xcassets */,
 				8737B33521436039000A628B /* LaunchScreen.storyboard */,
@@ -243,7 +240,6 @@
 				8737B32F21436035000A628B /* ViewController.swift in Sources */,
 				5F101367214A4C1300DD99CD /* Situation.swift in Sources */,
 				873D319721478B26007A1EE8 /* GameViewController.swift in Sources */,
-				873D31C3214A5000007A1EE8 /* test.swift in Sources */,
 				8737B32D21436035000A628B /* AppDelegate.swift in Sources */,
 				873D319F2147B07F007A1EE8 /* HomeViewController.swift in Sources */,
 			);
