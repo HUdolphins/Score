@@ -90,10 +90,10 @@
             </objects>
             <point key="canvasLocation" x="1804" y="918"/>
         </scene>
-        <!--View Controller-->
+        <!--Home Cell View Controller-->
         <scene sceneID="CMd-pe-twm">
             <objects>
-                <viewController storyboardIdentifier="HomeCell" id="ugv-3Z-evV" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeCell" id="ugv-3Z-evV" customClass="HomeCellViewController" customModule="Score" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Y8F-Xj-rl9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
