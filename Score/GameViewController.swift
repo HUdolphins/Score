@@ -20,7 +20,7 @@ class GameViewController: UIViewController {
     var startPoint: CGPoint!
     var endPoint: CGPoint!
     
-    var battingOrder = 2
+    var battingOrder = 1
     var outCounts = 0
     var strikeCounts = 0
     var ballCounts = 0
