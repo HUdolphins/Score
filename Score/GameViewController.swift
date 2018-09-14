@@ -20,7 +20,7 @@ class GameViewController: UIViewController {
     var startPoint: CGPoint!
     var endPoint: CGPoint!
     
-    var battingOrder = 1000
+    var battingOrder = 0
     var outCounts = 0
     var strikeCounts = 0
     var ballCounts = 0
@@ -49,6 +49,10 @@ class GameViewController: UIViewController {
     
     @IBAction func sampleButton(_ sender: Any) {
         modalAppear(resultString: "")
+    }
+    @IBAction func backToHomeButton(_ sender: Any) {
+        let homeViewController = self.storyboard?.instantiateViewController(withIdentifier: "Home")
+        self.present(homeViewController!, animated: true, completion: nil)
     }
     func modalAppear(resultString: String){
         let resultViewController = storyboard?.instantiateViewController(withIdentifier: "Result") as! ResultViewController
