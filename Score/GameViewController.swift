@@ -21,13 +21,17 @@ class GameViewController: UIViewController {
     var endPoint: CGPoint!
     
     var battingOrder = 0
-    var outCounts = 0
-    var strikeCounts = 0
-    var ballCounts = 0
     
-    var firstRunnerExists = false
-    var secondRunnerExists = false
-    var thirdRunnerExists = false
+    
+    //現在の状況(Situation)
+    
+    //var outCounts = 0
+    //var strikeCounts = 0
+    //var ballCounts = 0
+    
+    //var firstRunnerExists = false
+    //var secondRunnerExists = false
+    //var thirdRunnerExists = false
     
     var runnerSituation: String = "走者なし"
     

@@ -10,4 +10,9 @@ import UIKit
 
 class Situation: NSObject {
     static var outCounts:Int = 0
+    static var strikeCounts:Int = 0
+    static var ballCounts:Int = 0
+    static var firstRunnerExists:Int = 0
+    static var secondRunnerExists:Int = 0
+    static var thirdRunnerExists:Int = 0
 }
