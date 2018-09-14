@@ -17,12 +17,16 @@ class ResultViewController: UIViewController {
     var playerRef: DatabaseReference?
     var pageMenu: CAPSPageMenu?
     var battingOrder:Int = 0
-    
+    var result : String = ""
+    var outCounts = 0
+    //ストライク、ボール、ランナーの状況、
         //何を渡すか。打順、打者と投手のID、捕殺だれか、結果、想定される結果３パターン
     
     
     override func viewWillAppear(_ animated: Bool) {
         playerRef = Database.database().reference()
+        
+        
         
         //型はUIViewControllerでいいのか、resultChildViewControllerのクラスを作るなら配列の型変えないといけない
         let resultChildViewController1 = self.storyboard?.instantiateViewController(withIdentifier: "Result1")
