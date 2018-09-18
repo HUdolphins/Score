@@ -12,10 +12,12 @@ import SpreadsheetView
 class HomeCellViewController: UIViewController, SpreadsheetViewDataSource {
     
     
-    
-    
-    
     @IBOutlet weak var spreadSheetView: SpreadsheetView!
+    
+    
+
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
