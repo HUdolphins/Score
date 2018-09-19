@@ -1,0 +1,66 @@
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "6yt-ZU-7yW"; */
+"6yt-ZU-7yW.normalTitle" = "Button";
+
+/* Class = "UITabBarItem"; title = "Item 1"; ObjectID = "8F5-fI-Ft6"; */
+"8F5-fI-Ft6.title" = "Item 1";
+
+/* Class = "UITabBarItem"; title = "Item 2"; ObjectID = "9HH-2a-KV8"; */
+"9HH-2a-KV8.title" = "Item 2";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "A7B-HG-bdh"; */
+"A7B-HG-bdh.normalTitle" = "Button";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "Azi-sO-pIy"; */
+"Azi-sO-pIy.title" = "Item";
+
+/* Class = "UINavigationItem"; title = "Title"; ObjectID = "BYF-Ct-lKP"; */
+"BYF-Ct-lKP.title" = "Title";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Bxq-X2-Exz"; */
+"Bxq-X2-Exz.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "H9k-o1-cod"; */
+"H9k-o1-cod.normalTitle" = "Button";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "LR4-N8-MG5"; */
+"LR4-N8-MG5.placeholder" = "Password";
+
+/* Class = "UIButton"; normalTitle = "ログインせずに使う"; ObjectID = "LtV-ca-dia"; */
+"LtV-ca-dia.normalTitle" = "ログインせずに使う";
+
+/* Class = "UIButton"; normalTitle = "投手"; ObjectID = "MLA-W3-VqF"; */
+"MLA-W3-VqF.normalTitle" = "投手";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "RQz-m0-llu"; */
+"RQz-m0-llu.normalTitle" = "Button";
+
+/* Class = "UITextField"; placeholder = "E-mail"; ObjectID = "SEC-4s-mJa"; */
+"SEC-4s-mJa.placeholder" = "E-mail";
+
+/* Class = "UINavigationItem"; title = "Title"; ObjectID = "Thu-v8-wod"; */
+"Thu-v8-wod.title" = "Title";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "U9F-of-k6h"; */
+"U9F-of-k6h.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "ログイン"; ObjectID = "UWv-4Q-Y9i"; */
+"UWv-4Q-Y9i.normalTitle" = "ログイン";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "V6q-1L-rfT"; */
+"V6q-1L-rfT.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "サンプル"; ObjectID = "WaY-ha-Qgn"; */
+"WaY-ha-Qgn.normalTitle" = "サンプル";
+
+/* Class = "UISegmentedControl"; hkN-lo-AG4.segmentTitles[0] = "Login"; ObjectID = "hkN-lo-AG4"; */
+"hkN-lo-AG4.segmentTitles[0]" = "Login";
+
+/* Class = "UISegmentedControl"; hkN-lo-AG4.segmentTitles[1] = "Create account"; ObjectID = "hkN-lo-AG4"; */
+"hkN-lo-AG4.segmentTitles[1]" = "Create account";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "jIp-XE-Z7r"; */
+"jIp-XE-Z7r.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "ホームへ"; ObjectID = "tGn-Uj-rRY"; */
+"tGn-Uj-rRY.normalTitle" = "ホームへ";

@@ -56,6 +56,8 @@ class GameViewController: UIViewController {
     }
     
     //投手ボタン
+    @IBAction func pitcherButton(_ sender: Any) {
+    }
     
     
     func modalAppear(resultString: String){

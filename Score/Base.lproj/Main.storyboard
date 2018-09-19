@@ -248,10 +248,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MLA-W3-VqF">
-                                <rect key="frame" x="172" y="407" width="31" height="32"/>
+                                <rect key="frame" x="172" y="413" width="31" height="32"/>
                                 <state key="normal" title="投手"/>
                                 <connections>
-                                    <action selector="pitcherbutton:" destination="VIs-XW-KHK" eventType="touchUpInside" id="Hmh-tj-br4"/>
+                                    <action selector="pitcherButton:" destination="VIs-XW-KHK" eventType="touchUpInside" id="RSq-Dr-AY6"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -269,9 +269,6 @@
                         <viewLayoutGuide key="safeArea" id="xaa-DG-t6O"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="8F5-fI-Ft6"/>
-                    <connections>
-                        <outlet property="pitcherbutton" destination="MLA-W3-VqF" id="vpA-eb-MON"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YUV-I6-SWL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
