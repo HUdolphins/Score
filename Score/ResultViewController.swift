@@ -39,7 +39,10 @@ class ResultViewController: UIViewController {
         let parameters: [CAPSPageMenuOption] = [
             .menuItemSeparatorWidth(4.0),
             .useMenuLikeSegmentedControl(true),
-            .menuItemSeparatorPercentageHeight(0.0)
+            .menuItemSeparatorPercentageHeight(0.0),
+            .scrollMenuBackgroundColor(#colorLiteral(red: 0, green: 0.3764705882, blue: 0.01568627451, alpha: 1)),
+            .selectionIndicatorColor(#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1))
+            
         ]
         
         pageMenu =  CAPSPageMenu(viewControllers: resultChildViewControllerArray, frame: view.bounds, pageMenuOptions: parameters)

@@ -19,6 +19,8 @@
 		873D319B21479296007A1EE8 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873D319A21479296007A1EE8 /* ResultViewController.swift */; };
 		873D319D214794C3007A1EE8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 873D319C214794C3007A1EE8 /* GoogleService-Info.plist */; };
 		873D319F2147B07F007A1EE8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873D319E2147B07F007A1EE8 /* HomeViewController.swift */; };
+		873D31CB214BAC2C007A1EE8 /* HomeCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873D31CA214BAC2C007A1EE8 /* HomeCellViewController.swift */; };
+		87E1B9022150A40800803F9E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E1B9012150A40800803F9E /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,8 @@
 		873D319A21479296007A1EE8 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		873D319C214794C3007A1EE8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		873D319E2147B07F007A1EE8 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		873D31CA214BAC2C007A1EE8 /* HomeCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCellViewController.swift; sourceTree = "<group>"; };
+		87E1B9012150A40800803F9E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B7CF9664941F544554C97741 /* Pods-Score.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Score.release.xcconfig"; path = "Pods/Target Support Files/Pods-Score/Pods-Score.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -76,9 +80,11 @@
 				8737B32C21436035000A628B /* AppDelegate.swift */,
 				8737B32E21436035000A628B /* ViewController.swift */,
 				8737B33021436035000A628B /* Main.storyboard */,
+				87E1B9012150A40800803F9E /* LoginViewController.swift */,
 				873D319E2147B07F007A1EE8 /* HomeViewController.swift */,
 				873D319621478B26007A1EE8 /* GameViewController.swift */,
 				873D319A21479296007A1EE8 /* ResultViewController.swift */,
+				873D31CA214BAC2C007A1EE8 /* HomeCellViewController.swift */,
 				873D3198214790BB007A1EE8 /* FIRPlayer.swift */,
 				8737B33321436039000A628B /* Assets.xcassets */,
 				8737B33521436039000A628B /* LaunchScreen.storyboard */,
@@ -235,6 +241,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87E1B9022150A40800803F9E /* LoginViewController.swift in Sources */,
 				873D319B21479296007A1EE8 /* ResultViewController.swift in Sources */,
 				873D3199214790BB007A1EE8 /* FIRPlayer.swift in Sources */,
 				8737B32F21436035000A628B /* ViewController.swift in Sources */,
@@ -242,6 +249,7 @@
 				873D319721478B26007A1EE8 /* GameViewController.swift in Sources */,
 				8737B32D21436035000A628B /* AppDelegate.swift in Sources */,
 				873D319F2147B07F007A1EE8 /* HomeViewController.swift in Sources */,
+				873D31CB214BAC2C007A1EE8 /* HomeCellViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
