@@ -21,17 +21,13 @@ class GameViewController: UIViewController {
     var endPoint: CGPoint!
     
     var battingOrder = 0
+    var outCounts = 0
+    var strikeCounts = 0
+    var ballCounts = 0
     
-    
-    //現在の状況(Situation)
-    
-    //var outCounts = 0
-    //var strikeCounts = 0
-    //var ballCounts = 0
-    
-    //var firstRunnerExists = false
-    //var secondRunnerExists = false
-    //var thirdRunnerExists = false
+    var firstRunnerExists = false
+    var secondRunnerExists = false
+    var thirdRunnerExists = false
     
     var runnerSituation: String = "走者なし"
     
@@ -54,10 +50,14 @@ class GameViewController: UIViewController {
     @IBAction func sampleButton(_ sender: Any) {
         modalAppear(resultString: "")
     }
-    
+    //ホームボタン
     @IBAction func backToHomeButton(_ sender: Any) {
        dismiss(animated: true, completion: nil)
     }
+    
+    //投手ボタン
+    
+    
     func modalAppear(resultString: String){
         let resultViewController = storyboard?.instantiateViewController(withIdentifier: "Result") as! ResultViewController
         resultViewController.modalPresentationStyle = .custom
