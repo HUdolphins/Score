@@ -364,6 +364,10 @@
                         <viewLayoutGuide key="safeArea" id="xaa-DG-t6O"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="8F5-fI-Ft6"/>
+                    <connections>
+                        <outlet property="firstBaseView" destination="FL7-fB-lXU" id="lxj-LE-iTr"/>
+                        <outlet property="secondPlayerButton" destination="V6q-1L-rfT" id="jvd-i6-Got"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YUV-I6-SWL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
