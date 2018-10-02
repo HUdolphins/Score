@@ -16,7 +16,14 @@ class GameViewController: UIViewController {
     var playerArray: [FIRPlayer] = []
     let playerRef = Database.database().reference()
     
-   //startpoint変数とendPoint変数削除
+    @IBOutlet weak var firstBaseView: UIView!
+    @IBOutlet weak var secondBaseView: UIView!
+    @IBOutlet weak var thirdBaseView: UIView!
+    @IBOutlet weak var homeBaseView: UIView!
+    
+    var secondPlayerOrigin: CGPoint!
+    @IBOutlet weak var secondPlayerButton: UIButton!
+    //startpoint変数とendPoint変数削除
 
     override func viewDidLoad() {
         super.viewDidLoad()
