@@ -69,8 +69,13 @@ class GameViewController: UIViewController {
        dismiss(animated: true, completion: nil)
     }
     
-    //投手ボタン
+    //投手ボタン(ピッチャーフライ)
     @IBAction func pitcherButton(_ sender: Any) {
+        //ボールの場所
+        Situation.ballPosition = 1
+        
+        let resultViewController = self.storyboard?.instantiateViewController(withIdentifier: "Result")
+        self.present(resultViewController!, animated: true, completion: nil)
     }
     
     
