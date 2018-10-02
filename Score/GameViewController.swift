@@ -12,6 +12,7 @@ import FirebaseDatabase
 
 class GameViewController: UIViewController {
     //imageView消すの忘れない
+    //ピッチャー
     
     var playerArray: [FIRPlayer] = []
     let playerRef = Database.database().reference()
@@ -69,9 +70,9 @@ class GameViewController: UIViewController {
         //ボールの場所
         Situation.ballPosition = 1
         
-        
-        let resultViewController = self.storyboard?.instantiateViewController(withIdentifier: "Result") as! ResultViewController
-        self.present(resultViewController, animated: true, completion: nil)
+        let resultStoryBoard: UIStoryboard = UIStoryboard(name: "Result", bundle: nil)
+        let resultViewController = resultStoryBoard.instantiateInitialViewController()
+        self.present(resultViewController!, animated: true, completion: nil)
     }
     
     

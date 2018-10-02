@@ -11,7 +11,7 @@ import FirebaseAuth
 import ESTabBarController
 
 //ViewControllerを継承 結果の候補を表示する機能とボタンを追加
-class ResultChildViewController4: ViewController {
+class ResultChildViewController4: UIViewController {
     
     //結果の候補
     @IBOutlet weak var result4: UITextView!
@@ -37,7 +37,7 @@ class ResultChildViewController4: ViewController {
         super.viewDidLoad()
         self.title = "その他"
         setResult()
-        setupTab()
+        
     }
 
     

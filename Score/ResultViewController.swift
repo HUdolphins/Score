@@ -29,7 +29,7 @@ class ResultViewController: UIViewController {
         
         
         //型はUIViewControllerでいいのか、resultChildViewControllerのクラスを作るなら配列の型変えないといけない
-        let resultChildViewController1 = self.storyboard?.instantiateViewController(withIdentifier: "Result1")
+        let resultChildViewController1 = self.storyboard?.instantiateViewController(withIdentifier: "Result1") 
         let resultChildViewController2 = self.storyboard?.instantiateViewController(withIdentifier: "Result2")
         let resultChildViewController3 = self.storyboard?.instantiateViewController(withIdentifier: "Result3")
         let resultChildViewController4 = self.storyboard?.instantiateViewController(withIdentifier: "Result4")
