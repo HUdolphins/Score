@@ -60,11 +60,13 @@ class ResultViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    /*
     func sendRessult(){
         playerArray[battingOrder].results.insert("捕飛", at: 0)
         let results = ["results": playerArray[battingOrder].results]
         playerRef?.child("player").child(playerArray[battingOrder].id!).updateChildValues(results)
     }
+    */
     
 
 }

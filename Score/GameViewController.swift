@@ -20,16 +20,10 @@ class GameViewController: UIViewController {
     var startPoint: CGPoint!
     var endPoint: CGPoint!
     
-    var battingOrder = 0
-    var outCounts = 0
-    var strikeCounts = 0
-    var ballCounts = 0
-    
-    var firstRunnerExists = false
-    var secondRunnerExists = false
-    var thirdRunnerExists = false
-    
-    var runnerSituation: String = "走者なし"
+    internal static var result1: String! = "結果1"
+    internal static var result2: String! = "結果2"
+    internal static var result3: String! = "結果3"
+    internal static var result4: String! = "その他"
     
 
     override func viewDidLoad() {
@@ -55,8 +49,13 @@ class GameViewController: UIViewController {
        dismiss(animated: true, completion: nil)
     }
     
-    //投手ボタン
+    //投手ボタン(ピッチャーフライ)
     @IBAction func pitcherButton(_ sender: Any) {
+        //ボールの場所
+        Situation.ballPosition = 1
+        
+        let resultViewController = self.storyboard?.instantiateViewController(withIdentifier: "Result")
+        self.present(resultViewController!, animated: true, completion: nil)
     }
     
     
