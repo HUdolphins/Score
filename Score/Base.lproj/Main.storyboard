@@ -322,6 +322,17 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FL7-fB-lXU">
                                 <rect key="frame" x="297" y="378" width="61" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o1y-5f-fra">
+                                <rect key="frame" x="157" y="223" width="61" height="57"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hW2-tU-x5H">
+                                <rect key="frame" x="21" y="378" width="61" height="57"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gOw-ad-hRE">
@@ -349,6 +360,11 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="faul"/>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9en-cx-TGj">
+                                <rect key="frame" x="157" y="508" width="61" height="57"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -366,7 +382,10 @@
                     <tabBarItem key="tabBarItem" title="Item 1" id="8F5-fI-Ft6"/>
                     <connections>
                         <outlet property="firstBaseView" destination="FL7-fB-lXU" id="lxj-LE-iTr"/>
+                        <outlet property="homeBaseView" destination="9en-cx-TGj" id="X3g-lt-hc4"/>
+                        <outlet property="secondBaseView" destination="o1y-5f-fra" id="W2T-bl-oZr"/>
                         <outlet property="secondPlayerButton" destination="V6q-1L-rfT" id="jvd-i6-Got"/>
+                        <outlet property="thirdBaseView" destination="hW2-tU-x5H" id="z2i-GT-4ud"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YUV-I6-SWL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -388,10 +407,10 @@
             </objects>
             <point key="canvasLocation" x="1139" y="1592"/>
         </scene>
-        <!--Result Child View Controller1-->
+        <!--View Controller-->
         <scene sceneID="aUS-iM-Rbn">
             <objects>
-                <viewController storyboardIdentifier="Result1" id="AgP-Rp-igG" customClass="ResultChildViewController1" customModule="Score" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Result1" id="AgP-Rp-igG" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Dol-D5-kFh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -401,12 +420,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K3p-yf-RMW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="532" y="2318.5907046476764"/>
+            <point key="canvasLocation" x="532" y="2319"/>
         </scene>
-        <!--Result Child View Controller2-->
+        <!--View Controller-->
         <scene sceneID="UZN-cr-UMa">
             <objects>
-                <viewController storyboardIdentifier="Result2" id="rtY-2D-9ya" customClass="ResultChildViewController2" customModule="Score" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Result2" id="rtY-2D-9ya" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OX5-QD-dpa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -416,12 +435,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eka-oB-aOV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1346.4000000000001" y="2323.9880059970019"/>
+            <point key="canvasLocation" x="1347" y="2324"/>
         </scene>
-        <!--Result Child View Controller3-->
+        <!--View Controller-->
         <scene sceneID="QND-Iw-5wF">
             <objects>
-                <viewController storyboardIdentifier="Result3" id="T5t-oz-Q3h" customClass="ResultChildViewController3" customModule="Score" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Result3" id="T5t-oz-Q3h" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ONQ-8K-Qc3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -433,10 +452,10 @@
             </objects>
             <point key="canvasLocation" x="2281" y="2316"/>
         </scene>
-        <!--Result Child View Controller4-->
+        <!--View Controller-->
         <scene sceneID="YO4-nC-PQM">
             <objects>
-                <viewController storyboardIdentifier="Result4" id="nr4-xi-jBD" customClass="ResultChildViewController4" customModule="Score" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Result4" id="nr4-xi-jBD" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="s06-62-caC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

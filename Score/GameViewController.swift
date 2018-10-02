@@ -20,6 +20,14 @@ class GameViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //UIView透過
+        firstBaseView.backgroundColor = UIColor.clear
+        secondBaseView.backgroundColor = UIColor.clear
+        thirdBaseView.backgroundColor = UIColor.clear
+        homeBaseView.backgroundColor = UIColor.clear
+        
+        //背景画像設定
         let backgroundImage = UIImageView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height))
         backgroundImage.image = UIImage(named: "iPhone 8 Copy 2.png")
         backgroundImage.layer.zPosition = -1
@@ -83,6 +91,12 @@ class GameViewController: UIViewController {
         case .began, .changed:
             secondPlayerButton.setImage(#imageLiteral(resourceName: "baseball copy 2"), for: .normal)
             secondPlayerButton.center = CGPoint(x: rview.center.x + translation.x, y: rview.center.y + translation.y)
+            if rview.frame.intersects(firstBaseView.frame){
+                firstBaseView.backgroundColor = .red
+            }else {
+                firstBaseView.backgroundColor = .clear
+                
+            }
             sender.setTranslation(CGPoint.zero, in: self.view)
         case .ended:
             
