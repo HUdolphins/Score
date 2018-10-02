@@ -70,7 +70,8 @@ class GameViewController: UIViewController {
         Situation.ballPosition = 1
         
         
-        modalAppear(resultString: "ピッチャーフライ")
+        let resultViewController = self.storyboard?.instantiateViewController(withIdentifier: "Result") as! ResultViewController
+        self.present(resultViewController, animated: true, completion: nil)
     }
     
     

@@ -307,8 +307,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="Oval 9-1"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MLA-W3-VqF">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MLA-W3-VqF">
                                 <rect key="frame" x="164.5" y="373" width="46" height="57"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="Combined Shape"/>
                                 <connections>
                                     <action selector="pitcherButton:" destination="VIs-XW-KHK" eventType="touchUpInside" id="RSq-Dr-AY6"/>
@@ -368,7 +369,6 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="MLA-W3-VqF" firstAttribute="centerX" secondItem="50Q-Ku-MtM" secondAttribute="centerX" id="8eG-EK-sRy"/>
                             <constraint firstAttribute="bottom" secondItem="CV5-ZL-0PV" secondAttribute="bottom" id="IWS-i4-fVW"/>
                             <constraint firstItem="RQz-m0-llu" firstAttribute="centerX" secondItem="50Q-Ku-MtM" secondAttribute="centerX" id="NOY-Wd-0fk"/>
                             <constraint firstItem="CV5-ZL-0PV" firstAttribute="top" secondItem="xaa-DG-t6O" secondAttribute="top" id="cYx-73-eWk"/>
