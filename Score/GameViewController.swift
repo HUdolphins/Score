@@ -16,9 +16,8 @@ class GameViewController: UIViewController {
     var playerArray: [FIRPlayer] = []
     let playerRef = Database.database().reference()
     
+   //startpoint変数とendPoint変数削除
     
-    var startPoint: CGPoint!
-    var endPoint: CGPoint!
     
     internal static var result1: String! = "結果1"
     internal static var result2: String! = "結果2"
@@ -32,6 +31,14 @@ class GameViewController: UIViewController {
         backgroundImage.image = UIImage(named: "iPhone 8 Copy 2.png")
         backgroundImage.layer.zPosition = -1
         self.view.addSubview(backgroundImage)
+        
+        
+        
+        //ドラッグ適用
+        secondPlayerOrigin = secondPlayerButton.frame.origin
+        addPanGesture(view: secondPlayerButton)
+        view.bringSubview(toFront: secondPlayerButton)
+        
 
         // Do any additional setup after loading the view.
     }
@@ -64,6 +71,53 @@ class GameViewController: UIViewController {
         resultViewController.modalPresentationStyle = .custom
         resultViewController.transitioningDelegate = self
         present(resultViewController, animated: true, completion: nil)
+    }
+    
+    
+    
+    
+    //ドラッグメソッド
+    func addPanGesture(view: UIView){
+        let pan = UIPanGestureRecognizer(target: self, action: #selector(self.handlePan))
+        view.addGestureRecognizer(pan)
+    }
+    @objc func handlePan(sender: UIPanGestureRecognizer ){
+        
+        let rview = sender.view!
+        let translation = sender.translation(in: self.view)
+        
+        switch sender.state{
+        case .began, .changed:
+            secondPlayerButton.setImage(#imageLiteral(resourceName: "baseball copy 2"), for: .normal)
+            secondPlayerButton.center = CGPoint(x: rview.center.x + translation.x, y: rview.center.y + translation.y)
+            sender.setTranslation(CGPoint.zero, in: self.view)
+        case .ended:
+            
+            if rview.frame.intersects(firstBaseView.frame){
+                UIView.animate(withDuration: 0.3, animations: {
+                    self.secondPlayerButton.alpha = 0.0
+//ここにゴロ時の処理を記述。枠内にドラッグされたとき
+//頼んだのむさん
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                })
+            }else{
+                UIView.animate(withDuration: 0.3, animations: {
+                    self.secondPlayerButton.frame.origin = self.secondPlayerOrigin
+                    self.secondPlayerButton.setImage(#imageLiteral(resourceName: "Combined Shape"), for: .normal)
+                })
+            }
+        default:
+            break
+            
+        }
+        
+        
     }
    
 }
