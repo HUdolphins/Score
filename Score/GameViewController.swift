@@ -17,13 +17,6 @@ class GameViewController: UIViewController {
     let playerRef = Database.database().reference()
     
    //startpoint変数とendPoint変数削除
-    
-    
-    internal static var result1: String! = "結果1"
-    internal static var result2: String! = "結果2"
-    internal static var result3: String! = "結果3"
-    internal static var result4: String! = "その他"
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
