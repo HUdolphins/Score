@@ -11,11 +11,14 @@ import FirebaseAuth
 import ESTabBarController
 
 //ViewControllerを継承 結果の候補を表示する機能とボタンを追加
-class ResultChildViewController1: ViewController {
+class ResultChildViewController1: UIViewController {
     
     //結果の候補
     @IBOutlet weak var result1: UITextView!
-
+    
+    
+    //仮のラベル
+    @IBOutlet weak var label: UILabel!
     
     func setResult(){
         //ピッチャーボタンが押されたとき
@@ -35,9 +38,9 @@ class ResultChildViewController1: ViewController {
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "結果1"
+        
         setResult()
-        setupTab()
+        
     }
 
     
