@@ -407,10 +407,10 @@
             </objects>
             <point key="canvasLocation" x="1139" y="1592"/>
         </scene>
-        <!--View Controller-->
+        <!--Result Child View Controller1-->
         <scene sceneID="aUS-iM-Rbn">
             <objects>
-                <viewController storyboardIdentifier="Result1" id="AgP-Rp-igG" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Result1" id="AgP-Rp-igG" customClass="ResultChildViewController1" customModule="Score" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Dol-D5-kFh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -422,10 +422,10 @@
             </objects>
             <point key="canvasLocation" x="532" y="2319"/>
         </scene>
-        <!--View Controller-->
+        <!--Result Child View Controller2-->
         <scene sceneID="UZN-cr-UMa">
             <objects>
-                <viewController storyboardIdentifier="Result2" id="rtY-2D-9ya" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Result2" id="rtY-2D-9ya" customClass="ResultChildViewController2" customModule="Score" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OX5-QD-dpa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -437,10 +437,10 @@
             </objects>
             <point key="canvasLocation" x="1347" y="2324"/>
         </scene>
-        <!--View Controller-->
+        <!--Result Child View Controller3-->
         <scene sceneID="QND-Iw-5wF">
             <objects>
-                <viewController storyboardIdentifier="Result3" id="T5t-oz-Q3h" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Result3" id="T5t-oz-Q3h" customClass="ResultChildViewController3" customModule="Score" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ONQ-8K-Qc3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -452,10 +452,10 @@
             </objects>
             <point key="canvasLocation" x="2281" y="2316"/>
         </scene>
-        <!--View Controller-->
+        <!--Result Child View Controller4-->
         <scene sceneID="YO4-nC-PQM">
             <objects>
-                <viewController storyboardIdentifier="Result4" id="nr4-xi-jBD" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Result4" id="nr4-xi-jBD" customClass="ResultChildViewController4" customModule="Score" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="s06-62-caC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
