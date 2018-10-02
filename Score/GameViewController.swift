@@ -17,18 +17,6 @@ class GameViewController: UIViewController {
     let playerRef = Database.database().reference()
     
    //startpoint変数とendPoint変数削除
-    
-    
-    //ドラッグ用変数とoutlet接続
-    @IBOutlet weak var firstBaseView: UIView!
-    @IBOutlet weak var secondBaseView: UIView!
-    @IBOutlet weak var thirdBaseView: UIView!
-    @IBOutlet weak var homeBaseView: UIView!
-    
-    
-    @IBOutlet weak var secondPlayerButton: UIButton!
-    var secondPlayerOrigin: CGPoint!
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
