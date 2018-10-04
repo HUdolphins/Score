@@ -57,8 +57,9 @@ class GameViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    //サンプルボタン
     @IBAction func sampleButton(_ sender: Any) {
-        modalAppear(resultString: "")
+        modalAppear()
     }
     //ホームボタン
     @IBAction func backToHomeButton(_ sender: Any) {
@@ -76,8 +77,9 @@ class GameViewController: UIViewController {
     }
     
     
-    func modalAppear(resultString: String){
-        let resultViewController = storyboard?.instantiateViewController(withIdentifier: "Result") as! ResultViewController
+    func modalAppear(){
+        let resultStoryBoard: UIStoryboard = UIStoryboard(name: "Result", bundle: nil)
+        let resultViewController = resultStoryBoard.instantiateInitialViewController() as! ResultViewController
         resultViewController.modalPresentationStyle = .custom
         resultViewController.transitioningDelegate = self
         present(resultViewController, animated: true, completion: nil)
