@@ -58,7 +58,7 @@ class GameViewController: UIViewController {
     }
     
     @IBAction func sampleButton(_ sender: Any) {
-        modalAppear(resultString: "")
+        modalAppear()
     }
     //ホームボタン
     @IBAction func backToHomeButton(_ sender: Any) {
@@ -70,14 +70,13 @@ class GameViewController: UIViewController {
         //ボールの場所
         Situation.ballPosition = 1
         
-        let resultStoryBoard: UIStoryboard = UIStoryboard(name: "Result", bundle: nil)
-        let resultViewController = resultStoryBoard.instantiateInitialViewController()
-        self.present(resultViewController!, animated: true, completion: nil)
+        modalAppear()
     }
     
     
-    func modalAppear(resultString: String){
-        let resultViewController = storyboard?.instantiateViewController(withIdentifier: "Result") as! ResultViewController
+    func modalAppear(){
+        let resultStoryBoard: UIStoryboard = UIStoryboard(name:"Result",bundle:nil)
+        let resultViewController = resultStoryBoard.instantiateViewController(withIdentifier: "Result") as! ResultViewController
         resultViewController.modalPresentationStyle = .custom
         resultViewController.transitioningDelegate = self
         present(resultViewController, animated: true, completion: nil)

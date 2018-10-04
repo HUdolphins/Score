@@ -31,11 +31,23 @@ class ResultChildViewController4: UIViewController {
             }
         }
     }
-        //決定ボタン
+    
+    //決定ボタン
+    @IBAction func DecideButton(_ sender: UIButton) {
+        
+        //カウント・ランナーなどの処置
+        
+        //試合画面へ
+        
+        Situation.ballPosition = 0
+        
+        let mainStoryBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let gameViewController = mainStoryBoard.instantiateViewController(withIdentifier: "Game")
+        self.present(gameViewController,animated: true,completion: nil)
+    }
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "その他"
         setResult()
         
     }
