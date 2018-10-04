@@ -71,15 +71,13 @@ class GameViewController: UIViewController {
         //ボールの場所
         Situation.ballPosition = 1
         
-        let resultStoryBoard: UIStoryboard = UIStoryboard(name: "Result", bundle: nil)
-        let resultViewController = resultStoryBoard.instantiateInitialViewController()
-        self.present(resultViewController!, animated: true, completion: nil)
+        modalAppear()
     }
     
     
     func modalAppear(){
-        let resultStoryBoard: UIStoryboard = UIStoryboard(name: "Result", bundle: nil)
-        let resultViewController = resultStoryBoard.instantiateInitialViewController() as! ResultViewController
+        let resultStoryBoard: UIStoryboard = UIStoryboard(name:"Result",bundle:nil)
+        let resultViewController = resultStoryBoard.instantiateViewController(withIdentifier: "Result") as! ResultViewController
         resultViewController.modalPresentationStyle = .custom
         resultViewController.transitioningDelegate = self
         present(resultViewController, animated: true, completion: nil)
