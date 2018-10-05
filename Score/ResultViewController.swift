@@ -11,7 +11,9 @@ import Firebase
 import FirebaseDatabase
 import PageMenu
 
-class ResultViewController: UIViewController {
+class ResultViewController: UIViewController, resultChild1Delegate {
+    
+    
     
     var playerArray: [FIRPlayer] = []
     var playerRef: DatabaseReference?
@@ -34,12 +36,14 @@ class ResultViewController: UIViewController {
         let resultChildViewController3 = self.storyboard?.instantiateViewController(withIdentifier: "Result3")
         let resultChildViewController4 = self.storyboard?.instantiateViewController(withIdentifier: "Result4")
         
-        resultChildViewController1.title = "結果1"
+        
+        //oohashi: 先生、ここも変えたいです。
+        resultChildViewController1.title = Situation.result.childOptionOne().resultTitle
         resultChildViewController2?.title = "結果2"
         resultChildViewController3?.title = "結果3"
         resultChildViewController4?.title = "その他"
         
-//        resultChildViewController1.delegate = self
+
         
         
         
@@ -56,19 +60,34 @@ class ResultViewController: UIViewController {
         pageMenu =  CAPSPageMenu(viewControllers: resultChildViewControllerArray, frame: view.bounds, pageMenuOptions: parameters)
         view.addSubview(pageMenu!.view)
         
+        resultChildViewController1.resultDecideButton.addTarget(self, action: #selector(handleDecideButtonOne(_:forEvent:)), for: .touchUpInside)
+
+
+
+        
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        let resultChildViewController = self.storyboard?.instantiateViewController(withIdentifier: "Result1") as! ResultChildViewController1
+        //oohashi: delegateメソッドのインスタンスはResultViewControllerだという宣言
+        resultChildViewController.delegate = self
         // Do any additional setup after loading the view.
     }
-//    var sentResultFromGameViewController = ResultEnum(rawValue: 0)
-//    //sentResultにはresultEnum.childOptionOneを
-//    func setResult(sentResult: String, resultImage: UIImage){
-//        let resultChildViewController = self.storyboard?.instantiateViewController(withIdentifier: "Child1") as! ResultChildViewController1
-//        resultChildViewController.result.text = sentResult
-//    }
+    func setResult(resultEnumString: String, resultImage: UIImage) {
+        let resultChildViewController = self.storyboard?.instantiateViewController(withIdentifier: "Result1") as! ResultChildViewController1
+        resultChildViewController.resultTextView.font = UIFont(name:(resultChildViewController.resultTextView.font?.fontName)!,size: 30)
+        resultChildViewController.resultTextView.isEditable = false
+        resultChildViewController.resultTextView.text = Situation.result.childOptionOne().resultString
+        resultChildViewController.resultImageView.image = resultImage
+    }
+
+    @objc func handleDecideButtonOne(_ sender: UIButton, forEvent event: UIEvent){
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
+
 }
 
 

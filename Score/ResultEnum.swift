@@ -1,5 +1,6 @@
 
 import Foundation
+import UIKit
 
 enum ResultEnum: Int{
     case pitcherFly = 1
@@ -17,80 +18,80 @@ enum ResultEnum: Int{
     
     
     
-    
-    func childOptionOne() -> String{
+    //oohashi:とりあえず２１個画像作って最終的には全部画像作る
+    func childOptionOne() -> (resultTitle: String,resultString: String, resultImage: UIImage){
         switch self {
         case .pitcherFly:
             if Situation.oneOutNoRunner {
-                return "ピッチャーフライ\n２死走者なし"
+                return ("投飛", "ピッチャーフライ\n２死走者なし", UIImage(named: "")!)
             }else if Situation.twoOutNoRunner{
-                return "ピッチャーフライ\n３アウトチェンジ"
+                return ("投飛", "ピッチャーフライ\n３アウトチェンジ", UIImage(named: "")!)
             }
             else if Situation.noOutNoRunner{
-                return "ピッチャーフライ\n1死走者なし"
+                return ("投飛", "ピッチャーフライ\n1死走者なし", UIImage(named: "")! )
             }
             else if Situation.noOutRunnerOnFirst{
-                return "ピッチャーフライ\n1死1塁"
+                return ("投飛", "ピッチャーフライ\n1死1塁", UIImage(named: "")!)
             }
             else if Situation.oneOutRunnerOnFirst{
-                return "ピッチャーフライ\n2死走者1塁"
+                return ("投飛", "ピッチャーフライ\n2死走者1塁", UIImage(named: "")!)
             }
             else if Situation.twoOutRunnerOnFirst{
-                return "ピッチャーフライ\n3アウトチェンジ"
+                return ("投飛", "ピッチャーフライ\n3アウトチェンジ", UIImage(named: "")!)
             }
             else if Situation.noOutRunnerOnSecond{
-                return "ピッチャーフライ\n1死2塁"
+                return ("投飛", "ピッチャーフライ\n1死2塁", UIImage(named: "")!)
             }
             else if Situation.oneOutRunnerOnSecond{
-                return "ピッチャーフライ\n2死2塁"
+                return ("投飛", "ピッチャーフライ\n2死2塁", UIImage(named: "")!)
             }
             else if Situation.twoOutRunnerOnSecond{
-                return "ピッチャーフライ\n3アウトチェンジ"
+                return ("投飛", "ピッチャーフライ\n3アウトチェンジ", UIImage(named: "")!)
             }
             else if Situation.noOutRunnerOnThird{
-                return "ピッチャーフライ\n1死3塁"
+                return ("投飛", "ピッチャーフライ\n1死3塁", UIImage(named: "")!)
             }
             else if Situation.oneOutRunnerOnThird{
-                return "ピッチャーフライ\n2死3塁"
+                return ("投飛", "ピッチャーフライ\n2死3塁", UIImage(named: "")!)
             }
             else if Situation.twoOutRunnerOnThird{
-                return "ピッチャーフライ\n3アウトチェンジ"
+                return ("投飛", "ピッチャーフライ\n3アウトチェンジ", UIImage(named: "")!)
             }
             else if Situation.noOutRunnersOnFirstAndSecond{
-                return "ピッチャーフライ\n1死走者1,2塁"
+                return ("投飛", "ピッチャーフライ\n1死走者1,2塁", UIImage(named: "")!)
             }
             else if Situation.oneOutRunnersOnFirstAndSecond{
-                return "ピッチャーフライ\n2死1,2塁"
+                return ("投飛", "ピッチャーフライ\n2死1,2塁", UIImage(named: "")!)
             }
             else if Situation.twoOutRunnersOnFirstAndSecond{
-                return "ピッチャーフライ\n3アウトチェンジ"
+                return ("投飛", "ピッチャーフライ\n3アウトチェンジ", UIImage(named: "")!)
             }
             else if Situation.noOutRunnersOnFirstAndThird{
-                return "ピッチャーフライ\n1死1,3塁"
+                return ("投飛", "ピッチャーフライ\n1死1,3塁", UIImage(named: "")!)
             }
             else if Situation.oneOutRunnersOnFirstAndThird{
-                return "ピッチャーフライ\n2死1,３塁"
+                return ("投飛", "ピッチャーフライ\n2死1,３塁", UIImage(named: "")!)
             }
             else if Situation.twoOutRunnersOnFirstAndThird{
-                return "ピッチャーフライ\n3アウトチェンジ"
+                return ("投飛", "ピッチャーフライ\n3アウトチェンジ", UIImage(named: "")!)
             }
             else if Situation.noOutRunnersOnSecondAndThird{
-                return "ピッチャーフライ\n1死2,3塁"
+                return ("投飛", "ピッチャーフライ\n1死2,3塁", UIImage(named: "")!)
             }
             else if Situation.oneOutRunnersOnSecondAndThird{
-                return "ピッチャーフライ\n2死2,3塁"
+                return ("投飛", "ピッチャーフライ\n2死2,3塁", UIImage(named: "")!)
             }
             else if Situation.twoOutRunnersOnSecondAndThird{
-                return "ピッチャーフライ\n3アウトチェンジ"
+                return ("投飛", "ピッチャーフライ\n3アウトチェンジ", UIImage(named: "")!)
             }
             else if Situation.noOutFullBase{
-                return "ピッチャーフライ\n1死満塁"
+                return ("投飛", "ピッチャーフライ\n1死満塁", UIImage(named: "")!)
             }
             else if Situation.oneOutFullBase{
-                return "ピッチャーフライ\n2死満塁"
+                return ("投飛", "ピッチャーフライ\n2死満塁", UIImage(named: "")!)
             }
             else if Situation.twoOutFullBase{
-                return "ピッチャーフライ\n3アウトチェンジ"
+                return ("投飛", "ピッチャーフライ\n3アウトチェンジ", UIImage(named: "")!)
             }
             
         case .catcherFly:
@@ -235,11 +236,223 @@ enum ResultEnum: Int{
         case .shortFly:
             return ""
         case .leftFly:
-            return ""
+            if Situation.noOutNoRunner {
+                return "レフトフライ\n1死走者なし"
+            }else if Situation.oneOutNoRunner{
+                return "レフトフライ\n2死走者なし"
+            }
+            else if Situation.twoOutNoRunner{
+                return "レフトフライ\n3アウトチェンジ"
+            }
+            else if Situation.noOutRunnerOnFirst{
+                return "レフトフライ\n1死1塁"
+            }
+            else if Situation.oneOutRunnerOnFirst{
+                return "レフトフライ\n2死1塁"
+            }
+            else if Situation.twoOutRunnerOnFirst{
+                return "レフトフライ\n3アウトチェンジ"
+            }
+            else if Situation.noOutRunnerOnSecond{
+                return "レフトフライ\n1死2塁"
+            }
+            else if Situation.oneOutRunnerOnSecond{
+                return "レフトフライ\n2死2塁"
+            }
+            else if Situation.twoOutRunnerOnSecond{
+                return "レフトフライ\n3アウトチェンジ"
+            }
+            else if Situation.noOutRunnerOnThird{
+                return "タッチアップ\n1死走者なし\n1点"
+            }
+            else if Situation.oneOutRunnerOnThird{
+                return "タッチアップ\n2死走者なし\n1点"
+            }
+            else if Situation.twoOutRunnerOnThird{
+                return "レフトフライ\n3アウトチェンジ"
+            }
+            else if Situation.noOutRunnersOnFirstAndSecond{
+                return "レフトフライ\n1死1,2塁"
+            }
+            else if Situation.oneOutRunnersOnFirstAndSecond{
+                return "レフトフライ\n2死1,2塁"
+            }
+            else if Situation.twoOutRunnersOnFirstAndSecond{
+                return "レフトフライ\n3アウトチェンジ"
+            }
+            else if Situation.noOutRunnersOnFirstAndThird{
+                return "タッチアップ\n1死1塁\n1点"
+            }
+            else if Situation.oneOutRunnersOnFirstAndThird{
+                return "タッチアップ\n2死1塁\n1点"
+            }
+            else if Situation.twoOutRunnersOnFirstAndThird{
+                return "レフトフライ\n3アウトチェンジ"
+            }
+            else if Situation.noOutRunnersOnSecondAndThird{
+                return "タッチアップ\n1死2塁\n1点"
+            }
+            else if Situation.oneOutRunnersOnSecondAndThird{
+                return "タッチアップ\n2死2塁\n1点"
+            }
+            else if Situation.twoOutRunnersOnSecondAndThird{
+                return "レフトフライ\n3アウトチェンジ"
+            }
+            else if Situation.noOutFullBase{
+                return "タッチアップ\n1死1,2塁\n1点"
+            }
+            else if Situation.oneOutFullBase{
+                return "タッチアップ\n2死1,2塁\n1点"
+            }
+            else if Situation.twoOutFullBase{
+                return "レフトフライ\n3アウトチェンジ"
+            }
         case .centerFly:
-            return ""
+            if Situation.noOutNoRunner {
+                return "センターフライ\n一死走者なし"
+            }else if Situation.oneOutNoRunner{
+                return "センターフライ\n2死走者なし"
+            }
+            else if Situation.twoOutNoRunner{
+                return "センターフライ\n3アウトチェンジ"
+            }
+            else if Situation.noOutRunnerOnFirst{
+                return "センターフライ\n1死1塁"
+            }
+            else if Situation.oneOutRunnerOnFirst{
+                return "センターフライ\n2死1塁"
+            }
+            else if Situation.twoOutRunnerOnFirst{
+                return "センターフライ\n3アウトチェンジ"
+            }
+            else if Situation.noOutRunnerOnSecond{
+                return "センターフライ\n1死2塁"
+            }
+            else if Situation.oneOutRunnerOnSecond{
+                return "センターフライ\n2死2塁"
+            }
+            else if Situation.twoOutRunnerOnSecond{
+                return "センターフライ\n3アウトチェンジ"
+            }
+            else if Situation.noOutRunnerOnThird{
+                return "タッチアップ\n1死走者なし\n1点"
+            }
+            else if Situation.oneOutRunnerOnThird{
+                return "タッチアップ\n2死走者なし\n1点"
+            }
+            else if Situation.twoOutRunnerOnThird{
+                return "センターフライ\n3アウトチェンジ"
+            }
+            else if Situation.noOutRunnersOnFirstAndSecond{
+                return "センターフライ\n1死1,2塁"
+            }
+            else if Situation.oneOutRunnersOnFirstAndSecond{
+                return "センターフライ\n2死1,2塁"
+            }
+            else if Situation.twoOutRunnersOnFirstAndSecond{
+                return "センターフライ\n3アウトチェンジ"
+            }
+            else if Situation.noOutRunnersOnFirstAndThird{
+                return "タッチアップ\n1死1塁\n1点"
+            }
+            else if Situation.oneOutRunnersOnFirstAndThird{
+                return "タッチアップ\n2死1塁\n1点"
+            }
+            else if Situation.twoOutRunnersOnFirstAndThird{
+                return "センターフライ\n3アウトチェンジ"
+            }
+            else if Situation.noOutRunnersOnSecondAndThird{
+                return "タッチアップ\n1死2塁\n1点"
+            }
+            else if Situation.oneOutRunnersOnSecondAndThird{
+                return "タッチアップ\n2死2塁\n1点"
+            }
+            else if Situation.twoOutRunnersOnSecondAndThird{
+                return "センターフライ\n3アウトチェンジ"
+            }
+            else if Situation.noOutFullBase{
+                return "タッチアップ\n1死1,2塁"
+            }
+            else if Situation.oneOutFullBase{
+                return "タッチアップ\n2死1,2塁"
+            }
+            else if Situation.twoOutFullBase{
+                return "センターフライ\n3アウトチェンジ"
+            }
         case .rightFly:
-            return ""
+            if Situation.noOutNoRunner {
+                return "ライトフライ\n1死走者なし"
+            }else if Situation.oneOutNoRunner{
+                return "ライトフライ\n2死走者なし"
+            }
+            else if Situation.twoOutNoRunner{
+                return "ライトフライ\n3アウトチェンジ"
+            }
+            else if Situation.noOutRunnerOnFirst{
+                return "ライトフライ\n1死1塁"
+            }
+            else if Situation.oneOutRunnerOnFirst{
+                return "ライトフライ\n2死1塁"
+            }
+            else if Situation.twoOutRunnerOnFirst{
+                return "ライトフライ\n3アウトチェンジ"
+            }
+            else if Situation.noOutRunnerOnSecond{
+                return "ライトフライ\n1死2塁"
+            }
+            else if Situation.oneOutRunnerOnSecond{
+                return "ライトフライ\n2死2塁"
+            }
+            else if Situation.twoOutRunnerOnSecond{
+                return "ライトフライ\n3アウトチェンジ"
+            }
+            else if Situation.noOutRunnerOnThird{
+                return "タッチアップ\n1死走者なし\n1点"
+            }
+            else if Situation.oneOutRunnerOnThird{
+                return "タッチアップ\n2死走者なし\n1点"
+            }
+            else if Situation.twoOutRunnerOnThird{
+                return "ライトフライ\n3アウトチェンジ"
+            }
+            else if Situation.noOutRunnersOnFirstAndSecond{
+                return "ライトフライ\n1死1,2塁"
+            }
+            else if Situation.oneOutRunnersOnFirstAndSecond{
+                return "ライトフライ\n2死1,2塁"
+            }
+            else if Situation.twoOutRunnersOnFirstAndSecond{
+                return "ライトフライ\n3アウトチェンジ"
+            }
+            else if Situation.noOutRunnersOnFirstAndThird{
+                return "タッチアップ\n1死1塁\n1点"
+            }
+            else if Situation.oneOutRunnersOnFirstAndThird{
+                return "タッチアップ\n2死1塁\n1点"
+            }
+            else if Situation.twoOutRunnersOnFirstAndThird{
+                return "ライトフライ\n3アウトチェンジ"
+            }
+            else if Situation.noOutRunnersOnSecondAndThird{
+                //oohashi:23塁のがいいか？
+                return "タッチアップ\n1死2塁\n1点"
+            }
+            else if Situation.oneOutRunnersOnSecondAndThird{
+                return "タッチアップ\n2死2塁\n1点"
+            }
+            else if Situation.twoOutRunnersOnSecondAndThird{
+                return "ライトフライ\n3アウトチェンジ"
+            }
+            else if Situation.noOutFullBase{
+                //13塁のがいいか
+                return "タッチアップ\n1死1,2塁\n1点"
+            }
+            else if Situation.oneOutFullBase{
+                return "タッチアップ\n2死1,2塁\n1点"
+            }
+            else if Situation.twoOutFullBase{
+                return "ライトフライ\n3アウトチェンジ"
+            }
         case .pitcherGoro:
             return ""
         case .pitcherHit:
@@ -330,6 +543,7 @@ enum ResultEnum: Int{
     }
     
     //ボタンを押したときの関数3つ
+    //oohashi: 得点入った時アニメーション処理
     func childButtonTapedOne(){
         switch self{
         case .pitcherFly:

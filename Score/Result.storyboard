@@ -19,26 +19,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eaa-qh-hK9">
-                                <rect key="frame" x="133" y="296" width="108" height="30"/>
+                                <rect key="frame" x="133" y="421" width="108" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="この結果を選択"/>
-                                <connections>
-                                    <action selector="DecideButton:" destination="dQh-Nz-HMN" eventType="touchUpInside" id="fBP-Mg-VTg"/>
-                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vVb-Or-i5a">
-                                <rect key="frame" x="48" y="61" width="270" height="184"/>
+                                <rect key="frame" x="52" y="229" width="270" height="184"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oNc-Wz-c28">
+                                <rect key="frame" x="67" y="67" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="iCo-pm-yLv"/>
                     </view>
                     <connections>
-                        <outlet property="result" destination="vVb-Or-i5a" id="cR6-JB-vmp"/>
+                        <outlet property="resultDecideButton" destination="eaa-qh-hK9" id="nuv-6b-JmP"/>
+                        <outlet property="resultImageView" destination="oNc-Wz-c28" id="v71-EK-ULA"/>
+                        <outlet property="resultTextView" destination="vVb-Or-i5a" id="ob2-p5-3me"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PkG-Yv-v6M" userLabel="First Responder" sceneMemberID="firstResponder"/>
