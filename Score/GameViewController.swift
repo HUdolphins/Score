@@ -52,10 +52,6 @@ class GameViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     //サンプルボタン
     @IBAction func sampleButton(_ sender: Any) {
@@ -74,15 +70,17 @@ class GameViewController: UIViewController {
         modalAppear()
     }
     
-    
+    //モーダル表示メソッド
     func modalAppear(){
         let resultStoryBoard: UIStoryboard = UIStoryboard(name:"Result",bundle:nil)
         let resultViewController = resultStoryBoard.instantiateViewController(withIdentifier: "Result") as! ResultViewController
         resultViewController.modalPresentationStyle = .custom
         resultViewController.transitioningDelegate = self
-        present(resultViewController, animated: true, completion: nil)
+        self.present(resultViewController, animated: true, completion: nil)
     }
     
+    
+    //モーダルのdissmissここで書かないといけないかも
     
     
     
@@ -98,8 +96,11 @@ class GameViewController: UIViewController {
         
         switch sender.state{
         case .began, .changed:
+            //プレイヤーが選手のimageからボールのimageに
             secondPlayerButton.setImage(#imageLiteral(resourceName: "baseball copy 2"), for: .normal)
+            //位置取得
             secondPlayerButton.center = CGPoint(x: rview.center.x + translation.x, y: rview.center.y + translation.y)
+            //ボールとベース重なったらベースが変化
             if rview.frame.intersects(firstBaseView.frame){
                 firstBaseView.backgroundColor = .red
             }else {
@@ -108,8 +109,9 @@ class GameViewController: UIViewController {
             }
             sender.setTranslation(CGPoint.zero, in: self.view)
         case .ended:
-            
+            //ドラッグを終了させたとき重なっていたら処理する
             if rview.frame.intersects(firstBaseView.frame){
+                
                 UIView.animate(withDuration: 0.3, animations: {
                     self.secondPlayerButton.alpha = 0.0
 //ここにゴロ時の処理を記述。枠内にドラッグされたとき

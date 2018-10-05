@@ -8,17 +8,36 @@
 
 import UIKit
 import FirebaseAuth
-import ESTabBarController
+
+
+//protocol resultChild1Delegate{
+//    func setResult(resultString: String, resultImage: UIImage)
+//
+//    //処理は全てResultViewController決めたい
+//
+//}
+//
+
 
 //結果選択画面1
 //ViewControllerを継承 結果の候補を表示する機能とボタンを追加
 class ResultChildViewController1: UIViewController {
     
+    //var delegate: resultChild1Delegate!
+    
     //結果の候補
+    
+    
+    //名前をtextViewに
     @IBOutlet weak var result: UITextView!
     
     //結果を表示する関数
     func setResult(){
+        
+        
+        //delegate.setResult(resultString: <#T##String#>, resultImage: <#T##UIImage#>)
+        
+        
         //ピッチャーボタンが押されたとき
         if Situation.ballPosition == 1{
             //2アウト
@@ -309,6 +328,14 @@ class ResultChildViewController1: UIViewController {
             }
         }
         //試合画面へ戻る
+        
+        
+        
+        
+        
+        //モーダルのdissmissができない
+        //ここで処理するより親ビューか最悪ゲームビューで処理
+        
         
         Situation.ballPosition = 0
         
