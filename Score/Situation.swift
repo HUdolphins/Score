@@ -33,7 +33,7 @@ class Situation: NSObject {
     
     //回の表裏
     internal static var inning = 1
-    internal static var toporbottom = "Top"
+    internal static var topOrBottom = "Top"
     
     //条件指定めんどいからまとめる
     static let oneOutNoRunner: Bool = outCounts == 1 && firstRunnerExists == 0 && secondRunnerExists == 0 && thirdRunnerExists == 0

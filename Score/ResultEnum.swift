@@ -22,11 +22,52 @@ enum ResultEnum: Int{
         switch self {
         case .pitcherFly:
             if Situation.oneOutNoRunner {
-                return "ピッチャーフライ/n２死走者なし"
+                return "ピッチャーフライ\n２死走者なし"
             }else if Situation.twoOutsNoRunner{
-                return "ピッチャーフライ/n３アウトチェンジ"
+                return "ピッチャーフライ\n３アウトチェンジ"
             }
-            
+            else if Situation.noOutNoRunner{
+                return "ピッチャーフライ\n1死走者なし"
+            }
+            else if Situation.noOutRunnerOnFirst{
+                return "ピッチャーフライ\n1死走者1塁"
+            }
+            else if Situation.oneOutRunnerOnFirst{
+                return "ピッチャーフライ\n2死走者1塁"
+            }
+            else if Situation.twoOutRunnerOnFirst{
+                return "ピッチャーフライ\n3アウトチェンジ"
+            }
+            else if Situation.noOutRunnerOnSecond{
+                return "ピッチャーフライ\n1死走者2塁"
+            }
+            else if Situation.oneOutRunnerOnSecond{
+                return "ピッチャーフライ\n2死走者2塁"
+            }
+            else if Situation.twoOutRunnerOnSecond{
+                return "ピッチャーフライ\n3アウトチェンジ"
+            }
+            else if Situation.noOutRunnerOnThird{
+                return "ピッチャーフライ\n1死走者3塁"
+            }
+            else if Situation.oneOutRunnerOnThird{
+                return "ピッチャーフライ\n2死走者3塁"
+            }
+            else if Situation.twoOutRunnerOnThird{
+                return "ピッチャーフライ\n3アウトチェンジ"
+            }
+            else if Situation.noOutRunnerOnFirstAndSecond{
+                return "ピッチャーフライ\n1死走者1塁2塁"
+            }
+            else if Situation.oneOutRunnerOnFirstAndSecond{
+                return "ピッチャーフライ\n2死走者1塁2塁"
+            }
+            else if Situation.twoOutRunnerOnFirstAndSecond{
+                return "ピッチャーフライ\n3アウトチェンジ"
+            }
+            else if Situation.noOutRunnerOnFirstAndThird{
+                return "ピッチャーフライ\1死走者1塁3塁"
+            }
             
         case .catcherFly:
             return ""
@@ -102,6 +143,9 @@ enum ResultEnum: Int{
             if Situation.oneOutNoRunner{
                 return "ピッチャーエラー/n１死走者２塁"
             }
+            else if Situation.twoOutsNoRunner{
+                return ""
+            }
         case .catcherFly:
             return ""
         case .firstFly:
@@ -130,7 +174,28 @@ enum ResultEnum: Int{
         return ""
     }
     
-    
-    
+    //ボタンを押したときの関数3つ
+    func childButtonTapedOne(){
+        switch self {
+        case .pitcherFly:
+            if Situation.oneOutNoRunner{
+                Situation.outCounts = 2
+            }
+            else if Situation.twoOutsNoRunner{
+                Situation.outCounts = 0
+                if Situation.topOrBottom == "Top"{
+                    Situation.toporbottom = "Bottom"
+                }
+                else{
+                    Situation.inning += 1
+                    Situation.toporbottom ="Top"
+                }
+            }
+            
+        case .catcherFly
+        default:
+            <#code#>
+        }
+    }
 }
 

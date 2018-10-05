@@ -18,28 +18,14 @@ class ResultChildViewController4: UIViewController {
 
     
     func setResult(){
-        //ピッチャーボタンが押されたとき
-        if Situation.ballPosition == 1{
-            if Situation.outCounts == 2{
-                //2アウトランナーなし
-                if Situation.firstRunnerExists == 0 && Situation.secondRunnerExists == 0 && Situation.thirdRunnerExists == 0 {
-                    //処理
-                    }
-                else if Situation.firstRunnerExists == 1 && Situation.secondRunnerExists == 0 && Situation.thirdRunnerExists == 0{
         
-                    }
-            }
-        }
     }
     
     //決定ボタン
     @IBAction func DecideButton(_ sender: UIButton) {
         
         //カウント・ランナーなどの処置
-        
-        //試合画面へ
-        
-        Situation.ballPosition = 0
+
         
         let mainStoryBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let gameViewController = mainStoryBoard.instantiateViewController(withIdentifier: "Game")

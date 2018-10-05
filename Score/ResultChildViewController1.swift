@@ -50,7 +50,6 @@ class ResultChildViewController1: UIViewController {
         
         //カウント・ランナーなどの処置(表示した結果の通りに処理する)
         
-        
     
         //モーダルのdissmissができない
         //ここで処理するより親ビューか最悪ゲームビューで処理

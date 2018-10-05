@@ -215,8 +215,6 @@ class CustomPresentationController: UIPresentationController {
     // overlayViewをタップした時に呼ばれる
     @objc func overlayViewDidTouch(_ sender: UITapGestureRecognizer) {
         presentedViewController.dismiss(animated: true, completion: nil)
-        //ボールポジションの初期化
-        Situation.ballPosition = 0
     }
 }
 
