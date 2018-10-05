@@ -11,6 +11,8 @@ import UIKit
 //現在の状況、一つ前の状況を保存しておく
 class Situation: NSObject {
     
+    
+    
     //現在の状況
     
     //カウント
@@ -28,8 +30,20 @@ class Situation: NSObject {
     internal static var firstRunnerExists:Int = 0
     internal static var secondRunnerExists:Int = 0
     internal static var thirdRunnerExists:Int = 0
+    //Boolにするか
+    
+    
     
     //回の表裏
     internal static var inning = 1
     internal static var toporbottom = "Top"
+    
+    //条件指定めんどいからまとめる
+    static let oneOutNoRunner: Bool = outCounts == 1 && firstRunnerExists == 0 && secondRunnerExists == 0 && thirdRunnerExists == 0
+    
+    static let twoOutsNoRunner = outCounts == 2 && firstRunnerExists == 0 && secondRunnerExists == 0 && thirdRunnerExists == 0
+
+
+
+
 }

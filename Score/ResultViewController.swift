@@ -29,18 +29,21 @@ class ResultViewController: UIViewController {
         
         
         //型はUIViewControllerでいいのか、resultChildViewControllerのクラスを作るなら配列の型変えないといけない
-        let resultChildViewController1 = self.storyboard?.instantiateViewController(withIdentifier: "Result1")
+        let resultChildViewController1 = self.storyboard?.instantiateViewController(withIdentifier: "Result1") as! ResultChildViewController1
         let resultChildViewController2 = self.storyboard?.instantiateViewController(withIdentifier: "Result2")
         let resultChildViewController3 = self.storyboard?.instantiateViewController(withIdentifier: "Result3")
         let resultChildViewController4 = self.storyboard?.instantiateViewController(withIdentifier: "Result4")
         
-        resultChildViewController1?.title = "結果1"
+        resultChildViewController1.title = "結果1"
         resultChildViewController2?.title = "結果2"
         resultChildViewController3?.title = "結果3"
         resultChildViewController4?.title = "その他"
         
+//        resultChildViewController1.delegate = self
         
-        let resultChildViewControllerArray: [UIViewController] = [resultChildViewController1!, resultChildViewController2!, resultChildViewController3!, resultChildViewController4!]
+        
+        
+        let resultChildViewControllerArray: [UIViewController] = [resultChildViewController1, resultChildViewController2!, resultChildViewController3!, resultChildViewController4!]
         
         let parameters: [CAPSPageMenuOption] = [
             .menuItemSeparatorWidth(4.0),
@@ -60,11 +63,12 @@ class ResultViewController: UIViewController {
         
         // Do any additional setup after loading the view.
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
+//    var sentResultFromGameViewController = ResultEnum(rawValue: 0)
+//    //sentResultにはresultEnum.childOptionOneを
+//    func setResult(sentResult: String, resultImage: UIImage){
+//        let resultChildViewController = self.storyboard?.instantiateViewController(withIdentifier: "Child1") as! ResultChildViewController1
+//        resultChildViewController.result.text = sentResult
+//    }
 }
+
+
