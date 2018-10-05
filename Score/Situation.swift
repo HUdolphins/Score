@@ -38,7 +38,7 @@ class Situation: NSObject {
     //条件指定めんどいからまとめる
     static let noOutNoRunner = outCounts == 0 && !firstRunnerExists && !secondRunnerExists && !thirdRunnerExists
     static let oneOutNoRunner = outCounts == 1 && !firstRunnerExists && !secondRunnerExists && !thirdRunnerExists
-    static let twoOutsNoRunner = outCounts == 2 && !firstRunnerExists && !secondRunnerExists && !thirdRunnerExists
+    static let twoOutNoRunner = outCounts == 2 && !firstRunnerExists && !secondRunnerExists && !thirdRunnerExists
     static let noOutRunnerOnFirst = outCounts == 0 && firstRunnerExists && !secondRunnerExists && !thirdRunnerExists
     static let oneOutRunnerOnFirst = outCounts == 1 && firstRunnerExists && !secondRunnerExists && !thirdRunnerExists
     static let twoOutRunnerOnFirst = outCounts == 2 && firstRunnerExists && !secondRunnerExists && !thirdRunnerExists
