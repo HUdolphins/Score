@@ -2,7 +2,7 @@
 import Foundation
 
 enum ResultEnum: Int{
-    case pitcherFly
+    case pitcherFly = 1
     case catcherFly
     case firstFly
     case secondFly

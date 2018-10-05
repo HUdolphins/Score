@@ -65,7 +65,8 @@ class GameViewController: UIViewController {
     //投手ボタン(ピッチャーフライ)
     @IBAction func pitcherButton(_ sender: Any) {
         //ボールの場所
-        Situation.ballPosition = 1
+        //オプショナル？
+        Situation.result = ResultEnum.pitcherFly
         
         modalAppear()
     }

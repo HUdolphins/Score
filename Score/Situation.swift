@@ -14,14 +14,11 @@ class Situation: NSObject {
     
     
     //現在の状況
-    
+    internal static var result:ResultEnum!
     //カウント
     internal static var outCounts:Int = 2
     internal static var strikeCounts:Int = 0
     internal static var ballCounts:Int = 0
-    
-    //ボールが飛んだ場所
-    internal static var ballPosition:Int = 0
     
     //打順
     internal static var battingOrder:Int = 0
@@ -42,6 +39,8 @@ class Situation: NSObject {
     static let oneOutNoRunner: Bool = outCounts == 1 && firstRunnerExists == 0 && secondRunnerExists == 0 && thirdRunnerExists == 0
     
     static let twoOutsNoRunner = outCounts == 2 && firstRunnerExists == 0 && secondRunnerExists == 0 && thirdRunnerExists == 0
+    
+    
 
 
 
