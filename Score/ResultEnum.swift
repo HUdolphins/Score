@@ -56,17 +56,17 @@ enum ResultEnum: Int{
             else if Situation.twoOutRunnerOnThird{
                 return "ピッチャーフライ\n3アウトチェンジ"
             }
-            else if Situation.noOutRunnerOnFirstAndSecond{
+            else if Situation.noOutRunnersOnFirstAndSecond{
                 return "ピッチャーフライ\n1死走者1塁2塁"
             }
-            else if Situation.oneOutRunnerOnFirstAndSecond{
+            else if Situation.oneOutRunnersOnFirstAndSecond{
                 return "ピッチャーフライ\n2死走者1塁2塁"
             }
-            else if Situation.twoOutRunnerOnFirstAndSecond{
+            else if Situation.twoOutRunnersOnFirstAndSecond{
                 return "ピッチャーフライ\n3アウトチェンジ"
             }
-            else if Situation.noOutRunnerOnFirstAndThird{
-                return "ピッチャーフライ\1死走者1塁3塁"
+            else if Situation.noOutRunnersOnFirstAndThird{
+                return "ピッチャーフライ\n1死走者1塁3塁"
             }
             
         case .catcherFly:
@@ -176,7 +176,7 @@ enum ResultEnum: Int{
     
     //ボタンを押したときの関数3つ
     func childButtonTapedOne(){
-        switch self {
+        switch self{
         case .pitcherFly:
             if Situation.oneOutNoRunner{
                 Situation.outCounts = 2
@@ -184,18 +184,39 @@ enum ResultEnum: Int{
             else if Situation.twoOutsNoRunner{
                 Situation.outCounts = 0
                 if Situation.topOrBottom == "Top"{
-                    Situation.toporbottom = "Bottom"
+                    Situation.topOrBottom = "Bottom"
                 }
                 else{
                     Situation.inning += 1
-                    Situation.toporbottom ="Top"
+                    Situation.topOrBottom = "Top"
                 }
             }
             
-        case .catcherFly
-        default:
-            <#code#>
+        //case .catcherFly
+        
+        case .firstFly:
+            return
+        case .secondFly:
+            return
+        case .thirdFly:
+            return
+        case .shortFly:
+            return
+        case .leftFly:
+            return
+        case .centerFly:
+            return
+        case .rightFly:
+            return
+        case .pitcherGoro:
+            return
+        case .pitcherHit:
+            return
+        case .struckOut:
+            return
+        case .catcherFly:
+            return
         }
     }
-}
 
+}

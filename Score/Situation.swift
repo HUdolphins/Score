@@ -24,9 +24,9 @@ class Situation: NSObject {
     internal static var battingOrder:Int = 0
     
     //ランナーの有無
-    internal static var firstRunnerExists = true
-    internal static var secondRunnerExists = true
-    internal static var thirdRunnerExists = true
+    internal static var firstRunnerExists = false
+    internal static var secondRunnerExists = false
+    internal static var thirdRunnerExists = false
     //Boolにするか
     
     
