@@ -57,21 +57,30 @@ enum ResultEnum: Int{
                 return "ピッチャーフライ\n3アウトチェンジ"
             }
             else if Situation.noOutRunnersOnFirstAndSecond{
-                return "ピッチャーフライ\n1死走者1塁2塁"
+                return "ピッチャーフライ\n1死走者1,2塁"
             }
             else if Situation.oneOutRunnersOnFirstAndSecond{
-                return "ピッチャーフライ\n2死1塁2塁"
+                return "ピッチャーフライ\n2死1,2塁"
             }
             else if Situation.twoOutRunnersOnFirstAndSecond{
                 return "ピッチャーフライ\n3アウトチェンジ"
             }
             else if Situation.noOutRunnersOnFirstAndThird{
-                return "ピッチャーフライ\n1死1塁3塁"
+                return "ピッチャーフライ\n1死1,3塁"
             }
             else if Situation.oneOutRunnersOnFirstAndThird{
-                return "ピッチャーフライ\n2死1塁３塁"
+                return "ピッチャーフライ\n2死1,３塁"
             }
             else if Situation.twoOutRunnersOnFirstAndThird{
+                return "ピッチャーフライ\n3アウトチェンジ"
+            }
+            else if Situation.noOutRunnersOnSecondAndThird{
+                return "ピッチャーフライ\n1死2,3塁"
+            }
+            else if Situation.oneOutRunnersOnSecondAndThird{
+                return "ピッチャーフライ\n2死2,3塁"
+            }
+            else if Situation.twoOutRunnersOnSecondAndThird{
                 return "ピッチャーフライ\n3アウトチェンジ"
             }
             else if Situation.noOutFullBase{
@@ -199,6 +208,15 @@ enum ResultEnum: Int{
                 return "<#parameter#>"
             }
             else if Situation.twoOutRunnersOnFirstAndThird{
+                return "<#parameter#>"
+            }
+            else if Situation.noOutRunnersOnSecondAndThird{
+                return "<#parameter#>"
+            }
+            else if Situation.oneOutRunnersOnSecondAndThird{
+                return "<#parameter#>"
+            }
+            else if Situation.twoOutRunnersOnSecondAndThird{
                 return "<#parameter#>"
             }
             else if Situation.noOutFullBase{
@@ -381,6 +399,15 @@ enum ResultEnum: Int{
                 
             }
             else if Situation.twoOutRunnersOnFirstAndThird{
+                
+            }
+            else if Situation.noOutRunnersOnSecondAndThird{
+                
+            }
+            else if Situation.oneOutRunnersOnSecondAndThird{
+                
+            }
+            else if Situation.twoOutRunnersOnSecondAndThird{
                 
             }
             else if Situation.noOutFullBase{
