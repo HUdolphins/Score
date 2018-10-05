@@ -32,6 +32,7 @@ class ResultChildViewController1: UIViewController {
     @IBOutlet weak var result: UITextView!
     
     //結果を表示する関数
+    //childOptionOneを引数に
     func setResult(){
         
         

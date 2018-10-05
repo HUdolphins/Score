@@ -29,28 +29,33 @@ enum ResultEnum: Int{
             
             
         case .catcherFly:
-            <#code#>
+            return ""
         case .firstFly:
-            <#code#>
+            return ""
         case .secondFly:
-            <#code#>
+            return ""
         case .thirdFly:
-            <#code#>
+            return ""
         case .shortFly:
-            <#code#>
+            return ""
         case .leftFly:
-            <#code#>
+            return ""
         case .centerFly:
-            <#code#>
+            return ""
         case .rightFly:
-            <#code#>
+            return ""
         case .pitcherGoro:
-            <#code#>
+            return ""
         case .pitcherHit:
-            <#code#>
+            return ""
         case .struckOut:
-            <#code#>
+            
+            return ""
+        default:
+            return ""
         }
+        //なんかエラーでるから仮置き
+        return ""
     }
     
     func childOptionTwo() -> String{
@@ -63,28 +68,31 @@ enum ResultEnum: Int{
                 return "ピッチャーエラー/n２死走者１塁"
             }
         case .catcherFly:
-            <#code#>
+            return ""
         case .firstFly:
-            <#code#>
+            return ""
         case .secondFly:
-            <#code#>
+            return ""
         case .thirdFly:
-            <#code#>
+            return ""
         case .shortFly:
-            <#code#>
+            return ""
         case .leftFly:
-            <#code#>
+            return ""
         case .centerFly:
-            <#code#>
+            return ""
         case .rightFly:
-            <#code#>
+            return ""
         case .pitcherGoro:
-            <#code#>
+            return ""
         case .pitcherHit:
-            <#code#>
+            return ""
         case .struckOut:
-            <#code#>
+            return ""
         }
+        
+        //なんかエラーでるから仮置き
+        return ""
     }
     
     func childOptionThree() -> String{
@@ -95,28 +103,31 @@ enum ResultEnum: Int{
                 return "ピッチャーエラー/n１死走者２塁"
             }
         case .catcherFly:
-            <#code#>
+            return ""
         case .firstFly:
-            <#code#>
+            return ""
         case .secondFly:
-            <#code#>
+            return ""
         case .thirdFly:
-            <#code#>
+            return ""
         case .shortFly:
-            <#code#>
+            return ""
         case .leftFly:
-            <#code#>
+            return ""
         case .centerFly:
-            <#code#>
+            return ""
         case .rightFly:
-            <#code#>
+            return ""
         case .pitcherGoro:
-            <#code#>
+            return ""
         case .pitcherHit:
-            <#code#>
+            return ""
         case .struckOut:
-            <#code#>
+            return "" 
         }
+        
+        //なんかエラーでるから仮置き
+        return ""
     }
     
     
