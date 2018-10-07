@@ -30,6 +30,7 @@ class ResultChildViewController1: UIViewController {
     @IBOutlet weak var resultTextView: UITextView!
     @IBOutlet weak var resultImageView: UIImageView!
     // oohasi:   ボタンはChildに@IBActionではなくOutletでつないでただの部品としてResultViewController から指示
+    @IBOutlet weak var commentTextField: UITextField!
     @IBOutlet weak var resultDecideButton: UIButton!
     
     
