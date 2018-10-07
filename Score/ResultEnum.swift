@@ -14,7 +14,8 @@ enum ResultEnum: Int{
     case rightFly
     case pitcherGoro
     case pitcherHit
-    case struckOut
+    case struckOutSwinging
+    case missedStruckOut
     
     //ゴロヒットとライナーヒットで場合分け
     
@@ -27,7 +28,7 @@ enum ResultEnum: Int{
             if Situation.oneOutNoRunner {
                 return ("投飛", "ピッチャーフライ\n２死走者なし", UIImage(named: "")!)
             }else if Situation.twoOutNoRunner{
-                return ("投飛", "ピッチャーフライ\n３アウトチェンジ", UIImage(named: "")!)
+                return ("投飛", "ピッチャーフライ\n３アウトチェンジ", UIImage(named: "3-0")!)
             }
             else if Situation.noOutNoRunner{
                 return ("投飛", "ピッチャーフライ\n1死走者なし", UIImage(named: "")! )
@@ -670,9 +671,152 @@ enum ResultEnum: Int{
             return ("", "", UIImage(named: "")! )
         case .pitcherHit:
              return ("", "", UIImage(named: "")! )
-        case .struckOut:
+        case .struckOutSwinging:
             
-             return ("", "", UIImage(named: "")! )
+            if Situation.noOutNoRunner {
+                return ("空振", "空振り三振\n1死走者なし", UIImage(named: "1-0")! )
+            }else if Situation.oneOutNoRunner{
+                return ("空振", "空振り三振\n2死走者なし", UIImage(named: "2-0")! )
+            }
+            else if Situation.twoOutNoRunner{
+                return ("空振", "空振り三振\n3アウトチェンジ", UIImage(named: "3-0")! )
+            }
+            else if Situation.noOutRunnerOnFirst{
+                return ("空振", "空振り三振\n1死1塁", UIImage(named: "1-1")! )
+            }
+            else if Situation.oneOutRunnerOnFirst{
+                return ("空振", "空振り三振\n2死1塁", UIImage(named: "2-1")! )
+            }
+            else if Situation.twoOutRunnerOnFirst{
+                return ("空振", "空振り三振\n3アウトチェンジ", UIImage(named: "3-1")! )
+            }
+            else if Situation.noOutRunnerOnSecond{
+                return ("空振", "空振り三振\n1死2塁", UIImage(named: "1-2")! )
+            }
+            else if Situation.oneOutRunnerOnSecond{
+                return ("空振", "空振り三振\n2死2塁", UIImage(named: "2-2")! )
+            }
+            else if Situation.twoOutRunnerOnSecond{
+                return ("空振", "空振り三振\n3アウトチェンジ", UIImage(named: "3-2")! )
+            }
+            else if Situation.noOutRunnerOnThird{
+                return ("空振", "空振り三振\n1死3塁", UIImage(named: "1-3")! )
+            }
+            else if Situation.oneOutRunnerOnThird{
+                return ("空振", "空振り三振n2死3塁", UIImage(named: "2-3")! )
+            }
+            else if Situation.twoOutRunnerOnThird{
+                return ("空振", "空振り三振\n3アウトチェンジ", UIImage(named: "3-3")! )
+            }
+            else if Situation.noOutRunnersOnFirstAndSecond{
+                return ("空振", "空振り三振\n1死1,2塁", UIImage(named: "1-1,2")! )
+            }
+            else if Situation.oneOutRunnersOnFirstAndSecond{
+                return ("空振", "空振り三振\n2死1,2塁", UIImage(named: "2-1,2")! )
+            }
+            else if Situation.twoOutRunnersOnFirstAndSecond{
+                return ("空振", "空振り三振\n3アウトチェンジ", UIImage(named: "3-1,2")! )
+            }
+            else if Situation.noOutRunnersOnFirstAndThird{
+                return ("空振", "空振り三振\n1死1,3塁", UIImage(named: "1-1,3")! )
+            }
+            else if Situation.oneOutRunnersOnFirstAndThird{
+                return ("空振", "空振り三振\n2死1,3塁", UIImage(named: "2-1,3")! )
+            }
+            else if Situation.twoOutRunnersOnFirstAndThird{
+                return ("空振", "空振り三振\n3アウトチェンジ", UIImage(named: "3-1,3")! )
+            }
+            else if Situation.noOutRunnersOnSecondAndThird{
+                return ("空振", "空振り三振\n1死2,3塁", UIImage(named: "1-2,3")! )
+            }
+            else if Situation.oneOutRunnersOnSecondAndThird{
+                return ("空振", "空振り三振\n2死2,3塁", UIImage(named: "2-2,3")! )
+            }
+            else if Situation.twoOutRunnersOnSecondAndThird{
+                return ("空振", "空振り三振\n3アウトチェンジ", UIImage(named: "3-2,3")! )
+            }
+            else if Situation.noOutFullBase{
+                return ("空振", "空振り三振\n1死満塁", UIImage(named: "1-1,2,3")! )
+            }
+            else if Situation.oneOutFullBase{
+                return ("空振", "空振り三振\n2死満塁", UIImage(named: "2-1,2,3")! )
+            }
+            else if Situation.twoOutFullBase{
+                return ("空振", "空振り三振\n3アウトチェンジ", UIImage(named: "3-1,2,3")! )
+            }
+        case .missedStruckOut:
+            if Situation.noOutNoRunner {
+                return ("見振", "見逃し三振\n1死走者なし", UIImage(named: "1-0")! )
+            }else if Situation.oneOutNoRunner{
+                return ("見振", "見逃し三振\n2死走者なし", UIImage(named: "2-0")! )
+            }
+            else if Situation.twoOutNoRunner{
+                return ("見振", "見逃し三振\n3アウトチェンジ", UIImage(named: "3-0")! )
+            }
+            else if Situation.noOutRunnerOnFirst{
+                return ("見振", "見逃し三振\n1死1塁", UIImage(named: "1-1")! )
+            }
+            else if Situation.oneOutRunnerOnFirst{
+                return ("見振", "見逃し三振\n2死1塁", UIImage(named: "2-1")! )
+            }
+            else if Situation.twoOutRunnerOnFirst{
+                return ("見振", "見逃し三振\n3アウトチェンジ", UIImage(named: "3-1")! )
+            }
+            else if Situation.noOutRunnerOnSecond{
+                return ("見振", "見逃し三振\n1死2塁", UIImage(named: "1-2")! )
+            }
+            else if Situation.oneOutRunnerOnSecond{
+                return ("見振", "見逃し三振\n2死2塁", UIImage(named: "2-2")! )
+            }
+            else if Situation.twoOutRunnerOnSecond{
+                return ("見振", "見逃し三振\n3アウトチェンジ", UIImage(named: "3-2")! )
+            }
+            else if Situation.noOutRunnerOnThird{
+                return ("見振", "見逃し三振\n1死3塁", UIImage(named: "1-3")! )
+            }
+            else if Situation.oneOutRunnerOnThird{
+                return ("見振", "見逃し三振\n2死3塁", UIImage(named: "2-3")! )
+            }
+            else if Situation.twoOutRunnerOnThird{
+                return ("見振", "見逃し三振\n3アウトチェンジ", UIImage(named: "3-3")! )
+            }
+            else if Situation.noOutRunnersOnFirstAndSecond{
+                return ("見振", "見逃し三振\n1死1,2塁", UIImage(named: "1-1,2")! )
+            }
+            else if Situation.oneOutRunnersOnFirstAndSecond{
+                return ("見振", "見逃し三振\n2死1,2塁", UIImage(named: "2-1,2")! )
+            }
+            else if Situation.twoOutRunnersOnFirstAndSecond{
+                return ("見振", "見逃し三振\n3アウトチェンジ", UIImage(named: "3-1,2")! )
+            }
+            else if Situation.noOutRunnersOnFirstAndThird{
+                return ("見振", "見逃し三振\n1死1,3塁", UIImage(named: "1-1,3")! )
+            }
+            else if Situation.oneOutRunnersOnFirstAndThird{
+                return ("見振", "見逃し三振\n2死1,3塁", UIImage(named: "2-1,3")! )
+            }
+            else if Situation.twoOutRunnersOnFirstAndThird{
+                return ("見振", "見逃し三振\n3アウトチェンジ", UIImage(named: "3-1,3")! )
+            }
+            else if Situation.noOutRunnersOnSecondAndThird{
+                return ("見振", "見逃し三振\n1死2,3塁", UIImage(named: "1-2,3")! )
+            }
+            else if Situation.oneOutRunnersOnSecondAndThird{
+                return ("見振", "見逃し三振\n2死2,3塁", UIImage(named: "2-2,3")! )
+            }
+            else if Situation.twoOutRunnersOnSecondAndThird{
+                return ("見振", "見逃し三振\n3アウトチェンジ", UIImage(named: "3-2,3")! )
+            }
+            else if Situation.noOutFullBase{
+                return ("見振", "見逃し三振\n1死満塁", UIImage(named: "1-1,2,3")! )
+            }
+            else if Situation.oneOutFullBase{
+                return ("見振", "見逃し三振\n2死満塁", UIImage(named: "2-1,2,3")! )
+            }
+            else if Situation.twoOutFullBase{
+                return ("見振", "見逃し三振\n3アウトチェンジ", UIImage(named: "3-1,2,3")! )
+            }
+            
         default:
              return ("", "", UIImage(named: "")! )
         }
@@ -709,7 +853,9 @@ enum ResultEnum: Int{
             return ""
         case .pitcherHit:
             return ""
-        case .struckOut:
+        case .struckOutSwinging:
+            return ""
+        case .missedStruckOut:
             return ""
         }
         
@@ -747,8 +893,10 @@ enum ResultEnum: Int{
             return ""
         case .pitcherHit:
             return ""
-        case .struckOut:
-            return "" 
+        case .struckOutSwinging:
+            return ""
+        case .missedStruckOut:
+            return ""
         }
         
         //なんかエラーでるから仮置き
@@ -864,9 +1012,10 @@ enum ResultEnum: Int{
             return
         case .pitcherHit:
             return
-        case .struckOut:
+        case .struckOutSwinging:
             return
-        
+        case .missedStruckOut:
+            return
         }
     }
 

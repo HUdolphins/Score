@@ -13,7 +13,7 @@ import PageMenu
 
 class ResultViewController: UIViewController, resultChild1Delegate {
     
-    
+    //viewの現れる順番でエラー起きる
     
     var playerArray: [FIRPlayer] = []
     var playerRef: DatabaseReference?
@@ -71,7 +71,8 @@ class ResultViewController: UIViewController, resultChild1Delegate {
         super.viewDidLoad()
         let resultChildViewController = self.storyboard?.instantiateViewController(withIdentifier: "Result1") as! ResultChildViewController1
         //oohashi: delegateメソッドのインスタンスはResultViewControllerだという宣言
-        resultChildViewController.delegate = self
+        resultChildViewController.delegate = AAA()
+        print(resultChildViewController.delegate)
         // Do any additional setup after loading the view.
     }
     func setResult(resultEnumString: String, resultImage: UIImage) {
@@ -90,4 +91,13 @@ class ResultViewController: UIViewController, resultChild1Delegate {
 
 }
 
-
+class AAA: resultChild1Delegate{
+    func setResult(resultEnumString: String, resultImage: UIImage) {
+        
+        let resultChildViewController = ResultViewController().storyboard?.instantiateViewController(withIdentifier: "Result1") as! ResultChildViewController1
+        resultChildViewController.resultTextView.font = UIFont(name:(resultChildViewController.resultTextView.font?.fontName)!,size: 30)
+        resultChildViewController.resultTextView.isEditable = false
+        resultChildViewController.resultTextView.text = Situation.result.childOptionOne().resultString
+        resultChildViewController.resultImageView.image = resultImage
+    }
+}

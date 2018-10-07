@@ -77,6 +77,9 @@ class GameViewController: UIViewController {
         let resultViewController = resultStoryBoard.instantiateViewController(withIdentifier: "Result") as! ResultViewController
         resultViewController.modalPresentationStyle = .custom
         resultViewController.transitioningDelegate = self
+        
+//        let resultChildViewController = resultStoryBoard.instantiateViewController(withIdentifier: "Result1") as! ResultChildViewController1
+//        resultChildViewController.delegate = resultViewController
         self.present(resultViewController, animated: true, completion: nil)
     }
     
