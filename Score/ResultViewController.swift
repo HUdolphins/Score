@@ -11,7 +11,7 @@ import Firebase
 import FirebaseDatabase
 import PageMenu
 
-class ResultViewController: UIViewController, resultChild1Delegate {
+class ResultViewController: UIViewController {
     
     //viewの現れる順番でエラー起きる
     
@@ -60,7 +60,7 @@ class ResultViewController: UIViewController, resultChild1Delegate {
         pageMenu =  CAPSPageMenu(viewControllers: resultChildViewControllerArray, frame: view.bounds, pageMenuOptions: parameters)
         view.addSubview(pageMenu!.view)
         
-        resultChildViewController1.resultDecideButton.addTarget(self, action: #selector(handleDecideButtonOne(_:forEvent:)), for: .touchUpInside)
+//        resultChildViewController1.resultDecideButton.addTarget(self, action: #selector(handleDecideButtonOne(_:forEvent:)), for: .touchUpInside)
 
 
 
@@ -69,35 +69,35 @@ class ResultViewController: UIViewController, resultChild1Delegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let resultChildViewController = self.storyboard?.instantiateViewController(withIdentifier: "Result1") as! ResultChildViewController1
-        //oohashi: delegateメソッドのインスタンスはResultViewControllerだという宣言
-        resultChildViewController.delegate = AAA()
-        print(resultChildViewController.delegate)
-        // Do any additional setup after loading the view.
-    }
-    func setResult(resultEnumString: String, resultImage: UIImage) {
-        let resultChildViewController = self.storyboard?.instantiateViewController(withIdentifier: "Result1") as! ResultChildViewController1
-        resultChildViewController.resultTextView.font = UIFont(name:(resultChildViewController.resultTextView.font?.fontName)!,size: 30)
-        resultChildViewController.resultTextView.isEditable = false
-        resultChildViewController.resultTextView.text = Situation.result.childOptionOne().resultString
-        resultChildViewController.resultImageView.image = resultImage
-    }
-
-    @objc func handleDecideButtonOne(_ sender: UIButton, forEvent event: UIEvent){
-        self.dismiss(animated: true, completion: nil)
-    }
-    
-    
-
-}
-
-class AAA: resultChild1Delegate{
-    func setResult(resultEnumString: String, resultImage: UIImage) {
+//        let resultChildViewController = self.storyboard?.instantiateViewController(withIdentifier: "Result1") as! ResultChildViewController1
+//        //oohashi: delegateメソッドのインスタンスはResultViewControllerだという宣言
+//        resultChildViewController.delegate = AAA()
+//        print(resultChildViewController.delegate)
         
-        let resultChildViewController = ResultViewController().storyboard?.instantiateViewController(withIdentifier: "Result1") as! ResultChildViewController1
-        resultChildViewController.resultTextView.font = UIFont(name:(resultChildViewController.resultTextView.font?.fontName)!,size: 30)
-        resultChildViewController.resultTextView.isEditable = false
-        resultChildViewController.resultTextView.text = Situation.result.childOptionOne().resultString
-        resultChildViewController.resultImageView.image = resultImage
     }
+//    func setResult(resultEnumString: String, resultImage: UIImage) {
+//        let resultChildViewController = self.storyboard?.instantiateViewController(withIdentifier: "Result1") as! ResultChildViewController1
+//        resultChildViewController.resultTextView.font = UIFont(name:(resultChildViewController.resultTextView.font?.fontName)!,size: 30)
+//        resultChildViewController.resultTextView.isEditable = false
+//        resultChildViewController.resultTextView.text = Situation.result.childOptionOne().resultString
+//        resultChildViewController.resultImageView.image = resultImage
+//    }
+//
+//    @objc func handleDecideButtonOne(_ sender: UIButton, forEvent event: UIEvent){
+//        self.dismiss(animated: true, completion: nil)
+//    }
+    
+    
+
 }
+
+//class AAA: resultChild1Delegate{
+//    func setResult(resultEnumString: String, resultImage: UIImage) {
+//
+//        let resultChildViewController = ResultViewController().storyboard?.instantiateViewController(withIdentifier: "Result1") as! ResultChildViewController1
+//        resultChildViewController.resultTextView.font = UIFont(name:(resultChildViewController.resultTextView.font?.fontName)!,size: 30)
+//        resultChildViewController.resultTextView.isEditable = false
+//        resultChildViewController.resultTextView.text = Situation.result.childOptionOne().resultString
+//        resultChildViewController.resultImageView.image = resultImage
+//    }
+//}

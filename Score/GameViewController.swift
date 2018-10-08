@@ -10,7 +10,13 @@ import UIKit
 import Firebase
 import FirebaseDatabase
 
-class GameViewController: UIViewController {
+class GameViewController: UIViewController, ResultChildDelegate {
+    func sendResult() {
+        print(Situation.result.childOptionOne().resultString)
+    }
+    
+    
+    
     //imageView消すの忘れない
     //ピッチャー
     
@@ -25,6 +31,24 @@ class GameViewController: UIViewController {
     var secondPlayerOrigin: CGPoint!
     @IBOutlet weak var secondPlayerButton: UIButton!
     //startpoint変数とendPoint変数削除
+    
+    
+    
+    
+    
+    
+    
+    //ohashi:ここでチャイルドビューコントローラーインスタンス化
+    let childVC = ResultChildViewController1()
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,15 +65,20 @@ class GameViewController: UIViewController {
         backgroundImage.layer.zPosition = -1
         self.view.addSubview(backgroundImage)
         
-        
-        
         //ドラッグ適用
         secondPlayerOrigin = secondPlayerButton.frame.origin
         addPanGesture(view: secondPlayerButton)
         view.bringSubview(toFront: secondPlayerButton)
         
 
-        // Do any additional setup after loading the view.
+//        //ohashi:デリゲート設定
+//        let resultStoryBoard: UIStoryboard = UIStoryboard(name:"Result",bundle:nil)
+//        let resultChildViewControllerOne = resultStoryBoard.instantiateViewController(withIdentifier: "Result1") as! ResultChildViewController1
+//        resultChildViewControllerOne.delegate = self
+        
+        print(self.childVC.delegate)
+        self.childVC.delegate = self
+        print(self.childVC.delegate)
     }
 
     
@@ -67,11 +96,22 @@ class GameViewController: UIViewController {
         //ボールの場所
         //オプショナル？
         Situation.result = ResultEnum.pitcherFly
-        
+        print(self.childVC.delegate)
         modalAppear()
     }
     
-    //モーダル表示メソッド
+    //ohashi:**************************モーダル処理*************************************
+        func setResult(resultEnumString: String, resultImage: UIImage) {
+            let resultChildViewController = self.storyboard?.instantiateViewController(withIdentifier: "Result1") as! ResultChildViewController1
+            resultChildViewController.resultTextView.font = UIFont(name:(resultChildViewController.resultTextView.font?.fontName)!,size: 30)
+            resultChildViewController.resultTextView.isEditable = false
+            resultChildViewController.resultTextView.text = Situation.result.childOptionOne().resultString
+            resultChildViewController.resultImageView.image = resultImage
+        }
+    
+        
+
+
     func modalAppear(){
         let resultStoryBoard: UIStoryboard = UIStoryboard(name:"Result",bundle:nil)
         let resultViewController = resultStoryBoard.instantiateViewController(withIdentifier: "Result") as! ResultViewController
@@ -82,10 +122,9 @@ class GameViewController: UIViewController {
 //        resultChildViewController.delegate = resultViewController
         self.present(resultViewController, animated: true, completion: nil)
     }
+    //ohashi:**************************モーダル処理ここまで*************************************
     
-    
-    //モーダルのdissmissここで書かないといけないかも
-    
+    //ohshi:デリゲートメソッドを書く
     
     
     //ドラッグメソッド
@@ -143,6 +182,27 @@ class GameViewController: UIViewController {
     }
    
 }
+
+//ohashi:わかりにくいからスペースとった
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 extension GameViewController: UIViewControllerTransitioningDelegate {
     func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {

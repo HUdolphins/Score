@@ -40,6 +40,9 @@
                                 <rect key="frame" x="133" y="470" width="108" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="この結果を選択"/>
+                                <connections>
+                                    <action selector="sendResultButton:" destination="dQh-Nz-HMN" eventType="touchUpInside" id="b8c-zX-nMQ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
