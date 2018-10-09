@@ -976,7 +976,7 @@ enum ResultEnum: Int{
                 Situation.outCounts = 1
             }
             else if Situation.oneOutRunnersOnFirstAndSecond{
-                Situation.outConuts = 2
+                Situation.outCounts = 2
             }
             else if Situation.twoOutRunnersOnFirstAndSecond{
                 Situation.outCounts = 0
