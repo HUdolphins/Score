@@ -63,6 +63,11 @@ class ResultChildViewController1: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //結果の表示
+        resultTextView.text = Situation.result.childOptionOne().resultString
+        //結果テキストの文字の大きさ
+        resultTextView.font = resultTextView.font?.withSize(30)
         //結果表示部分の背景の色
         resultTextView.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.0)
         //結果テキストを中央に揃える
@@ -71,10 +76,7 @@ class ResultChildViewController1: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         //結果表示部分の背景の色
-       
         
-        print(Situation.result.childOptionOne().resultString)
-        print()
         //oohasi:デリゲートメソッドを実行
         self.delegate?.setResult(resultEnumString: Situation.result.childOptionOne().resultString , resultImage: Situation.result.childOptionOne().resultImage )
     }
