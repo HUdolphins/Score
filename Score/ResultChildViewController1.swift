@@ -84,6 +84,7 @@ class ResultChildViewController1: UIViewController {
         resultTextView.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.0)
         //結果テキストを中央に揃える
         resultTextView.textAlignment = NSTextAlignment.center
+        
         setResult()
     }
     

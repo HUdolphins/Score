@@ -111,7 +111,7 @@ class ResultViewController: UIViewController, ResultChildDelegate {
     }
     
     
-    
+    //oohashi: 得点圏の打席かどうか
     
     
     
