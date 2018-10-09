@@ -10,10 +10,10 @@ import UIKit
 import Firebase
 import FirebaseDatabase
 
-class GameViewController: UIViewController, ResultChildDelegate {
-    func sendResult() {
-        print(Situation.result.childOptionOne().resultString)
-    }
+class GameViewController: UIViewController {
+//    func sendResult() {
+//        print(Situation.result.childOptionOne().resultString)
+//    }
     
     
     
@@ -39,7 +39,7 @@ class GameViewController: UIViewController, ResultChildDelegate {
     
     
     //ohashi:ここでチャイルドビューコントローラーインスタンス化
-    let childVC = ResultChildViewController1()
+    //let childVC = ResultChildViewController1()
     
     
     
@@ -76,9 +76,9 @@ class GameViewController: UIViewController, ResultChildDelegate {
 //        let resultChildViewControllerOne = resultStoryBoard.instantiateViewController(withIdentifier: "Result1") as! ResultChildViewController1
 //        resultChildViewControllerOne.delegate = self
         
-        print(self.childVC.delegate)
-        self.childVC.delegate = self
-        print(self.childVC.delegate)
+//        print(self.childVC.delegate)
+//        self.childVC.delegate = self
+//        print(self.childVC.delegate)
     }
 
     
@@ -96,19 +96,18 @@ class GameViewController: UIViewController, ResultChildDelegate {
         //ボールの場所
         //オプショナル？
         Situation.result = ResultEnum.pitcherFly
-        print(self.childVC.delegate)
         modalAppear()
     }
     
     //ohashi:**************************モーダル処理*************************************
-        func setResult(resultEnumString: String, resultImage: UIImage) {
-            let resultChildViewController = self.storyboard?.instantiateViewController(withIdentifier: "Result1") as! ResultChildViewController1
-            resultChildViewController.resultTextView.font = UIFont(name:(resultChildViewController.resultTextView.font?.fontName)!,size: 30)
-            resultChildViewController.resultTextView.isEditable = false
-            resultChildViewController.resultTextView.text = Situation.result.childOptionOne().resultString
-            resultChildViewController.resultImageView.image = resultImage
-        }
-    
+//        func setResult(resultEnumString: String, resultImage: UIImage) {
+//            let resultChildViewController = self.storyboard?.instantiateViewController(withIdentifier: "Result1") as! ResultChildViewController1
+//            resultChildViewController.resultTextView.font = UIFont(name:(resultChildViewController.resultTextView.font?.fontName)!,size: 30)
+//            resultChildViewController.resultTextView.isEditable = false
+//            resultChildViewController.resultTextView.text = Situation.result.childOptionOne().resultString
+//            resultChildViewController.resultImageView.image = resultImage
+//        }
+//    
         
 
 
@@ -118,8 +117,8 @@ class GameViewController: UIViewController, ResultChildDelegate {
         resultViewController.modalPresentationStyle = .custom
         resultViewController.transitioningDelegate = self
         
-//        let resultChildViewController = resultStoryBoard.instantiateViewController(withIdentifier: "Result1") as! ResultChildViewController1
-//        resultChildViewController.delegate = resultViewController
+//        let resultChildViewController = ResultChildViewController1()
+//        resultChildViewController.delegate = self
         self.present(resultViewController, animated: true, completion: nil)
     }
     //ohashi:**************************モーダル処理ここまで*************************************

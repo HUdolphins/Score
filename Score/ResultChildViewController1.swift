@@ -12,7 +12,7 @@ import Foundation
 
 
 protocol ResultChildDelegate{
-//    func setResult(resultEnumString: String, resultImage: UIImage)
+    //func setResult(resultEnumString: String, resultImage: UIImage)
 
     //oohashi:処理は全てResultViewController決めたい
     
@@ -97,6 +97,7 @@ class ResultChildViewController1: UIViewController {
     }
     
     func setResult(){
+        self.title = Situation.result.childOptionOne().resultTitle
         self.resultImageView.image = Situation.result.childOptionOne().resultImage
         self.resultTextView.text = Situation.result.childOptionOne().resultString
         

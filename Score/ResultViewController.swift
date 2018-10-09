@@ -11,7 +11,10 @@ import Firebase
 import FirebaseDatabase
 import PageMenu
 
-class ResultViewController: UIViewController {
+class ResultViewController: UIViewController, ResultChildDelegate {
+    
+    
+    
     
     //viewの現れる順番でエラー起きる
     
@@ -36,9 +39,10 @@ class ResultViewController: UIViewController {
         let resultChildViewController3 = self.storyboard?.instantiateViewController(withIdentifier: "Result3")
         let resultChildViewController4 = self.storyboard?.instantiateViewController(withIdentifier: "Result4")
         
+        resultChildViewController1.delegate = self
         
         //oohashi: 先生、ここも変えたいです。
-        resultChildViewController1.title = Situation.result.childOptionOne().resultTitle
+//        resultChildViewController1.title = Situation.result.childOptionOne().resultTitle
         resultChildViewController2?.title = "結果2"
         resultChildViewController3?.title = "結果3"
         resultChildViewController4?.title = "その他"
@@ -86,6 +90,31 @@ class ResultViewController: UIViewController {
 //    @objc func handleDecideButtonOne(_ sender: UIButton, forEvent event: UIEvent){
 //        self.dismiss(animated: true, completion: nil)
 //    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    //oohashi:childViewControllerで結果ボタンおされたときの処理
+    func sendResult() {
+        print("delegateMethod")
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    
+    
+    
+    
     
     
 
