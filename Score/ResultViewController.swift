@@ -13,24 +13,12 @@ import PageMenu
 
 class ResultViewController: UIViewController, ResultChildDelegate {
     
-    
-    
-    
-    //viewの現れる順番でエラー起きる
-    
     var playerArray: [FIRPlayer] = []
     var playerRef: DatabaseReference?
     var pageMenu: CAPSPageMenu?
-    var battingOrder:Int = 0
-    var result : String = ""
-    var outCounts = 0
-    //ストライク、ボール、ランナーの状況、
-        //何を渡すか。打順、打者と投手のID、捕殺だれか、結果、想定される結果３パターン
-    
     
     override func viewWillAppear(_ animated: Bool) {
         playerRef = Database.database().reference()
-        
         
         
         //型はUIViewControllerでいいのか、resultChildViewControllerのクラスを作るなら配列の型変えないといけない
@@ -40,16 +28,10 @@ class ResultViewController: UIViewController, ResultChildDelegate {
         let resultChildViewController4 = self.storyboard?.instantiateViewController(withIdentifier: "Result4")
         
         resultChildViewController1.delegate = self
-        
-        //oohashi: 先生、ここも変えたいです。
-//        resultChildViewController1.title = Situation.result.childOptionOne().resultTitle
         resultChildViewController2?.title = "結果2"
         resultChildViewController3?.title = "結果3"
         resultChildViewController4?.title = "その他"
-        
 
-        
-        
         
         let resultChildViewControllerArray: [UIViewController] = [resultChildViewController1, resultChildViewController2!, resultChildViewController3!, resultChildViewController4!]
         
@@ -64,69 +46,51 @@ class ResultViewController: UIViewController, ResultChildDelegate {
         pageMenu =  CAPSPageMenu(viewControllers: resultChildViewControllerArray, frame: view.bounds, pageMenuOptions: parameters)
         view.addSubview(pageMenu!.view)
         
-//        resultChildViewController1.resultDecideButton.addTarget(self, action: #selector(handleDecideButtonOne(_:forEvent:)), for: .touchUpInside)
-
-
-
-        
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        let resultChildViewController = self.storyboard?.instantiateViewController(withIdentifier: "Result1") as! ResultChildViewController1
-//        //oohashi: delegateメソッドのインスタンスはResultViewControllerだという宣言
-//        resultChildViewController.delegate = AAA()
-//        print(resultChildViewController.delegate)
         
-    }
-//    func setResult(resultEnumString: String, resultImage: UIImage) {
-//        let resultChildViewController = self.storyboard?.instantiateViewController(withIdentifier: "Result1") as! ResultChildViewController1
-//        resultChildViewController.resultTextView.font = UIFont(name:(resultChildViewController.resultTextView.font?.fontName)!,size: 30)
-//        resultChildViewController.resultTextView.isEditable = false
-//        resultChildViewController.resultTextView.text = Situation.result.childOptionOne().resultString
-//        resultChildViewController.resultImageView.image = resultImage
-//    }
-//
 //    @objc func handleDecideButtonOne(_ sender: UIButton, forEvent event: UIEvent){
 //        self.dismiss(animated: true, completion: nil)
 //    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    }
     
     //oohashi:childViewControllerで結果ボタンおされたときの処理
     func sendResult() {
-        print("delegateMethod")
+        Situation.result.childButtonTapedOne()
+        SituationUpdate()
         self.dismiss(animated: true, completion: nil)
     }
     
     
     //oohashi: 得点圏の打席かどうか
     
-    
-    
-    
-    
-
+    //Situationを更新する関数
+    func SituationUpdate(){
+        Situation.noOutNoRunner = Situation.outCounts == 0 && !Situation.firstRunnerExists && !Situation.secondRunnerExists && !Situation.thirdRunnerExists
+        Situation.oneOutNoRunner = Situation.outCounts == 1 && !Situation.firstRunnerExists && !Situation.secondRunnerExists && !Situation.thirdRunnerExists
+        Situation.twoOutNoRunner = Situation.outCounts == 2 && !Situation.firstRunnerExists && !Situation.secondRunnerExists && !Situation.thirdRunnerExists
+        Situation.noOutRunnerOnFirst = Situation.outCounts == 0 && Situation.firstRunnerExists && !Situation.secondRunnerExists && !Situation.thirdRunnerExists
+        Situation.oneOutRunnerOnFirst = Situation.outCounts == 1 && Situation.firstRunnerExists && !Situation.secondRunnerExists && !Situation.thirdRunnerExists
+        Situation.twoOutRunnerOnFirst = Situation.outCounts == 2 && Situation.firstRunnerExists && !Situation.secondRunnerExists && !Situation.thirdRunnerExists
+        Situation.noOutRunnerOnSecond = Situation.outCounts == 0 && !Situation.firstRunnerExists && Situation.secondRunnerExists && !Situation.thirdRunnerExists
+        Situation.oneOutRunnerOnSecond = Situation.outCounts == 1 && !Situation.firstRunnerExists && Situation.secondRunnerExists && !Situation.thirdRunnerExists
+        Situation.twoOutRunnerOnSecond = Situation.outCounts == 2 && !Situation.firstRunnerExists && Situation.secondRunnerExists && !Situation.thirdRunnerExists
+        Situation.noOutRunnerOnThird = Situation.outCounts == 0 && !Situation.firstRunnerExists && !Situation.secondRunnerExists && Situation.thirdRunnerExists
+        Situation.oneOutRunnerOnThird = Situation.outCounts == 1 && !Situation.firstRunnerExists && !Situation.secondRunnerExists && Situation.thirdRunnerExists
+        Situation.twoOutRunnerOnThird = Situation.outCounts == 2 && !Situation.firstRunnerExists && !Situation.secondRunnerExists && Situation.thirdRunnerExists
+        Situation.noOutRunnersOnFirstAndSecond = Situation.outCounts == 0  && Situation.firstRunnerExists && Situation.secondRunnerExists && !Situation.thirdRunnerExists
+        Situation.oneOutRunnersOnFirstAndSecond = Situation.outCounts == 1  && Situation.firstRunnerExists && Situation.secondRunnerExists && !Situation.thirdRunnerExists
+        Situation.twoOutRunnersOnFirstAndSecond = Situation.outCounts == 2  && Situation.firstRunnerExists && Situation.secondRunnerExists && !Situation.thirdRunnerExists
+        Situation.noOutRunnersOnFirstAndThird = Situation.outCounts == 0  && Situation.firstRunnerExists && !Situation.secondRunnerExists && Situation.thirdRunnerExists
+        Situation.oneOutRunnersOnFirstAndThird = Situation.outCounts == 1  && Situation.firstRunnerExists && !Situation.secondRunnerExists && Situation.thirdRunnerExists
+        Situation.twoOutRunnersOnFirstAndThird = Situation.outCounts == 2  && Situation.firstRunnerExists && !Situation.secondRunnerExists && Situation.thirdRunnerExists
+        Situation.noOutRunnersOnSecondAndThird = Situation.outCounts == 0  && !Situation.firstRunnerExists && Situation.secondRunnerExists && Situation.thirdRunnerExists
+        Situation.oneOutRunnersOnSecondAndThird = Situation.outCounts == 1  && !Situation.firstRunnerExists && Situation.secondRunnerExists && Situation.thirdRunnerExists
+        Situation.twoOutRunnersOnSecondAndThird = Situation.outCounts == 2  && !Situation.firstRunnerExists && Situation.secondRunnerExists && Situation.thirdRunnerExists
+        Situation.noOutFullBase = Situation.outCounts == 0  && Situation.firstRunnerExists && Situation.secondRunnerExists && Situation.thirdRunnerExists
+        Situation.oneOutFullBase = Situation.outCounts == 1  && Situation.firstRunnerExists && Situation.secondRunnerExists && Situation.thirdRunnerExists
+        Situation.twoOutFullBase = Situation.outCounts == 2  && Situation.firstRunnerExists && Situation.secondRunnerExists && Situation.thirdRunnerExists
+    }
 }
-
-//class AAA: resultChild1Delegate{
-//    func setResult(resultEnumString: String, resultImage: UIImage) {
-//
-//        let resultChildViewController = ResultViewController().storyboard?.instantiateViewController(withIdentifier: "Result1") as! ResultChildViewController1
-//        resultChildViewController.resultTextView.font = UIFont(name:(resultChildViewController.resultTextView.font?.fontName)!,size: 30)
-//        resultChildViewController.resultTextView.isEditable = false
-//        resultChildViewController.resultTextView.text = Situation.result.childOptionOne().resultString
-//        resultChildViewController.resultImageView.image = resultImage
-//    }
-//}

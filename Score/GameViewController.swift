@@ -35,21 +35,6 @@ class GameViewController: UIViewController {
     
     
     
-    
-    
-    
-    //ohashi:ここでチャイルドビューコントローラーインスタンス化
-    //let childVC = ResultChildViewController1()
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -70,15 +55,6 @@ class GameViewController: UIViewController {
         addPanGesture(view: secondPlayerButton)
         view.bringSubview(toFront: secondPlayerButton)
         
-
-//        //ohashi:デリゲート設定
-//        let resultStoryBoard: UIStoryboard = UIStoryboard(name:"Result",bundle:nil)
-//        let resultChildViewControllerOne = resultStoryBoard.instantiateViewController(withIdentifier: "Result1") as! ResultChildViewController1
-//        resultChildViewControllerOne.delegate = self
-        
-//        print(self.childVC.delegate)
-//        self.childVC.delegate = self
-//        print(self.childVC.delegate)
     }
 
     
@@ -98,17 +74,6 @@ class GameViewController: UIViewController {
         modalAppear()
     }
     
-    //ohashi:**************************モーダル処理*************************************
-//        func setResult(resultEnumString: String, resultImage: UIImage) {
-//            let resultChildViewController = self.storyboard?.instantiateViewController(withIdentifier: "Result1") as! ResultChildViewController1
-//            resultChildViewController.resultTextView.font = UIFont(name:(resultChildViewController.resultTextView.font?.fontName)!,size: 30)
-//            resultChildViewController.resultTextView.isEditable = false
-//            resultChildViewController.resultTextView.text = Situation.result.childOptionOne().resultString
-//            resultChildViewController.resultImageView.image = resultImage
-//        }
-//    
-        
-
 
     func modalAppear(){
         let resultStoryBoard: UIStoryboard = UIStoryboard(name:"Result",bundle:nil)
@@ -116,14 +81,9 @@ class GameViewController: UIViewController {
         resultViewController.modalPresentationStyle = .custom
         resultViewController.transitioningDelegate = self
         
-//        let resultChildViewController = ResultChildViewController1()
-//        resultChildViewController.delegate = self
         self.present(resultViewController, animated: true, completion: nil)
     }
     //ohashi:**************************モーダル処理ここまで*************************************
-    
-    //ohshi:デリゲートメソッドを書く
-    
     
     //ドラッグメソッド
     func addPanGesture(view: UIView){

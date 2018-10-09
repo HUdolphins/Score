@@ -38,5 +38,4 @@ class ResultChildViewController2: UIViewController {
         
     }
 
-    
 }
