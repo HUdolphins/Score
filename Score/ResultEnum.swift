@@ -791,8 +791,7 @@ enum ResultEnum: Int{
             else if Situation.twoOutFullBase{
                 return ("投ゴロ", "投ゴロ,1-3\n3アウトチェンジ", UIImage(named: "<#resultImage#>")! )
             }
-        case .pitcherHit:
-             return ("", "", UIImage(named: "")! )
+
         case .struckOutSwinging:
             
             if Situation.noOutNoRunner {
