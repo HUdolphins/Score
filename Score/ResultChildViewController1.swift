@@ -64,7 +64,7 @@ class ResultChildViewController1: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //結果の表示
-        resultTextView.text = Situation.result.childOptionOne().resultString
+        SituationUpdate()
         //結果テキストの文字の大きさ
         resultTextView.font = resultTextView.font?.withSize(30)
         //結果表示部分の背景の色
