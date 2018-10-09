@@ -11,7 +11,10 @@ import Firebase
 import FirebaseDatabase
 import PageMenu
 
-class ResultViewController: UIViewController, resultChild1Delegate {
+class ResultViewController: UIViewController, ResultChildDelegate {
+    
+    
+    
     
     //viewの現れる順番でエラー起きる
     
@@ -36,9 +39,10 @@ class ResultViewController: UIViewController, resultChild1Delegate {
         let resultChildViewController3 = self.storyboard?.instantiateViewController(withIdentifier: "Result3")
         let resultChildViewController4 = self.storyboard?.instantiateViewController(withIdentifier: "Result4")
         
+        resultChildViewController1.delegate = self
         
         //oohashi: 先生、ここも変えたいです。
-        resultChildViewController1.title = Situation.result.childOptionOne().resultTitle
+//        resultChildViewController1.title = Situation.result.childOptionOne().resultTitle
         resultChildViewController2?.title = "結果2"
         resultChildViewController3?.title = "結果3"
         resultChildViewController4?.title = "その他"
@@ -60,46 +64,69 @@ class ResultViewController: UIViewController, resultChild1Delegate {
         pageMenu =  CAPSPageMenu(viewControllers: resultChildViewControllerArray, frame: view.bounds, pageMenuOptions: parameters)
         view.addSubview(pageMenu!.view)
         
-        resultChildViewController1.resultDecideButton.addTarget(self, action: #selector(handleDecideButtonOne(_:forEvent:)), for: .touchUpInside)
+//        resultChildViewController1.resultDecideButton.addTarget(self, action: #selector(handleDecideButtonOne(_:forEvent:)), for: .touchUpInside)
+
+
 
         
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let resultChildViewController = self.storyboard?.instantiateViewController(withIdentifier: "Result1") as! ResultChildViewController1
-        //oohashi: delegateメソッドのインスタンスはResultViewControllerだという宣言
-        resultChildViewController.delegate = AAA()
-        /*デバッグ用*/
-        print(resultChildViewController.delegate)
+//        let resultChildViewController = self.storyboard?.instantiateViewController(withIdentifier: "Result1") as! ResultChildViewController1
+//        //oohashi: delegateメソッドのインスタンスはResultViewControllerだという宣言
+//        resultChildViewController.delegate = AAA()
+//        print(resultChildViewController.delegate)
         
-        // Do any additional setup after loading the view.
     }
-    func setResult(resultEnumString: String, resultImage: UIImage) {
-        let resultChildViewController = self.storyboard?.instantiateViewController(withIdentifier: "Result1") as! ResultChildViewController1
-        resultChildViewController.resultTextView.font = UIFont(name:(resultChildViewController.resultTextView.font?.fontName)!,size: 30)
-        resultChildViewController.resultTextView.isEditable = false
-        resultChildViewController.resultTextView.text = Situation.result.childOptionOne().resultString
-        resultChildViewController.resultImageView.image = resultImage
-    }
-
-    @objc func handleDecideButtonOne(_ sender: UIButton, forEvent event: UIEvent){
-        //結果テキストに応じた処理を実行する関数
-        Situation.result.childButtonTapedOne()
+//    func setResult(resultEnumString: String, resultImage: UIImage) {
+//        let resultChildViewController = self.storyboard?.instantiateViewController(withIdentifier: "Result1") as! ResultChildViewController1
+//        resultChildViewController.resultTextView.font = UIFont(name:(resultChildViewController.resultTextView.font?.fontName)!,size: 30)
+//        resultChildViewController.resultTextView.isEditable = false
+//        resultChildViewController.resultTextView.text = Situation.result.childOptionOne().resultString
+//        resultChildViewController.resultImageView.image = resultImage
+//    }
+//
+//    @objc func handleDecideButtonOne(_ sender: UIButton, forEvent event: UIEvent){
+//        self.dismiss(animated: true, completion: nil)
+//    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    //oohashi:childViewControllerで結果ボタンおされたときの処理
+    func sendResult() {
+        print("delegateMethod")
         self.dismiss(animated: true, completion: nil)
     }
     
     
+    //oohashi: 得点圏の打席かどうか
+    
+    
+    
+    
+    
 
 }
 
-class AAA: resultChild1Delegate{
-    func setResult(resultEnumString: String, resultImage: UIImage) {
-        
-        let resultChildViewController = ResultViewController().storyboard?.instantiateViewController(withIdentifier: "Result1") as! ResultChildViewController1
-        resultChildViewController.resultTextView.font = UIFont(name:(resultChildViewController.resultTextView.font?.fontName)!,size: 30)
-        resultChildViewController.resultTextView.isEditable = false
-        resultChildViewController.resultTextView.text = Situation.result.childOptionOne().resultString
-        resultChildViewController.resultImageView.image = resultImage
-    }
-}
+//class AAA: resultChild1Delegate{
+//    func setResult(resultEnumString: String, resultImage: UIImage) {
+//
+//        let resultChildViewController = ResultViewController().storyboard?.instantiateViewController(withIdentifier: "Result1") as! ResultChildViewController1
+//        resultChildViewController.resultTextView.font = UIFont(name:(resultChildViewController.resultTextView.font?.fontName)!,size: 30)
+//        resultChildViewController.resultTextView.isEditable = false
+//        resultChildViewController.resultTextView.text = Situation.result.childOptionOne().resultString
+//        resultChildViewController.resultImageView.image = resultImage
+//    }
+//}

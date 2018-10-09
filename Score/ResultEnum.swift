@@ -3,6 +3,7 @@ import Foundation
 import UIKit
 
 enum ResultEnum: Int{
+    
     case pitcherFly = 1
     case catcherFly
     case firstFly
@@ -13,10 +14,61 @@ enum ResultEnum: Int{
     case centerFly
     case rightFly
     case pitcherGoro
-    case pitcherHit
     case struckOutSwinging
     case missedStruckOut
     
+    
+
+
+
+//    case pitcherGoroThrowToHome
+//    case pithergoroThrowToFirst
+//    case pitcherGorothrowToSecond
+//    case pitcherGoroThrowToThird
+//    case catcherGoroThrowToHome
+//    case catcherGoroThrowToFirst
+//    case catcherGoroThrowToSecond
+//    case catcherGoroThrowToThird
+//    case firstGoroThrowToHome
+//    case firstGoroThrowToFirst
+//    case firstGoroThrowToSecond
+//    case firstGoroThrowToThird
+//    case secondGoroThrowToHome
+//    case secondGoroThrowToFirst
+//    case secondGoroThrowToSecond
+//    case secondGoroThrowToThird
+//    case thirdGoroThrowToHome
+//    case thirdGoroThrowToFirst
+//    case thirdGoroThrowToSecond
+//    case thirdGoroThrowToThird
+//    case shortGoroThrowToHome
+//    case shortGoroThrowToFirst
+//    case shortGoroThrowToSecond
+//    case shortGoroThrowToThird
+//    //oohashi:外野ゴロヒットとライナーヒットで場合分け
+//    case pitcherOrCatcherHit //ohashi:ボタン一つで投手と捕手
+//    case firstHit
+//    case secondHit
+//    case thirdHit
+//    case shortHit
+//    case leftSingleHit
+//    case centerSingleHit
+//    case rightSingleHit
+//    case leftOverHit
+//    case centerOverHit
+//    case RightOverHit
+//    case thirdBaseLineHit
+//    case firstBaselineHit
+//    case leftIntermediateHit  //左中間
+//    case rightIntermediateHit //右中間
+//    
+//    case fourBall
+//    case deadBall
+//    
+    
+    
+    
+    //oohashi: ピッチャーフライの２個目ピッチャーライナー
     //ゴロヒットとライナーヒットで場合分け
     
     //oohashi:とりあえず２４個画像作って最終的には全部画像作る
@@ -26,7 +78,7 @@ enum ResultEnum: Int{
         switch self {
         case .pitcherFly:
             if Situation.oneOutNoRunner {
-                return ("投飛", "ピッチャーフライ\n２死走者なし", UIImage(named: "")!)
+                return ("投飛", "ピッチャーフライ\n２死走者なし", UIImage(named: "2-0")!)
             }else if Situation.twoOutNoRunner{
                 return ("投飛", "ピッチャーフライ\n３アウトチェンジ", UIImage(named: "3-0")!)
             }
@@ -61,7 +113,7 @@ enum ResultEnum: Int{
                 return ("投飛", "ピッチャーフライ\n3アウトチェンジ", UIImage(named: "")!)
             }
             else if Situation.noOutRunnersOnFirstAndSecond{
-                return ("投飛", "ピッチャーフライ\n1死走者1,2塁", UIImage(named: "")!)
+                return ("投飛", "ピッチャーフライ\n1死走者1,2塁", UIImage(named: "1-1,2")!)
             }
             else if Situation.oneOutRunnersOnFirstAndSecond{
                 return ("投飛", "ピッチャーフライ\n2死1,2塁", UIImage(named: "")!)
@@ -668,9 +720,78 @@ enum ResultEnum: Int{
                 return ("右飛", "ライトフライ\n3アウトチェンジ", UIImage(named: "")! )
             }
         case .pitcherGoro:
-            return ("", "", UIImage(named: "")! )
-        case .pitcherHit:
-             return ("", "", UIImage(named: "")! )
+            if Situation.noOutNoRunner {
+                return ("投ゴロ", "投ゴロ,1-3\n1死走者なし", UIImage(named: "1-0")! )
+            }else if Situation.oneOutNoRunner{
+                return ("投ゴロ", "投ゴロ,1-3\n2死走者なし", UIImage(named: "2-0")! )
+            }
+            else if Situation.twoOutNoRunner{
+                return ("投ゴロ", "投ゴロ,1-3\n3アウトチェンジ", UIImage(named: "3-0")! )
+            }
+            else if Situation.noOutRunnerOnFirst{
+                return ("投併殺", "ダブルプレー, 1-6-3\n2死走者なし", UIImage(named: "2-0")! )
+            }
+            else if Situation.oneOutRunnerOnFirst{
+                return ("投併殺", "ダブルプレー,1-6-3\n3アウトチェンジ", UIImage(named: "3-0")! )
+            }
+            else if Situation.twoOutRunnerOnFirst{
+                return ("投ゴロ", "投ゴロ,1-3\n3アウトチェンジ", UIImage(named: "3-1")! )
+            }
+            else if Situation.noOutRunnerOnSecond{
+                return ("投ゴロ", "投ゴロ,1-3\n1死2塁", UIImage(named: "1-2")! )
+            }
+            else if Situation.oneOutRunnerOnSecond{
+                return ("投ゴロ", "投ゴロ,1-3\n2死2塁", UIImage(named: "2-2")! )
+            }
+            else if Situation.twoOutRunnerOnSecond{
+                return ("投ゴロ", "投ゴロ,1-3\n3アウトチェンジ", UIImage(named: "3-2")! )
+            }
+            else if Situation.noOutRunnerOnThird{
+                return ("投ゴロ", "投ゴロ,1-3\n1死3塁", UIImage(named: "1-3")! )
+            }
+            else if Situation.oneOutRunnerOnThird{
+                return ("投ゴロ", "投ゴロ,1-3\n2死3塁", UIImage(named: "2-3")! )
+            }
+            else if Situation.twoOutRunnerOnThird{
+                return ("投ゴロ", "投ゴロ,1-3\n3アウトチェンジ", UIImage(named: "3-3")! )
+            }
+            else if Situation.noOutRunnersOnFirstAndSecond{
+                return ("投併殺", "ダブルプレー,1-6-3\n2死3塁", UIImage(named: "<#resultImage#>")! )
+            }
+            else if Situation.oneOutRunnersOnFirstAndSecond{
+                return ("投併殺", "ダブルプレー,1-6-3\n3アウトチェンジ", UIImage(named: "<#resultImage#>")! )
+            }
+            else if Situation.twoOutRunnersOnFirstAndSecond{
+                return ("投ゴロ", "投ゴロ,1-3\n3アウトチェンジ", UIImage(named: "<#resultImage#>")! )
+            }
+            else if Situation.noOutRunnersOnFirstAndThird{
+                return ("投ゴロ", "投ゴロ,1-3\n1死2,3塁", UIImage(named: "<#resultImage#>")! )
+            }
+            else if Situation.oneOutRunnersOnFirstAndThird{
+                return ("投併殺", "ダブルプレー,1-6-3\n3アウトチェンジ", UIImage(named: "<#resultImage#>")! )
+            }
+            else if Situation.twoOutRunnersOnFirstAndThird{
+                return ("投ゴロ", "投ゴロ,1-3\n3アウトチェンジ", UIImage(named: "<#resultImage#>")! )
+            }
+            else if Situation.noOutRunnersOnSecondAndThird{
+                return ("投ゴロ", "投ゴロ,1-3\n1死2,3塁", UIImage(named: "<#resultImage#>")! )
+            }
+            else if Situation.oneOutRunnersOnSecondAndThird{
+                return ("投ゴロ", "投ゴロ,1-3\n2死2,3塁", UIImage(named: "<#resultImage#>")! )
+            }
+            else if Situation.twoOutRunnersOnSecondAndThird{
+                return ("投ゴロ", "投ゴロ,1-3\n3アウトチェンジ", UIImage(named: "<#resultImage#>")! )
+            }
+            else if Situation.noOutFullBase{
+                return ("投併殺", "ホームゲッツー,1-2-3\n1死満塁", UIImage(named: "<#resultImage#>")! )
+            }
+            else if Situation.oneOutFullBase{
+                return ("投併殺", "ホームゲッツー,1-2-3\n2死満塁", UIImage(named: "<#resultImage#>")! )
+            }
+            else if Situation.twoOutFullBase{
+                return ("投ゴロ", "投ゴロ,1-3\n3アウトチェンジ", UIImage(named: "<#resultImage#>")! )
+            }
+
         case .struckOutSwinging:
             
             if Situation.noOutNoRunner {
@@ -851,8 +972,6 @@ enum ResultEnum: Int{
             return ""
         case .pitcherGoro:
             return ""
-        case .pitcherHit:
-            return ""
         case .struckOutSwinging:
             return ""
         case .missedStruckOut:
@@ -890,8 +1009,6 @@ enum ResultEnum: Int{
         case .rightFly:
             return ""
         case .pitcherGoro:
-            return ""
-        case .pitcherHit:
             return ""
         case .struckOutSwinging:
             return ""
@@ -1124,8 +1241,6 @@ enum ResultEnum: Int{
         case .rightFly:
             return
         case .pitcherGoro:
-            return
-        case .pitcherHit:
             return
         case .struckOutSwinging:
             return

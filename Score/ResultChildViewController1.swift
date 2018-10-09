@@ -8,12 +8,24 @@
 
 import UIKit
 import FirebaseAuth
+import Foundation
 
 
-protocol resultChild1Delegate{
-    func setResult(resultEnumString: String, resultImage: UIImage)
+protocol ResultChildDelegate{
+    //func setResult(resultEnumString: String, resultImage: UIImage)
 
     //oohashi:処理は全てResultViewController決めたい
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    func sendResult()
 
 }
 
@@ -23,7 +35,7 @@ protocol resultChild1Delegate{
 //ViewControllerを継承 結果の候補を表示する機能とボタンを追加
 class ResultChildViewController1: UIViewController {
     //oohasi:デリゲートメソッドの入ってるインスタンス
-    var delegate: resultChild1Delegate?
+    var delegate: ResultChildDelegate!
     
     //結果の候補
     
@@ -72,15 +84,28 @@ class ResultChildViewController1: UIViewController {
         //結果テキストを中央に揃える
         resultTextView.textAlignment = NSTextAlignment.center
         
-        //noOutNoRunnerとかの変数が更新されてないからそれをする関数を作る
+        setResult()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         //結果表示部分の背景の色
         
-        //oohasi:デリゲートメソッドを実行
-        self.delegate?.setResult(resultEnumString: Situation.result.childOptionOne().resultString , resultImage: Situation.result.childOptionOne().resultImage )
+        print(Situation.result.childOptionOne().resultString)
+        print(delegate)
+//        //oohasi:デリゲートメソッドを実行
+//        self.delegate.setResult(resultEnumString: Situation.result.childOptionOne().resultString , resultImage: Situation.result.childOptionOne().resultImage )
+        print(delegate)
+    }
+    @IBAction func sendResultButton(_ sender: Any) {
+        self.delegate.sendResult()
+    }
+    
+    func setResult(){
+        self.title = Situation.result.childOptionOne().resultTitle
+        self.resultImageView.image = Situation.result.childOptionOne().resultImage
+        self.resultTextView.text = Situation.result.childOptionOne().resultString
+        
     }
 }
 
