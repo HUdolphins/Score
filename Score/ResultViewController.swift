@@ -62,8 +62,6 @@ class ResultViewController: UIViewController, resultChild1Delegate {
         
         resultChildViewController1.resultDecideButton.addTarget(self, action: #selector(handleDecideButtonOne(_:forEvent:)), for: .touchUpInside)
 
-
-
         
     }
 
@@ -72,7 +70,9 @@ class ResultViewController: UIViewController, resultChild1Delegate {
         let resultChildViewController = self.storyboard?.instantiateViewController(withIdentifier: "Result1") as! ResultChildViewController1
         //oohashi: delegateメソッドのインスタンスはResultViewControllerだという宣言
         resultChildViewController.delegate = AAA()
+        /*デバッグ用*/
         print(resultChildViewController.delegate)
+        
         // Do any additional setup after loading the view.
     }
     func setResult(resultEnumString: String, resultImage: UIImage) {
@@ -84,6 +84,8 @@ class ResultViewController: UIViewController, resultChild1Delegate {
     }
 
     @objc func handleDecideButtonOne(_ sender: UIButton, forEvent event: UIEvent){
+        //結果テキストに応じた処理を実行する関数
+        Situation.result.childButtonTapedOne()
         self.dismiss(animated: true, completion: nil)
     }
     

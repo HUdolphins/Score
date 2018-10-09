@@ -36,29 +36,29 @@ class Situation: NSObject {
     internal static var topOrBottom = "Top"
     
     //条件指定めんどいからまとめる
-    static let noOutNoRunner = outCounts == 0 && !firstRunnerExists && !secondRunnerExists && !thirdRunnerExists
-    static let oneOutNoRunner = outCounts == 1 && !firstRunnerExists && !secondRunnerExists && !thirdRunnerExists
-    static let twoOutNoRunner = outCounts == 2 && !firstRunnerExists && !secondRunnerExists && !thirdRunnerExists
-    static let noOutRunnerOnFirst = outCounts == 0 && firstRunnerExists && !secondRunnerExists && !thirdRunnerExists
-    static let oneOutRunnerOnFirst = outCounts == 1 && firstRunnerExists && !secondRunnerExists && !thirdRunnerExists
-    static let twoOutRunnerOnFirst = outCounts == 2 && firstRunnerExists && !secondRunnerExists && !thirdRunnerExists
-    static let noOutRunnerOnSecond = outCounts == 0 && !firstRunnerExists && secondRunnerExists && !thirdRunnerExists
-    static let oneOutRunnerOnSecond = outCounts == 1 && !firstRunnerExists && secondRunnerExists && !thirdRunnerExists
-    static let twoOutRunnerOnSecond = outCounts == 2 && !firstRunnerExists && secondRunnerExists && !thirdRunnerExists
-    static let noOutRunnerOnThird = outCounts == 0 && !firstRunnerExists && !secondRunnerExists && thirdRunnerExists
-    static let oneOutRunnerOnThird = outCounts == 1 && !firstRunnerExists && !secondRunnerExists && thirdRunnerExists
-    static let twoOutRunnerOnThird = outCounts == 2 && !firstRunnerExists && !secondRunnerExists && thirdRunnerExists
-    static let noOutRunnersOnFirstAndSecond = outCounts == 0  && firstRunnerExists && secondRunnerExists && !thirdRunnerExists
-    static let oneOutRunnersOnFirstAndSecond = outCounts == 1  && firstRunnerExists && secondRunnerExists && !thirdRunnerExists
-    static let twoOutRunnersOnFirstAndSecond = outCounts == 2  && firstRunnerExists && secondRunnerExists && !thirdRunnerExists
-    static let noOutRunnersOnFirstAndThird = outCounts == 0  && firstRunnerExists && !secondRunnerExists && thirdRunnerExists
-    static let oneOutRunnersOnFirstAndThird = outCounts == 1  && firstRunnerExists && !secondRunnerExists && thirdRunnerExists
-    static let twoOutRunnersOnFirstAndThird = outCounts == 2  && firstRunnerExists && !secondRunnerExists && thirdRunnerExists
-    static let noOutRunnersOnSecondAndThird = outCounts == 0  && !firstRunnerExists && secondRunnerExists && thirdRunnerExists
-    static let oneOutRunnersOnSecondAndThird = outCounts == 1  && !firstRunnerExists && secondRunnerExists && thirdRunnerExists
-    static let twoOutRunnersOnSecondAndThird = outCounts == 2  && !firstRunnerExists && secondRunnerExists && thirdRunnerExists
-    static let noOutFullBase = outCounts == 0  && firstRunnerExists && secondRunnerExists && thirdRunnerExists
-    static let oneOutFullBase = outCounts == 1  && firstRunnerExists && secondRunnerExists && thirdRunnerExists
-    static let twoOutFullBase = outCounts == 2  && firstRunnerExists && secondRunnerExists && thirdRunnerExists
+    static var noOutNoRunner = outCounts == 0 && !firstRunnerExists && !secondRunnerExists && !thirdRunnerExists
+    static var oneOutNoRunner = outCounts == 1 && !firstRunnerExists && !secondRunnerExists && !thirdRunnerExists
+    static var twoOutNoRunner = outCounts == 2 && !firstRunnerExists && !secondRunnerExists && !thirdRunnerExists
+    static var noOutRunnerOnFirst = outCounts == 0 && firstRunnerExists && !secondRunnerExists && !thirdRunnerExists
+    static var oneOutRunnerOnFirst = outCounts == 1 && firstRunnerExists && !secondRunnerExists && !thirdRunnerExists
+    static var twoOutRunnerOnFirst = outCounts == 2 && firstRunnerExists && !secondRunnerExists && !thirdRunnerExists
+    static var noOutRunnerOnSecond = outCounts == 0 && !firstRunnerExists && secondRunnerExists && !thirdRunnerExists
+    static var oneOutRunnerOnSecond = outCounts == 1 && !firstRunnerExists && secondRunnerExists && !thirdRunnerExists
+    static var twoOutRunnerOnSecond = outCounts == 2 && !firstRunnerExists && secondRunnerExists && !thirdRunnerExists
+    static var noOutRunnerOnThird = outCounts == 0 && !firstRunnerExists && !secondRunnerExists && thirdRunnerExists
+    static var oneOutRunnerOnThird = outCounts == 1 && !firstRunnerExists && !secondRunnerExists && thirdRunnerExists
+    static var twoOutRunnerOnThird = outCounts == 2 && !firstRunnerExists && !secondRunnerExists && thirdRunnerExists
+    static var noOutRunnersOnFirstAndSecond = outCounts == 0  && firstRunnerExists && secondRunnerExists && !thirdRunnerExists
+    static var oneOutRunnersOnFirstAndSecond = outCounts == 1  && firstRunnerExists && secondRunnerExists && !thirdRunnerExists
+    static var twoOutRunnersOnFirstAndSecond = outCounts == 2  && firstRunnerExists && secondRunnerExists && !thirdRunnerExists
+    static var noOutRunnersOnFirstAndThird = outCounts == 0  && firstRunnerExists && !secondRunnerExists && thirdRunnerExists
+    static var oneOutRunnersOnFirstAndThird = outCounts == 1  && firstRunnerExists && !secondRunnerExists && thirdRunnerExists
+    static var twoOutRunnersOnFirstAndThird = outCounts == 2  && firstRunnerExists && !secondRunnerExists && thirdRunnerExists
+    static var noOutRunnersOnSecondAndThird = outCounts == 0  && !firstRunnerExists && secondRunnerExists && thirdRunnerExists
+    static var oneOutRunnersOnSecondAndThird = outCounts == 1  && !firstRunnerExists && secondRunnerExists && thirdRunnerExists
+    static var twoOutRunnersOnSecondAndThird = outCounts == 2  && !firstRunnerExists && secondRunnerExists && thirdRunnerExists
+    static var noOutFullBase = outCounts == 0  && firstRunnerExists && secondRunnerExists && thirdRunnerExists
+    static var oneOutFullBase = outCounts == 1  && firstRunnerExists && secondRunnerExists && thirdRunnerExists
+    static var twoOutFullBase = outCounts == 2  && firstRunnerExists && secondRunnerExists && thirdRunnerExists
 
 }

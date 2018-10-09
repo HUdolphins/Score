@@ -954,10 +954,125 @@ enum ResultEnum: Int{
     func childButtonTapedOne(){
         switch self{
         case .pitcherFly:
-            if Situation.oneOutNoRunner{
+            if Situation.noOutNoRunner{
+                Situation.outCounts = 1
+            }
+            else if Situation.oneOutNoRunner{
                 Situation.outCounts = 2
             }
             else if Situation.twoOutNoRunner{
+                Situation.outCounts = 0
+                if Situation.topOrBottom == "Top"{
+                    Situation.topOrBottom = "Bottom"
+                }
+                else{
+                    Situation.inning += 1
+                    Situation.topOrBottom = "Top"
+                }
+            }
+            else if Situation.noOutRunnerOnFirst{
+                Situation.outCounts = 1
+            }
+            else if Situation.oneOutRunnerOnFirst{
+                Situation.outCounts = 2
+            }
+            else if Situation.twoOutRunnerOnFirst{
+                Situation.outCounts = 0
+                if Situation.topOrBottom == "Top"{
+                    Situation.topOrBottom = "Bottom"
+                }
+                else{
+                    Situation.inning += 1
+                    Situation.topOrBottom = "Top"
+                }
+            }
+            else if Situation.noOutRunnerOnSecond{
+                Situation.outCounts = 1
+            }
+            else if Situation.oneOutRunnerOnSecond{
+                Situation.outCounts = 2
+            }
+            else if Situation.twoOutRunnerOnFirst{
+                Situation.outCounts = 0
+                if Situation.topOrBottom == "Top"{
+                    Situation.topOrBottom = "Bottom"
+                }
+                else{
+                    Situation.inning += 1
+                    Situation.topOrBottom = "Top"
+                }
+            }
+            else if Situation.noOutRunnerOnThird{
+                Situation.outCounts = 1
+            }
+            else if Situation.oneOutRunnerOnThird{
+                Situation.outCounts = 2
+            }
+            else if Situation.twoOutRunnerOnThird{
+                Situation.outCounts = 0
+                if Situation.topOrBottom == "Top"{
+                    Situation.topOrBottom = "Bottom"
+                }
+                else{
+                    Situation.inning += 1
+                    Situation.topOrBottom = "Top"
+                }
+            }
+            else if Situation.noOutRunnersOnFirstAndSecond{
+                Situation.outCounts = 1
+            }
+            else if Situation.oneOutRunnersOnFirstAndSecond{
+                Situation.outCounts = 2
+            }
+            else if Situation.twoOutRunnersOnFirstAndSecond{
+                Situation.outCounts = 0
+                if Situation.topOrBottom == "Top"{
+                    Situation.topOrBottom = "Bottom"
+                }
+                else{
+                    Situation.inning += 1
+                    Situation.topOrBottom = "Top"
+                }
+            }
+            else if Situation.noOutRunnersOnFirstAndThird{
+                Situation.outCounts = 1
+            }
+            else if Situation.oneOutRunnersOnFirstAndThird{
+                Situation.outCounts = 2
+            }
+            else if Situation.twoOutRunnersOnFirstAndThird{
+                Situation.outCounts = 0
+                if Situation.topOrBottom == "Top"{
+                    Situation.topOrBottom = "Bottom"
+                }
+                else{
+                    Situation.inning += 1
+                    Situation.topOrBottom = "Top"
+                }
+            }
+            else if Situation.noOutRunnersOnSecondAndThird{
+                Situation.outCounts = 1
+            }
+            else if Situation.oneOutRunnersOnSecondAndThird{
+                Situation.outCounts = 2
+            }
+            else if Situation.twoOutRunnersOnSecondAndThird{
+                Situation.outCounts = 0
+                if Situation.topOrBottom == "Top"{
+                    Situation.topOrBottom = "Bottom"
+                }
+                else{
+                    Situation.inning += 1
+                    Situation.topOrBottom = "Top"
+                }
+            }
+            else if Situation.noOutFullBase{
+                Situation.outCounts = 1
+            }
+            else if Situation.oneOutFullBase{
+                Situation.outCounts = 2
+            }
+            else if Situation.twoOutFullBase{
                 Situation.outCounts = 0
                 if Situation.topOrBottom == "Top"{
                     Situation.topOrBottom = "Bottom"
