@@ -84,6 +84,9 @@ class ResultChildViewController1: UIViewController {
         //結果テキストを中央に揃える
         resultTextView.textAlignment = NSTextAlignment.center
         
+        //テキストを編集不可に
+        resultTextView.isEditable = false
+        
         setResult()
     }
     
