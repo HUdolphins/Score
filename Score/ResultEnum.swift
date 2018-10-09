@@ -31,7 +31,7 @@ enum ResultEnum: Int{
                 return ("投飛", "ピッチャーフライ\n３アウトチェンジ", UIImage(named: "3-0")!)
             }
             else if Situation.noOutNoRunner{
-                return ("投飛", "ピッチャーフライ\n1死走者なし", UIImage(named: "")! )
+                return ("投飛", "ピッチャーフライ\n1死走者なし", UIImage(named: "1-0")! )
             }
             else if Situation.noOutRunnerOnFirst{
                 return ("投飛", "ピッチャーフライ\n1死1塁", UIImage(named: "")!)
