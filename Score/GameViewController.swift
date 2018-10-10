@@ -11,17 +11,11 @@ import Firebase
 import FirebaseDatabase
 
 class GameViewController: UIViewController {
-//    func sendResult() {
-//        print(Situation.result.childOptionOne().resultString)
-//    }
-    
-    
-    
     //imageView消すの忘れない
     //ピッチャー
     
-    var playerArray: [FIRPlayer] = []
-    let playerRef = Database.database().reference()
+    
+    
     
     @IBOutlet weak var firstBaseView: UIView!
     @IBOutlet weak var secondBaseView: UIView!
@@ -32,7 +26,8 @@ class GameViewController: UIViewController {
     @IBOutlet weak var secondPlayerButton: UIButton!
     //startpoint変数とendPoint変数削除
     
-    
+    //oohashi: プレイヤーいるかの確認用変数
+    var isSetPlayers = false
     
     
     override func viewDidLoad() {
@@ -55,6 +50,9 @@ class GameViewController: UIViewController {
         addPanGesture(view: secondPlayerButton)
         view.bringSubview(toFront: secondPlayerButton)
         
+        //初回画面起動時、選手設定、表裏
+        
+        setPlayers()
     }
 
     
@@ -74,16 +72,22 @@ class GameViewController: UIViewController {
         modalAppear()
     }
     
-
+    //oohashi:初回起動時用選手設定メソッド
+    func setPlayers(){
+        let setPlayersViewController = self.storyboard?.instantiateViewController(withIdentifier: "SetPlayers") as! SetPlayersViewController
+        setPlayersViewController.modalPresentationStyle = .custom
+        setPlayersViewController.transitioningDelegate = self
+        self.present(setPlayersViewController, animated: true, completion: nil)
+    }
+    
+    
     func modalAppear(){
         let resultStoryBoard: UIStoryboard = UIStoryboard(name:"Result",bundle:nil)
         let resultViewController = resultStoryBoard.instantiateViewController(withIdentifier: "Result") as! ResultViewController
         resultViewController.modalPresentationStyle = .custom
         resultViewController.transitioningDelegate = self
-        
         self.present(resultViewController, animated: true, completion: nil)
     }
-    //ohashi:**************************モーダル処理ここまで*************************************
     
     //ドラッグメソッド
     func addPanGesture(view: UIView){
@@ -235,7 +239,11 @@ class CustomPresentationController: UIPresentationController {
     
     // overlayViewをタップした時に呼ばれる
     @objc func overlayViewDidTouch(_ sender: UITapGestureRecognizer) {
+        //ohashi:初回起動のモーダルでは画面外タッチしても消せない
+        let gameViewController = GameViewController()
+        if gameViewController.isSetPlayers{
         presentedViewController.dismiss(animated: true, completion: nil)
+        }
     }
 }
 

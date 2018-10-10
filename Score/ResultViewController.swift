@@ -18,7 +18,7 @@ class ResultViewController: UIViewController, ResultChildDelegate {
     var pageMenu: CAPSPageMenu?
     
     override func viewWillAppear(_ animated: Bool) {
-        playerRef = Database.database().reference()
+        
         
         
         //型はUIViewControllerでいいのか、resultChildViewControllerのクラスを作るなら配列の型変えないといけない
@@ -58,6 +58,7 @@ class ResultViewController: UIViewController, ResultChildDelegate {
     
     //oohashi:childViewControllerで結果ボタンおされたときの処理
     func sendResult() {
+        playerRef = Database.database().reference()
         Situation.result.childButtonTapedOne()
         SituationUpdate()
         self.dismiss(animated: true, completion: nil)
