@@ -12,21 +12,18 @@ import FirebaseDatabase
 import PageMenu
 
 class ResultViewController: UIViewController, ResultChildDelegate {
-    
-    var playerArray: [FIRPlayer] = []
-    var playerRef: DatabaseReference?
     var pageMenu: CAPSPageMenu?
     
+    
+    let playerRef = Database.database().reference().child("players")
+    //ohashi: player配列
+    
     override func viewWillAppear(_ animated: Bool) {
-        
-        
-        
         //型はUIViewControllerでいいのか、resultChildViewControllerのクラスを作るなら配列の型変えないといけない
         let resultChildViewController1 = self.storyboard?.instantiateViewController(withIdentifier: "Result1") as! ResultChildViewController1
         let resultChildViewController2 = self.storyboard?.instantiateViewController(withIdentifier: "Result2")
         let resultChildViewController3 = self.storyboard?.instantiateViewController(withIdentifier: "Result3")
         let resultChildViewController4 = self.storyboard?.instantiateViewController(withIdentifier: "Result4")
-        
         resultChildViewController1.delegate = self
         resultChildViewController2?.title = "結果2"
         resultChildViewController3?.title = "結果3"
@@ -58,9 +55,25 @@ class ResultViewController: UIViewController, ResultChildDelegate {
     
     //oohashi:childViewControllerで結果ボタンおされたときの処理
     func sendResult() {
-        playerRef = Database.database().reference()
+        
         Situation.result.childButtonTapedOne()
         SituationUpdate()
+        if Situation.topOrBottom == "Top"{
+            //ohashi: 打ったバッター
+            let batter = Situation.topBattersArray[Situation.topBattingOrder]
+            //ohashi:バッターの結果の配列に今の結果を挿入
+            
+            
+            
+            
+            //childTappedOneに結果に返させる？？？？？？？？？？？？？？
+            batter.battingResultsArray.insert("送信する結果", at: 0)
+            //ohashi:送信用のデータの形にする
+            //ohashi: 試合のデータ、相手、何球目か、コメント
+            let resultData = ["results":batter.battingResultsArray]
+            //ohashi:送信用のデータにデータベース上のデータをアップデート
+            playerRef.child(batter.id!).updateChildValues(resultData)
+        }
         self.dismiss(animated: true, completion: nil)
     }
     

@@ -337,15 +337,15 @@
                         <viewLayoutGuide key="safeArea" id="fEi-Ml-wNm"/>
                     </view>
                     <connections>
-                        <outlet property="topBatterEightName" destination="v0d-mX-dqn" id="PrU-8L-YgY"/>
-                        <outlet property="topBatterFiveName" destination="mMa-B5-oU4" id="3lt-kI-yYd"/>
-                        <outlet property="topBatterFourName" destination="MfO-fE-tbs" id="NXD-R7-D3x"/>
-                        <outlet property="topBatterNineName" destination="oRA-s8-Iv8" id="ECw-gP-fiw"/>
-                        <outlet property="topBatterOneName" destination="OYm-Uz-bHy" id="D1Y-Mw-23h"/>
-                        <outlet property="topBatterSevenName" destination="Fr5-rL-thB" id="Bgy-zf-d4j"/>
-                        <outlet property="topBatterSixName" destination="hcP-dc-Wh3" id="wsl-f8-947"/>
-                        <outlet property="topBatterThreeName" destination="ihM-OR-ZoQ" id="JuC-zj-Z8o"/>
-                        <outlet property="topBatterTwoName" destination="5cl-tC-jWs" id="rSM-ML-BqP"/>
+                        <outlet property="topBatterEighttNameTextField" destination="v0d-mX-dqn" id="kFb-PS-70q"/>
+                        <outlet property="topBatterFiveNameTextField" destination="mMa-B5-oU4" id="5ZG-IO-miV"/>
+                        <outlet property="topBatterFourNameTextField" destination="MfO-fE-tbs" id="Qk3-xL-Eke"/>
+                        <outlet property="topBatterNineNameTextField" destination="oRA-s8-Iv8" id="gN3-L6-71G"/>
+                        <outlet property="topBatterOneNameTextField" destination="OYm-Uz-bHy" id="WEs-gg-D66"/>
+                        <outlet property="topBatterSevenNameTextField" destination="Fr5-rL-thB" id="O9x-iR-f4K"/>
+                        <outlet property="topBatterSixNameTextField" destination="hcP-dc-Wh3" id="Xnk-NP-0vz"/>
+                        <outlet property="topBatterThreeNameTextField" destination="ihM-OR-ZoQ" id="1eo-nj-Wvr"/>
+                        <outlet property="topBatterTwoNameTextField" destination="5cl-tC-jWs" id="3Ld-7o-ong"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZFE-BU-K8a" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -587,10 +587,10 @@
             </objects>
             <point key="canvasLocation" x="1141.5999999999999" y="917.99100449775119"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Game Tab Bar Controller-->
         <scene sceneID="ueT-eL-JlB">
             <objects>
-                <tabBarController storyboardIdentifier="Game" id="NDS-Hj-ur5" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="Game" id="NDS-Hj-ur5" customClass="GameTabBarController" customModule="Score" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="c5X-ZK-yh3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -599,6 +599,7 @@
                     <connections>
                         <segue destination="VIs-XW-KHK" kind="relationship" relationship="viewControllers" id="aYe-pi-TAm"/>
                         <segue destination="yEi-Vc-YeM" kind="relationship" relationship="viewControllers" id="Pma-27-Wm8"/>
+                        <segue destination="HMe-gJ-BOH" kind="relationship" relationship="viewControllers" id="mJA-MR-wPm"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NMd-IT-mRw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -630,6 +631,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FPy-Rj-PSl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2553" y="34"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="lN2-jg-yaF">
+            <objects>
+                <viewController id="HMe-gJ-BOH" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ued-Np-sj8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="290-6N-JbO"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="wb4-sj-XSY"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j5p-Id-sLG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2490" y="917"/>
         </scene>
     </scenes>
     <resources>

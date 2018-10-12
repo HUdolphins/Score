@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import FirebaseDatabase
 
+//oohashi: gameは入力専用でresultはデータやシチュエーション設定画面
 class GameViewController: UIViewController {
     //imageView消すの忘れない
     //ピッチャー
@@ -26,8 +27,9 @@ class GameViewController: UIViewController {
     @IBOutlet weak var secondPlayerButton: UIButton!
     //startpoint変数とendPoint変数削除
     
-    //oohashi: プレイヤーいるかの確認用変数
+    //oohashi: プレイヤーいるかの確認用変数,試合終了時falseに
     var isSetPlayers = false
+    let playerRef = Database.database().reference().child("players")
     
     
     override func viewDidLoad() {
@@ -52,12 +54,31 @@ class GameViewController: UIViewController {
         
         //初回画面起動時、選手設定、表裏
         
+        playerRef.observe(.childAdded, with: {(snapshot: DataSnapshot) in
+            let playerData = FIRPlayer(snapshot: snapshot)
+            Situation.topBattersArray.append(playerData)
+            self.isSetPlayers = true
+            
+        })
         setPlayers()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
     }
 
     
     //サンプルボタン
     @IBAction func sampleButton(_ sender: Any) {
+        //ohashi: 配列の中のtopBattingOrderの結果の配列に”捕飛”を挿入
+//        topBattersArray[Situation.topBattingOrder].results.insert("捕飛", at: 0)
+//
+//        //ohashi: データベース上に"results"という名前のtopBattersArray[Situation.topBattingOrder].resultsという配列データを送信する
+//        let results = ["results": topBattersArray[Situation.topBattingOrder].results]
+//        playerRef.child(topBattersArray[Situation.topBattingOrder].id!).updateChildValues(results)
+
+
         modalAppear()
     }
     //ホームボタン

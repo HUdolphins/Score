@@ -8,44 +8,65 @@
 
 import UIKit
 import FirebaseDatabase
+import SVProgressHUD
 
 class SetPlayersViewController: UIViewController {
-    var playerRef = Database.database().reference().child("players")
-    @IBOutlet weak var topBatterOneName: UITextField!
-    @IBOutlet weak var topBatterTwoName: UITextField!
-    @IBOutlet weak var topBatterThreeName: UITextField!
-    @IBOutlet weak var topBatterFourName: UITextField!
-    @IBOutlet weak var topBatterFiveName: UITextField!
-    @IBOutlet weak var topBatterSixName: UITextField!
-    @IBOutlet weak var topBatterSevenName: UITextField!
-    @IBOutlet weak var topBatterEightName: UITextField!
-    @IBOutlet weak var topBatterNineName: UITextField!
+    let playerRef = Database.database().reference().child("players")
+    
+    @IBOutlet weak var topBatterOneNameTextField: UITextField!
+    @IBOutlet weak var topBatterTwoNameTextField: UITextField!
+    @IBOutlet weak var topBatterThreeNameTextField: UITextField!
+    @IBOutlet weak var topBatterFourNameTextField: UITextField!
+    @IBOutlet weak var topBatterFiveNameTextField: UITextField!
+    @IBOutlet weak var topBatterSixNameTextField: UITextField!
+    @IBOutlet weak var topBatterSevenNameTextField: UITextField!
+    @IBOutlet weak var topBatterEighttNameTextField: UITextField!
+    @IBOutlet weak var topBatterNineNameTextField: UITextField!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     @IBAction func setPlayerButton(_ sender: Any) {
-        //oohashi: もしテキスト空ならダメ
-        //ohashi: オーダーの配列アプリ内に作るか
-        //ohashi: authの許可
-        let topBatterOneData = ["name": topBatterOneName.text!]
-        let topBatterTwoData = ["name": topBatterTwoName.text!]
-        let topBatterThreeData = ["name": topBatterThreeName.text!]
-        let topBatterFourData = ["name": topBatterFourName.text!]
-        let topBatterFiveData = ["name": topBatterFiveName.text!]
-        let topBatterSixData = ["name": topBatterSixName.text!]
-        let topBatterSevenData = ["name": topBatterSevenName.text!]
-        let topBatterEightData = ["name": topBatterEightName.text!]
-        let topBatterNineData = ["name": topBatterNineName.text!]
-        //ohashi: varのがいいのか
-        let topBattersDataArray = [topBatterOneData, topBatterTwoData, topBatterThreeData, topBatterFourData, topBatterFiveData,  topBatterSixData, topBatterSevenData, topBatterEightData,topBatterNineData]
-        //ohashi: ９人分のデータをオートIDで作成
-        for battersData in topBattersDataArray{
-            playerRef.childByAutoId().setValue(battersData)
+        
+        if let topBatterOneName = topBatterOneNameTextField.text, let topBatterTwoName = topBatterTwoNameTextField.text, let topBatterThreeName = topBatterThreeNameTextField.text, let topBatterFourName = topBatterFourNameTextField.text, let topBatterFiveName = topBatterFiveNameTextField.text, let topBatterSixName = topBatterSixNameTextField.text, let topBatterSevenName = topBatterSevenNameTextField.text, let topBatterEightName = topBatterEighttNameTextField.text, let topBatterNineName = topBatterNineNameTextField.text{
+            let topBatterOneData = ["name": topBatterOneName]
+            let topBatterTwoData = ["name": topBatterTwoName]
+            let topBatterThreeData = ["name": topBatterThreeName]
+            let topBatterFourData = ["name": topBatterFourName]
+            let topBatterFiveData = ["name": topBatterFiveName]
+            let topBatterSixData = ["name": topBatterSixName]
+            let topBatterSevenData = ["name": topBatterSevenName]
+            let topBatterEightData = ["name": topBatterEightName]
+            let topBatterNineData = ["name": topBatterNineName]
+            
+            //ohashi: varのがいいのか
+            let topBattersDataArray = [topBatterOneData, topBatterTwoData, topBatterThreeData, topBatterFourData, topBatterFiveData,  topBatterSixData, topBatterSevenData, topBatterEightData,topBatterNineData]
+            //ohashi: ９人分のデータをオートIDで作成
+            for battersData in topBattersDataArray{
+                playerRef.childByAutoId().setValue(battersData)
+            }
+        }else{
+            SVProgressHUD.showError(withStatus: "空欄があります。")
         }
-        playerRef.childByAutoId().setValue(topBatterOneData)
-        let gameViewController = GameViewController()
-        gameViewController.isSetPlayers = true
+        //ohashi: Situation内の関数を初期値にする。試合終了時のがいいのか？
+        Situation.outCounts = 0
+        Situation.strikeCounts = 0
+        Situation.ballCounts = 0
+        Situation.topScore = 0
+        Situation.bottomScore = 0
+        Situation.topBattingOrder = 0
+        Situation.bottomBattingOrder = 0
+        Situation.firstRunnerExists = false
+        Situation.secondRunnerExists = false
+        Situation.thirdRunnerExists = false
+        Situation.inning = 1
+        Situation.topOrBottom = "Top"
+        
+       
+        SVProgressHUD.showSuccess(withStatus: "プレイボール！！！")
         self.dismiss(animated: true, completion: nil)
     }
     

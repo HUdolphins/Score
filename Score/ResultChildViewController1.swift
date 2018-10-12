@@ -48,7 +48,7 @@ class ResultChildViewController1: UIViewController {
     }
     
     func setResult(){
-        self.title = Situation.result.childOptionOne().resultTitle
+            self.title = Situation.result.childOptionOne().resultTitle
         self.resultImageView.image = Situation.result.childOptionOne().resultImage
         self.resultTextView.text = Situation.result.childOptionOne().resultString
         //結果テキストの文字の大きさ

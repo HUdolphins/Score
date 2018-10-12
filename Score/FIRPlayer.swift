@@ -13,7 +13,7 @@ import FirebaseDatabase
 class FIRPlayer: NSObject {
     var id: String?
     var name: String?
-    var results: [String] = []
+    var battingResultsArray: [String] = []
     //第一打席ならgame-1.
     
     init(snapshot: DataSnapshot){
@@ -22,7 +22,7 @@ class FIRPlayer: NSObject {
         
         let valueDictionary = snapshot.value as! [String:Any]
         if let results = valueDictionary["results"] as? [String]{
-            self.results = results
+            self.battingResultsArray = results
         }
         self.name = valueDictionary["name"] as? String
     }

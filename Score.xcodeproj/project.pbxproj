@@ -27,6 +27,7 @@
 		879AE1E121638A81003CF4B7 /* Result.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 879AE1E021638A81003CF4B7 /* Result.storyboard */; };
 		87C71BE82166DC65007550E7 /* ResultEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C71BE72166DC65007550E7 /* ResultEnum.swift */; };
 		87C71C0A216D05D9007550E7 /* SetPlayersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C71C09216D05D9007550E7 /* SetPlayersViewController.swift */; };
+		87C71C10217057C4007550E7 /* GameTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C71C0F217057C4007550E7 /* GameTabBarController.swift */; };
 		87E1B9022150A40800803F9E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E1B9012150A40800803F9E /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +55,7 @@
 		879AE1E021638A81003CF4B7 /* Result.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Result.storyboard; sourceTree = "<group>"; };
 		87C71BE72166DC65007550E7 /* ResultEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultEnum.swift; sourceTree = "<group>"; };
 		87C71C09216D05D9007550E7 /* SetPlayersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPlayersViewController.swift; sourceTree = "<group>"; };
+		87C71C0F217057C4007550E7 /* GameTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTabBarController.swift; sourceTree = "<group>"; };
 		87E1B9012150A40800803F9E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B7CF9664941F544554C97741 /* Pods-Score.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Score.release.xcconfig"; path = "Pods/Target Support Files/Pods-Score/Pods-Score.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -92,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				8737B32C21436035000A628B /* AppDelegate.swift */,
+				87C71C0F217057C4007550E7 /* GameTabBarController.swift */,
 				8737B32E21436035000A628B /* ViewController.swift */,
 				8737B33021436035000A628B /* Main.storyboard */,
 				879AE1E021638A81003CF4B7 /* Result.storyboard */,
@@ -278,6 +281,7 @@
 				873D319F2147B07F007A1EE8 /* HomeViewController.swift in Sources */,
 				5F1013732161DE3800DD99CD /* ResultChildViewController2.swift in Sources */,
 				873D31CB214BAC2C007A1EE8 /* HomeCellViewController.swift in Sources */,
+				87C71C10217057C4007550E7 /* GameTabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -86,7 +86,7 @@ enum ResultEnum: Int{
                 return ("投飛", "ピッチャーフライ\n1死走者なし", UIImage(named: "1-0")! )
             }
             else if Situation.noOutRunnerOnFirst{
-                return ("投飛", "ピッチャーフライ\n1死1塁", UIImage(named: "")!)
+                return ("投飛", "ピッチャーフライ\n1死1塁", UIImage(named: "1-1")!)
             }
             else if Situation.oneOutRunnerOnFirst{
                 return ("投飛", "ピッチャーフライ\n2死走者1塁", UIImage(named: "")!)
@@ -140,7 +140,7 @@ enum ResultEnum: Int{
                 return ("投飛", "ピッチャーフライ\n3アウトチェンジ", UIImage(named: "")!)
             }
             else if Situation.noOutFullBase{
-                return ("投飛", "ピッチャーフライ\n1死満塁", UIImage(named: "")!)
+                return ("投飛", "ピッチャーフライ\n1死満塁", UIImage(named: "1-1,2,3")!)
             }
             else if Situation.oneOutFullBase{
                 return ("投飛", "ピッチャーフライ\n2死満塁", UIImage(named: "")!)

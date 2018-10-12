@@ -20,16 +20,21 @@ class Situation: NSObject {
     internal static var strikeCounts:Int = 0
     internal static var ballCounts:Int = 0
     
-    //打順
-    internal static var battingOrder:Int = 0
+    //ohashi: 得点状況
+    internal static var topScore: Int = 0
+    internal static var bottomScore: Int = 0
     
+    //ohashi: 表の打順、裏の打順
+    internal static var topBattingOrder:Int = 0
+    internal static var bottomBattingOrder:Int = 0
+    
+    //ohashi: 打者の配列
+    internal static var topBattersArray: [FIRPlayer] = []
+    internal static var bottomBattersArray: [FIRPlayer] = []
     //ランナーの有無
     internal static var firstRunnerExists = false
     internal static var secondRunnerExists = false
     internal static var thirdRunnerExists = false
-    //Boolにするか
-    
-    
     
     //回の表裏
     internal static var inning = 1
