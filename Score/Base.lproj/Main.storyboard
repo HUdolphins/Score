@@ -391,40 +391,64 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bxq-X2-Exz">
                                 <rect key="frame" x="192" y="765" width="30" height="38"/>
                                 <state key="normal" image="Combined Shape"/>
+                                <connections>
+                                    <action selector="catcherFlyButton:" destination="VIs-XW-KHK" eventType="touchUpInside" id="6wx-eY-3A4"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U9F-of-k6h">
                                 <rect key="frame" x="313" y="339" width="46" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="Combined Shape"/>
+                                <connections>
+                                    <action selector="firstFlyButton:" destination="VIs-XW-KHK" eventType="touchUpInside" id="Aoq-vn-iAx"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V6q-1L-rfT">
                                 <rect key="frame" x="273" y="223" width="46" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="Combined Shape"/>
+                                <connections>
+                                    <action selector="secondFlyButton:" destination="VIs-XW-KHK" eventType="touchUpInside" id="qsB-Ip-iRR"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A7B-HG-bdh">
                                 <rect key="frame" x="62" y="223" width="46" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="Combined Shape"/>
+                                <connections>
+                                    <action selector="shortFlyButton:" destination="VIs-XW-KHK" eventType="touchUpInside" id="djc-0O-bBT"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6yt-ZU-7yW" userLabel="thirdButton">
                                 <rect key="frame" x="16" y="339" width="46" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="Combined Shape"/>
+                                <connections>
+                                    <action selector="thirdFlyButton:" destination="VIs-XW-KHK" eventType="touchUpInside" id="i6y-Yo-feY"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RQz-m0-llu">
                                 <rect key="frame" x="192" y="92" width="30" height="57"/>
                                 <state key="normal" image="Combined Shape"/>
+                                <connections>
+                                    <action selector="centerFlyButton:" destination="VIs-XW-KHK" eventType="touchUpInside" id="BrA-5R-hZc"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H9k-o1-cod">
                                 <rect key="frame" x="16" y="131" width="46" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="Combined Shape"/>
+                                <connections>
+                                    <action selector="leftFlyButton:" destination="VIs-XW-KHK" eventType="touchUpInside" id="Ede-YX-Zev"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jIp-XE-Z7r">
                                 <rect key="frame" x="313" y="131" width="46" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="Combined Shape"/>
+                                <connections>
+                                    <action selector="rightFlyButton:" destination="VIs-XW-KHK" eventType="touchUpInside" id="bhw-po-4qq"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tGn-Uj-rRY">
                                 <rect key="frame" x="297" y="565" width="62" height="30"/>
@@ -507,7 +531,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="Combined Shape"/>
                                 <connections>
-                                    <action selector="pitcherButton:" destination="VIs-XW-KHK" eventType="touchUpInside" id="RSq-Dr-AY6"/>
+                                    <action selector="pictherFlyButton:" destination="VIs-XW-KHK" eventType="touchUpInside" id="hRr-Dp-B4W"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pfb-Ec-bRh" userLabel="thirdBaseLineHit">
@@ -545,16 +569,26 @@
                                 <rect key="frame" x="36" y="519" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="ball"/>
+                                <connections>
+                                    <action selector="strikeButton:" destination="VIs-XW-KHK" eventType="touchUpInside" id="bx1-wj-o0c"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="efi-00-YOd">
                                 <rect key="frame" x="31" y="535" width="40" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="swing"/>
+                                <connections>
+                                    <action selector="ballButton:" destination="VIs-XW-KHK" eventType="touchUpInside" id="I8G-9H-o1A"/>
+                                    <action selector="swingButton:" destination="VIs-XW-KHK" eventType="touchUpInside" id="73P-PJ-MfP"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SHz-Mf-Ug8">
                                 <rect key="frame" x="36" y="551" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="faul"/>
+                                <connections>
+                                    <action selector="faulButton:" destination="VIs-XW-KHK" eventType="touchUpInside" id="BIR-6g-Anr"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9en-cx-TGj">
                                 <rect key="frame" x="157" y="508" width="61" height="57"/>
@@ -590,7 +624,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YUV-I6-SWL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1141.5999999999999" y="917.99100449775119"/>
+            <point key="canvasLocation" x="1140.5797101449277" y="917.41071428571422"/>
         </scene>
         <!--Game Tab Bar Controller-->
         <scene sceneID="ueT-eL-JlB">

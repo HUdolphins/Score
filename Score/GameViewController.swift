@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import FirebaseDatabase
+import SVProgressHUD
 
 //oohashi: gameは入力専用でresultはデータやシチュエーション設定画面
 class GameViewController: UIViewController {
@@ -98,16 +99,12 @@ class GameViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    //投手ボタン(ピッチャーフライ)
-    @IBAction func pitcherButton(_ sender: Any) {
-        //オプショナル？
-        Situation.result = ResultEnum.pitcherFly
-        modalAppear()
-    }
+    
     
     //oohashi:初回起動時用選手設定メソッド
     func setPlayers(){
         let setPlayersViewController = self.storyboard?.instantiateViewController(withIdentifier: "SetPlayers") as! SetPlayersViewController
+        print(setPlayersViewController)
         setPlayersViewController.modalPresentationStyle = .custom
         setPlayersViewController.transitioningDelegate = self
         self.present(setPlayersViewController, animated: true, completion: nil)
@@ -122,7 +119,9 @@ class GameViewController: UIViewController {
         self.present(resultViewController, animated: true, completion: nil)
     }
     
-    //ohashi: ドラッグメソッドたくさん
+    
+    
+    //ohashi: 内野ゴロ用ドラッグメソッドたくさん***********
     //ohashi: ピッチャー用ドラッグメソッド
     func pitcherAddPanGesture(view: UIView){
         let pan = UIPanGestureRecognizer(target: self, action: #selector(self.pitcherHandlePan))
@@ -232,6 +231,92 @@ class GameViewController: UIViewController {
         }
         
     }
+    
+    //Ohashi:ドラッグメソッドここまで：************
+    
+    
+    //Ohashi:ストライクとかカウント
+    @IBAction func strikeButton(_ sender: Any) {
+        if Situation.strikeCounts == 2{
+            Situation.result = .missedStruckOut
+            Situation.strikeCounts = 0
+            SVProgressHUD.showSuccess(withStatus: "ストライク")
+            modalAppear()
+        }else{
+            Situation.strikeCounts += 1
+        }
+    }
+    @IBAction func ballButton(_ sender: Any) {
+        if Situation.ballCounts == 3{
+//            Situation.result = .fourBall
+            Situation.ballCounts = 0
+            modalAppear()
+            
+        }else {
+            Situation.ballCounts += 1
+        }
+    }
+    @IBAction func swingButton(_ sender: Any) {
+        if Situation.strikeCounts == 2{
+            Situation.result = .struckOutSwinging
+            Situation.strikeCounts = 0
+            modalAppear()
+        }else{
+            Situation.strikeCounts += 1
+        }
+    }
+    
+    @IBAction func faulButton(_ sender: Any) {
+        if Situation.strikeCounts == 2{
+            
+        }else{
+            Situation.strikeCounts += 1
+        }
+    }
+    
+    //Ohashi:フライメソッド
+    @IBAction func pictherFlyButton(_ sender: Any) {
+        Situation.result = .pitcherFly
+        modalAppear()
+    }
+    
+    @IBAction func catcherFlyButton(_ sender: Any) {
+        Situation.result = .catcherFly
+        modalAppear()
+    }
+    @IBAction func firstFlyButton(_ sender: Any) {
+        Situation.result = .firstFly
+        modalAppear()
+    }
+    @IBAction func secondFlyButton(_ sender: Any) {
+        Situation.result = .secondFly
+        modalAppear()
+    }
+    @IBAction func thirdFlyButton(_ sender: Any) {
+        Situation.result = .thirdFly
+        modalAppear()
+        
+        
+
+    }
+    
+    @IBAction func shortFlyButton(_ sender: Any) {
+        Situation.result = .shortFly
+        modalAppear()
+    }
+    @IBAction func leftFlyButton(_ sender: Any) {
+        Situation.result = .leftFly
+        modalAppear()
+    }
+    @IBAction func centerFlyButton(_ sender: Any) {
+        Situation.result = .centerFly
+        modalAppear()
+    }
+    @IBAction func rightFlyButton(_ sender: Any) {
+        Situation.result = .rightFly
+        modalAppear()
+    }
+    
 }
 
 
