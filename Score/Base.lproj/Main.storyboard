@@ -576,11 +576,16 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="8F5-fI-Ft6"/>
                     <connections>
+                        <outlet property="catcherPlayerButton" destination="Bxq-X2-Exz" id="i67-PS-Cko"/>
                         <outlet property="firstBaseView" destination="FL7-fB-lXU" id="uf8-Oc-qXp"/>
+                        <outlet property="firstPlayerButton" destination="U9F-of-k6h" id="QAE-qD-maw"/>
                         <outlet property="homeBaseView" destination="9en-cx-TGj" id="Td1-Rq-v0d"/>
+                        <outlet property="pitherPlayerButton" destination="MLA-W3-VqF" id="PRb-7n-Z85"/>
                         <outlet property="secondBaseView" destination="o1y-5f-fra" id="tck-pI-Zh7"/>
                         <outlet property="secondPlayerButton" destination="V6q-1L-rfT" id="XXk-US-SjQ"/>
+                        <outlet property="shortPlayerButton" destination="A7B-HG-bdh" id="OwN-OJ-8jv"/>
                         <outlet property="thirdBaseView" destination="hW2-tU-x5H" id="eAS-fX-rW2"/>
+                        <outlet property="thirdPlayerButton" destination="6yt-ZU-7yW" id="5Xa-86-hkA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YUV-I6-SWL" userLabel="First Responder" sceneMemberID="firstResponder"/>

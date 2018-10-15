@@ -23,9 +23,21 @@ class GameViewController: UIViewController {
     @IBOutlet weak var thirdBaseView: UIView!
     @IBOutlet weak var homeBaseView: UIView!
     
+    
+    var pitcherPlayerOrigin: CGPoint!
+    var catcherPlayerOrigin: CGPoint!
+    var firstPlayerOrigin: CGPoint!
     var secondPlayerOrigin: CGPoint!
+    var thirdPlayerOrigin: CGPoint!
+    var shortPlayerOrigin: CGPoint!
+    
+    
+    @IBOutlet weak var pitherPlayerButton: UIButton!
+    @IBOutlet weak var catcherPlayerButton: UIButton!
+    @IBOutlet weak var firstPlayerButton: UIButton!
     @IBOutlet weak var secondPlayerButton: UIButton!
-    //startpoint変数とendPoint変数削除
+    @IBOutlet weak var thirdPlayerButton: UIButton!
+    @IBOutlet weak var shortPlayerButton: UIButton!
     
     //oohashi: プレイヤーいるかの確認用変数,試合終了時falseに
     var isSetPlayers = false
@@ -48,12 +60,26 @@ class GameViewController: UIViewController {
         self.view.addSubview(backgroundImage)
         
         //ドラッグ適用
+        pitcherPlayerOrigin = pitherPlayerButton.frame.origin
+        catcherPlayerOrigin = catcherPlayerButton.frame.origin
+        firstPlayerOrigin = firstPlayerButton.frame.origin
         secondPlayerOrigin = secondPlayerButton.frame.origin
-        addPanGesture(view: secondPlayerButton)
+        thirdPlayerOrigin = thirdPlayerButton.frame.origin
+        shortPlayerOrigin = shortPlayerButton.frame.origin
+        pitcherAddPanGesture(view: pitherPlayerButton)
+        catcherAddPanGesture(view: catcherPlayerButton)
+        firstAddPanGesture(view: firstPlayerButton)
+        secondAddPanGesture(view: secondPlayerButton)
+        thirdAddPanGesture(view: thirdPlayerButton)
+        shortAddPanGesture(view: shortPlayerButton)
+        view.bringSubview(toFront: pitherPlayerButton)
+        view.bringSubview(toFront: catcherPlayerButton)
+        view.bringSubview(toFront: firstPlayerButton)
         view.bringSubview(toFront: secondPlayerButton)
+        view.bringSubview(toFront: thirdPlayerButton)
+        view.bringSubview(toFront: shortPlayerButton)
         
         //初回画面起動時、選手設定、表裏
-        
         playerRef.observe(.childAdded, with: {(snapshot: DataSnapshot) in
             let playerData = FIRPlayer(snapshot: snapshot)
             Situation.topBattersArray.append(playerData)
@@ -63,27 +89,13 @@ class GameViewController: UIViewController {
         setPlayers()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
-    }
-
-    
     //サンプルボタン
     @IBAction func sampleButton(_ sender: Any) {
-        //ohashi: 配列の中のtopBattingOrderの結果の配列に”捕飛”を挿入
-//        topBattersArray[Situation.topBattingOrder].results.insert("捕飛", at: 0)
-//
-//        //ohashi: データベース上に"results"という名前のtopBattersArray[Situation.topBattingOrder].resultsという配列データを送信する
-//        let results = ["results": topBattersArray[Situation.topBattingOrder].results]
-//        playerRef.child(topBattersArray[Situation.topBattingOrder].id!).updateChildValues(results)
-
-
         modalAppear()
     }
     //ホームボタン
     @IBAction func backToHomeButton(_ sender: Any) {
-       dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
     //投手ボタン(ピッチャーフライ)
@@ -110,162 +122,120 @@ class GameViewController: UIViewController {
         self.present(resultViewController, animated: true, completion: nil)
     }
     
-    //ドラッグメソッド
-    func addPanGesture(view: UIView){
-        let pan = UIPanGestureRecognizer(target: self, action: #selector(self.handlePan))
+    //ohashi: ドラッグメソッドたくさん
+    //ohashi: ピッチャー用ドラッグメソッド
+    func pitcherAddPanGesture(view: UIView){
+        let pan = UIPanGestureRecognizer(target: self, action: #selector(self.pitcherHandlePan))
         view.addGestureRecognizer(pan)
     }
-    @objc func handlePan(sender: UIPanGestureRecognizer ){
-        
-        let rview = sender.view!
+    @objc func pitcherHandlePan(sender: UIPanGestureRecognizer ){
+        panMethod(sender: sender, playerButton: pitherPlayerButton, playerOrigin: pitcherPlayerOrigin, throwToFirst: .catcherFly, throwToSecond: .catcherFly, throwToThird: .catcherFly, throwToHome: .catcherFly)
+    }
+    //ohashi:キャッチャー用ドラッグメソッド
+    func catcherAddPanGesture(view: UIView){
+        let pan = UIPanGestureRecognizer(target: self, action: #selector(self.catcherHandlePan))
+        view.addGestureRecognizer(pan)
+    }
+    @objc func catcherHandlePan(sender: UIPanGestureRecognizer ){
+        panMethod(sender: sender, playerButton: catcherPlayerButton, playerOrigin: catcherPlayerOrigin, throwToFirst: .catcherFly, throwToSecond: .catcherFly, throwToThird: .catcherFly, throwToHome: .catcherFly)
+    }
+    //ohashi:ファースト用ドラッグメソッド
+    func firstAddPanGesture(view: UIView){
+        let pan = UIPanGestureRecognizer(target: self, action: #selector(self.firstHandlePan))
+        view.addGestureRecognizer(pan)
+    }
+    @objc func firstHandlePan(sender: UIPanGestureRecognizer ){
+        panMethod(sender: sender, playerButton: firstPlayerButton, playerOrigin: firstPlayerOrigin, throwToFirst: .catcherFly, throwToSecond: .catcherFly, throwToThird: .catcherFly, throwToHome: .catcherFly)
+    }
+    //ohashi:セカンド用ドラッグメソッド
+    func secondAddPanGesture(view: UIView){
+        let pan = UIPanGestureRecognizer(target: self, action: #selector(self.secondHandlePan))
+        view.addGestureRecognizer(pan)
+    }
+    @objc func secondHandlePan(sender: UIPanGestureRecognizer ){
+        panMethod(sender: sender, playerButton: secondPlayerButton, playerOrigin: secondPlayerOrigin, throwToFirst: .catcherFly, throwToSecond: .catcherFly, throwToThird: .catcherFly, throwToHome: .catcherFly)
+    }
+    //ohashi:サード用ドラッグメソッド
+    func thirdAddPanGesture(view: UIView){
+        let pan = UIPanGestureRecognizer(target: self, action: #selector(self.thirdHandlePan))
+        view.addGestureRecognizer(pan)
+    }
+    @objc func thirdHandlePan(sender: UIPanGestureRecognizer ){
+        panMethod(sender: sender, playerButton: thirdPlayerButton, playerOrigin: thirdPlayerOrigin, throwToFirst: .catcherFly, throwToSecond: .catcherFly, throwToThird: .catcherFly, throwToHome: .catcherFly)
+    }
+    //ohashi:ショート用ドラッグメソッド
+    func shortAddPanGesture(view: UIView){
+        let pan = UIPanGestureRecognizer(target: self, action: #selector(self.shortHandlePan))
+        view.addGestureRecognizer(pan)
+    }
+    @objc func shortHandlePan(sender: UIPanGestureRecognizer ){
+        panMethod(sender: sender, playerButton: shortPlayerButton, playerOrigin: shortPlayerOrigin, throwToFirst: .catcherFly, throwToSecond: .catcherFly, throwToThird: .catcherFly, throwToHome: .catcherFly)
+    }
+    
+    func panMethod(sender: UIPanGestureRecognizer, playerButton: UIButton, playerOrigin: CGPoint, throwToFirst: ResultEnum, throwToSecond: ResultEnum, throwToThird: ResultEnum, throwToHome: ResultEnum){
+        let panView = sender.view!
         let translation = sender.translation(in: self.view)
         
         switch sender.state{
         case .began, .changed:
             //プレイヤーが選手のimageからボールのimageに
-            secondPlayerButton.setImage(#imageLiteral(resourceName: "baseball copy 2"), for: .normal)
+            playerButton.setImage(#imageLiteral(resourceName: "baseball copy 2"), for: .normal)
             //位置取得
-            secondPlayerButton.center = CGPoint(x: rview.center.x + translation.x, y: rview.center.y + translation.y)
+            playerButton.center = CGPoint(x: panView.center.x + translation.x, y: panView.center.y + translation.y)
             //ボールとベース重なったらベースが変化
-            if rview.frame.intersects(firstBaseView.frame){
+            if panView.frame.intersects(firstBaseView.frame){
                 firstBaseView.backgroundColor = .red
-            }else {
+            }else if panView.frame.intersects(secondBaseView.frame){
+                secondBaseView.backgroundColor = .red
+            }else if panView.frame.intersects(thirdBaseView.frame){
+                thirdBaseView.backgroundColor = .red
+            }else if panView.frame.intersects(homeBaseView.frame){
+                homeBaseView.backgroundColor = .red
+            }else{
                 firstBaseView.backgroundColor = .clear
+                secondBaseView.backgroundColor = .clear
+                thirdBaseView.backgroundColor = .clear
+                homeBaseView.backgroundColor = .clear
                 
             }
             sender.setTranslation(CGPoint.zero, in: self.view)
         case .ended:
             //ドラッグを終了させたとき重なっていたら処理する
-            if rview.frame.intersects(firstBaseView.frame){
-                
+            if panView.frame.intersects(firstBaseView.frame){
+                Situation.result = throwToFirst
                 UIView.animate(withDuration: 0.3, animations: {
-                    self.secondPlayerButton.alpha = 0.0
-//ここにゴロ時の処理を記述。枠内にドラッグされたとき
-//頼んだのむさん
-                    
-                    
-                    
-                    
-                    
-                    
-                    
+                    playerButton.alpha = 0.0
+                })
+            }else if panView.frame.intersects(secondBaseView.frame) {
+                Situation.result = throwToSecond
+                UIView.animate(withDuration: 0.3, animations: {
+                    playerButton.alpha = 0.0
+                    })
+            }else if panView.frame.intersects(thirdBaseView.frame){
+                Situation.result = throwToThird
+                UIView.animate(withDuration: 0.3, animations: {
+                    playerButton.alpha = 0.0
+                })
+            }else if panView.frame.intersects(homeBaseView.frame){
+                Situation.result = throwToHome
+                UIView.animate(withDuration: 0.3, animations: {
+                    playerButton.alpha = 0.0
                 })
             }else{
                 UIView.animate(withDuration: 0.3, animations: {
-                    self.secondPlayerButton.frame.origin = self.secondPlayerOrigin
-                    self.secondPlayerButton.setImage(#imageLiteral(resourceName: "Combined Shape"), for: .normal)
+                    playerButton.frame.origin = playerOrigin
+                    playerButton.setImage(#imageLiteral(resourceName: "Combined Shape"), for: .normal)
                 })
             }
         default:
             break
-            
         }
         
-        
-    }
-   
-}
-
-//ohashi:わかりにくいからスペースとった
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-extension GameViewController: UIViewControllerTransitioningDelegate {
-    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
-        return CustomPresentationController(presentedViewController: presented, presenting: presenting)
     }
 }
 
-class CustomPresentationController: UIPresentationController {
-    // 呼び出し元のView Controller の上に重ねるオーバレイView
-    var overlayView = UIView()
-    
-    // 表示トランジション開始前に呼ばれる
-    override func presentationTransitionWillBegin() {
-        guard let containerView = containerView else {
-            return
-        }
-        overlayView.frame = containerView.bounds
-        overlayView.gestureRecognizers = [UITapGestureRecognizer(target: self, action: #selector(CustomPresentationController.overlayViewDidTouch(_:)))]
-        overlayView.backgroundColor = .black
-        overlayView.alpha = 0.0
-        containerView.insertSubview(overlayView, at: 0)
-        
-        // トランジションを実行
-        presentedViewController.transitionCoordinator?.animate(alongsideTransition: {[weak self] context in
-            self?.overlayView.alpha = 0.7
-            }, completion:nil)
-    }
-    
-    // 非表示トランジション開始前に呼ばれる
-    override func dismissalTransitionWillBegin() {
-        presentedViewController.transitionCoordinator?.animate(alongsideTransition: {[weak self] context in
-            self?.overlayView.alpha = 0.0
-            }, completion:nil)
-    }
-    
-    // 非表示トランジション開始後に呼ばれる
-    override func dismissalTransitionDidEnd(_ completed: Bool) {
-        if completed {
-            overlayView.removeFromSuperview()
-        }
-    }
-    
-    let margin = (x: CGFloat(30), y: CGFloat(220.0))
-    // 子のコンテナサイズを返す
-    override func size(forChildContentContainer container: UIContentContainer, withParentContainerSize parentSize: CGSize) -> CGSize {
-        return CGSize(width: parentSize.width - margin.x, height: parentSize.height - margin.y)
-    }
-    
-    // 呼び出し先のView Controllerのframeを返す
-    override var frameOfPresentedViewInContainerView: CGRect {
-        var presentedViewFrame = CGRect()
-        let containerBounds = containerView!.bounds
-        let childContentSize = size(forChildContentContainer: presentedViewController, withParentContainerSize: containerBounds.size)
-        presentedViewFrame.size = childContentSize
-        presentedViewFrame.origin.x = margin.x / 2.0
-        presentedViewFrame.origin.y = margin.y / 2.0
-        
-        return presentedViewFrame
-    }
-    
-    // レイアウト開始前に呼ばれる
-    override func containerViewWillLayoutSubviews() {
-        overlayView.frame = containerView!.bounds
-        presentedView?.frame = frameOfPresentedViewInContainerView
-        presentedView?.layer.cornerRadius = 10
-        presentedView?.clipsToBounds = true
-    }
-    
-    // レイアウト開始後に呼ばれる
-    override func containerViewDidLayoutSubviews() {
-    }
-    
-    // overlayViewをタップした時に呼ばれる
-    @objc func overlayViewDidTouch(_ sender: UITapGestureRecognizer) {
-        //ohashi:初回起動のモーダルでは画面外タッチしても消せない
-        let gameViewController = GameViewController()
-        if gameViewController.isSetPlayers{
-        presentedViewController.dismiss(animated: true, completion: nil)
-        }
-    }
-}
+
+
+
 
 
