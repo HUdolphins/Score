@@ -60,8 +60,8 @@ enum ResultEnum: Int{
 //    case thirdBaseLineHit
 //    case firstBaselineHit
     case leftIntermediateHit  //左中間
-//    case rightIntermediateHit //右中間
-//    
+    case rightIntermediateHit //右中間
+//
 //    case fourBall
 //    case deadBall
 //    
@@ -937,8 +937,152 @@ enum ResultEnum: Int{
             else if Situation.twoOutFullBase{
                 return ("見振", "見逃し三振\n3アウトチェンジ", UIImage(named: "3-1,2,3")! )
             }
-//        case .leftIntermediateHit:
-            
+        case .leftIntermediateHit:
+            if Situation.noOutNoRunner {
+                return ("左中二", "左中間ツーベース\n無死2塁", UIImage(named: "0-2")!)
+            }else if Situation.oneOutNoRunner{
+                return ("左中二", "左中間ツーベース\n1死2塁", UIImage(named: "1-2")!)
+            }
+            else if Situation.twoOutNoRunner{
+                return ("左中二", "左中間ツーベース\n2死2塁", UIImage(named: "2-2")!)
+            }
+            else if Situation.noOutRunnerOnFirst{
+                return ("左中二", "左中間ツーベース\n無死2,3塁", UIImage(named: "0-2,3")!)
+            }
+            else if Situation.oneOutRunnerOnFirst{
+                return ("左中二", "左中間ツーベース\n1死2,3塁", UIImage(named: "1-2,3")!)
+            }
+            else if Situation.twoOutRunnerOnFirst{
+                return ("左中二", "左中間ツーベース\n２死2死2,3塁", UIImage(named: "2-2,3")!)
+            }
+            else if Situation.noOutRunnerOnSecond{
+                return ("左中二", "左中間ツーベース\n無死2塁", UIImage(named: "0-2,4_1")!)
+            }
+            else if Situation.oneOutRunnerOnSecond{
+                return ("左中二", "左中間ツーベース\n1死2塁", UIImage(named: "1-2,4_1")!)
+            }
+            else if Situation.twoOutRunnerOnSecond{
+                return ("左中二", "左中間ツーベース\n2死2塁", UIImage(named: "2-2,4_1")!)
+            }
+            else if Situation.noOutRunnerOnThird{
+                return ("左中二", "左中間ツーベース\n無死2塁", UIImage(named: "0-2,4_1")!)
+            }
+            else if Situation.oneOutRunnerOnThird{
+                return ("左中二", "左中間ツーベース\n1死2塁", UIImage(named: "1-2,4_1")!)
+            }
+            else if Situation.twoOutRunnerOnThird{
+                return ("左中二", "左中間ツーベース\n2死2塁", UIImage(named: "2-2,4_1")!)
+            }
+            else if Situation.noOutRunnersOnFirstAndSecond{
+                return ("左中二", "左中間ツーベース\n無死2,3塁", UIImage(named: "0-2,3,4_1")!)
+            }
+            else if Situation.oneOutRunnersOnFirstAndSecond{
+                return ("左中二", "左中間ツーベース\n1死2,3塁", UIImage(named: "1-2,3,4_1")!)
+            }
+            else if Situation.twoOutRunnersOnFirstAndSecond{
+                return ("左中二", "左中間ツーベース\n2死2,3塁", UIImage(named: "2-2,3,4_1")!)
+            }
+            else if Situation.noOutRunnersOnFirstAndThird{
+                return ("左中二", "左中間ツーベース\n無死2,3塁", UIImage(named: "0-2,3,4_1")!)
+            }
+            else if Situation.oneOutRunnersOnFirstAndThird{
+                return ("左中二", "左中間ツーベース\n1死2,3塁", UIImage(named: "1-2,3,4_1")!)
+            }
+            else if Situation.twoOutRunnersOnFirstAndThird{
+                return ("左中二", "左中間ツーベース\n2死2,3塁", UIImage(named: "2-2,3,4_1")!)
+            }
+            else if Situation.noOutRunnersOnSecondAndThird{
+                return ("左中二", "左中間ツーベース\n無死2塁", UIImage(named: "0-2,4_2")!)
+            }
+            else if Situation.oneOutRunnersOnSecondAndThird{
+                return ("左中二", "左中間ツーベース\n1死2塁", UIImage(named: "1-2,4_2")!)
+            }
+            else if Situation.twoOutRunnersOnSecondAndThird{
+                return ("左中二", "左中間ツーベース\n2死2塁", UIImage(named: "2-2,4_2")!)
+            }
+            else if Situation.noOutFullBase{
+                return ("左中二", "左中間ツーベース\n無死2,3塁", UIImage(named: "0-2,3,4_2")!)
+            }
+            else if Situation.oneOutFullBase{
+                return ("左中二", "左中間ツーベース\n1死2,3塁", UIImage(named: "1-2,3,4_2")!)
+            }
+            else if Situation.twoOutFullBase{
+                return ("左中二", "左中間ツーベース\n2死2,3塁", UIImage(named: "2-2,3,4_2")!)
+            }
+        case .rightIntermediateHit:
+            if Situation.noOutNoRunner {
+                return ("右中二", "右中間ツーベース\n無死2塁", UIImage(named: "0-2")!)
+            }else if Situation.oneOutNoRunner{
+                return ("右中二", "右中間ツーベース\n1死2塁", UIImage(named: "1-2")!)
+            }
+            else if Situation.twoOutNoRunner{
+                return ("右中二", "右中間ツーベース\n2死2塁", UIImage(named: "2-2")!)
+            }
+            else if Situation.noOutRunnerOnFirst{
+                return ("右中二", "右中間ツーベース\n2死2塁", UIImage(named: "2-2")!)
+            }
+            else if Situation.oneOutRunnerOnFirst{
+                return ("右中二", "右中間ツーベース\n1死2,3塁", UIImage(named: "1-2,3")!)
+            }
+            else if Situation.twoOutRunnerOnFirst{
+                return ("右中二", "右中間ツーベース\n２死2死2,3塁", UIImage(named: "2-2,3")!)
+            }
+            else if Situation.noOutRunnerOnSecond{
+                return ("右中二", "右中間ツーベース\n無死2塁", UIImage(named: "0-2,4_1")!)
+            }
+            else if Situation.oneOutRunnerOnSecond{
+                return ("右中二", "右中間ツーベース\n1死2塁", UIImage(named: "1-2,4_1")!)
+            }
+            else if Situation.twoOutRunnerOnSecond{
+                return ("右中二", "右中間ツーベース\n2死2塁", UIImage(named: "2-2,4_1")!)
+            }
+            else if Situation.noOutRunnerOnThird{
+                return ("右中二", "右中間ツーベース\n無死2塁", UIImage(named: "0-2,4_1")!)
+            }
+            else if Situation.oneOutRunnerOnThird{
+                return ("右中二", "右中間ツーベース\n1死2塁", UIImage(named: "1-2,4_1")!)
+            }
+            else if Situation.twoOutRunnerOnThird{
+                return ("右中二", "右中間ツーベース\n2死2塁", UIImage(named: "2-2,4_1")!)
+            }
+            else if Situation.noOutRunnersOnFirstAndSecond{
+                return ("右中二", "右中間ツーベース\n無死2,3塁", UIImage(named: "0-2,3,4_1")!)
+            }
+            else if Situation.oneOutRunnersOnFirstAndSecond{
+                return ("右中二", "右中間ツーベース\n1死2,3塁", UIImage(named: "1-2,3,4_1")!)
+            }
+            else if Situation.twoOutRunnersOnFirstAndSecond{
+                return ("右中二", "左中間ツーベース\n2死2,3塁", UIImage(named: "2-2,3,4_1")!)
+            }
+            else if Situation.noOutRunnersOnFirstAndThird{
+                return ("右中二", "右中間ツーベース\n無死2,3塁", UIImage(named: "0-2,3,4_1")!)
+            }
+            else if Situation.oneOutRunnersOnFirstAndThird{
+                return ("右中二", "右中間ツーベース\n1死2,3塁", UIImage(named: "1-2,3,4_1")!)
+            }
+            else if Situation.twoOutRunnersOnFirstAndThird{
+                return ("右中二", "右中間ツーベース\n2死2,3塁", UIImage(named: "2-2,3,4_1")!)
+            }
+            else if Situation.noOutRunnersOnSecondAndThird{
+                return ("右中二", "右中間ツーベース\n無死2塁", UIImage(named: "0-2,4_2")!)
+            }
+            else if Situation.oneOutRunnersOnSecondAndThird{
+                return ("右中二", "右中間ツーベース\n1死2塁", UIImage(named: "1-2,4_2")!)
+            }
+            else if Situation.twoOutRunnersOnSecondAndThird{
+                return ("右中二", "右中間ツーベース\n2死2塁", UIImage(named: "2-2,4_2")!)
+            }
+            else if Situation.noOutFullBase{
+                return ("右中二", "右中間ツーベース\n無死2,3塁", UIImage(named: "0-2,3,4_2")!)
+            }
+            else if Situation.oneOutFullBase{
+                return ("右中二", "右中間ツーベース\n1死2,3塁", UIImage(named: "1-2,3,4_2")!)
+            }
+            else if Situation.twoOutFullBase{
+                return ("右中二", "右中間ツーベース\n2死2,3塁", UIImage(named: "2-2,3,4_2")!)
+                        }
+
+
         default:
              return ("", "", UIImage(named: "")! )
         }
@@ -977,6 +1121,8 @@ enum ResultEnum: Int{
             return ""
         case .missedStruckOut:
             return ""
+        case .leftIntermediateHit:
+            return ""
         }
         
         //なんかエラーでるから仮置き
@@ -1014,6 +1160,8 @@ enum ResultEnum: Int{
         case .struckOutSwinging:
             return ""
         case .missedStruckOut:
+            return ""
+        case .leftIntermediateHit:
             return ""
         }
         
@@ -1246,6 +1394,8 @@ enum ResultEnum: Int{
         case .struckOutSwinging:
             return
         case .missedStruckOut:
+            return
+        case .leftIntermediateHit:
             return
         }
     }

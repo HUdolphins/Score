@@ -15,15 +15,13 @@ import SVProgressHUD
 class GameViewController: UIViewController {
     //imageView消すの忘れない
     //ピッチャー
-    
-    
+    var firstBaseViewOrigin: CGPoint!
     
     
     @IBOutlet weak var firstBaseView: UIView!
     @IBOutlet weak var secondBaseView: UIView!
     @IBOutlet weak var thirdBaseView: UIView!
     @IBOutlet weak var homeBaseView: UIView!
-    
     
     var pitcherPlayerOrigin: CGPoint!
     var catcherPlayerOrigin: CGPoint!
@@ -32,13 +30,13 @@ class GameViewController: UIViewController {
     var thirdPlayerOrigin: CGPoint!
     var shortPlayerOrigin: CGPoint!
     
-    
-    @IBOutlet weak var pitherPlayerButton: UIButton!
+    @IBOutlet weak var pitcherPlayerButton: UIButton!
     @IBOutlet weak var catcherPlayerButton: UIButton!
     @IBOutlet weak var firstPlayerButton: UIButton!
     @IBOutlet weak var secondPlayerButton: UIButton!
     @IBOutlet weak var thirdPlayerButton: UIButton!
     @IBOutlet weak var shortPlayerButton: UIButton!
+    
     
     //oohashi: プレイヤーいるかの確認用変数,試合終了時falseに
     var isSetPlayers = false
@@ -47,13 +45,7 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //UIView透過
-        firstBaseView.backgroundColor = UIColor.clear
-        secondBaseView.backgroundColor = UIColor.clear
-        thirdBaseView.backgroundColor = UIColor.clear
-        homeBaseView.backgroundColor = UIColor.clear
-        
+       
         //背景画像設定
         let backgroundImage = UIImageView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height))
         backgroundImage.image = UIImage(named: "iPhone 8 Copy 2.png")
@@ -61,19 +53,19 @@ class GameViewController: UIViewController {
         self.view.addSubview(backgroundImage)
         
         //ドラッグ適用
-        pitcherPlayerOrigin = pitherPlayerButton.frame.origin
+        pitcherPlayerOrigin = pitcherPlayerButton.frame.origin
         catcherPlayerOrigin = catcherPlayerButton.frame.origin
         firstPlayerOrigin = firstPlayerButton.frame.origin
         secondPlayerOrigin = secondPlayerButton.frame.origin
         thirdPlayerOrigin = thirdPlayerButton.frame.origin
         shortPlayerOrigin = shortPlayerButton.frame.origin
-        pitcherAddPanGesture(view: pitherPlayerButton)
+        pitcherAddPanGesture(view: pitcherPlayerButton)
         catcherAddPanGesture(view: catcherPlayerButton)
         firstAddPanGesture(view: firstPlayerButton)
         secondAddPanGesture(view: secondPlayerButton)
         thirdAddPanGesture(view: thirdPlayerButton)
         shortAddPanGesture(view: shortPlayerButton)
-        view.bringSubview(toFront: pitherPlayerButton)
+        view.bringSubview(toFront: pitcherPlayerButton)
         view.bringSubview(toFront: catcherPlayerButton)
         view.bringSubview(toFront: firstPlayerButton)
         view.bringSubview(toFront: secondPlayerButton)
@@ -87,6 +79,11 @@ class GameViewController: UIViewController {
             self.isSetPlayers = true
             
         })
+        firstBaseViewOrigin = firstBaseView.frame.origin
+        print("DEBUG_PRINT: \(firstBaseView.frame)")
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         setPlayers()
     }
     
@@ -128,7 +125,7 @@ class GameViewController: UIViewController {
         view.addGestureRecognizer(pan)
     }
     @objc func pitcherHandlePan(sender: UIPanGestureRecognizer ){
-        panMethod(sender: sender, playerButton: pitherPlayerButton, playerOrigin: pitcherPlayerOrigin, throwToFirst: .catcherFly, throwToSecond: .catcherFly, throwToThird: .catcherFly, throwToHome: .catcherFly)
+        panMethod(sender: sender, playerButton: pitcherPlayerButton, playerOrigin: pitcherPlayerOrigin, throwToFirst: .catcherFly, throwToSecond: .catcherFly, throwToThird: .catcherFly, throwToHome: .catcherFly)
     }
     //ohashi:キャッチャー用ドラッグメソッド
     func catcherAddPanGesture(view: UIView){
@@ -175,6 +172,8 @@ class GameViewController: UIViewController {
         let panView = sender.view!
         let translation = sender.translation(in: self.view)
         
+        
+        let baseView = UIView(frame: CGRect(x: 0, y: 290, width: 50, height: 50))
         switch sender.state{
         case .began, .changed:
             //プレイヤーが選手のimageからボールのimageに
@@ -182,19 +181,20 @@ class GameViewController: UIViewController {
             //位置取得
             playerButton.center = CGPoint(x: panView.center.x + translation.x, y: panView.center.y + translation.y)
             //ボールとベース重なったらベースが変化
-            if panView.frame.intersects(firstBaseView.frame){
+            if panView.frame.intersects(baseView.frame){
                 firstBaseView.backgroundColor = .red
             }else if panView.frame.intersects(secondBaseView.frame){
                 secondBaseView.backgroundColor = .red
             }else if panView.frame.intersects(thirdBaseView.frame){
                 thirdBaseView.backgroundColor = .red
-            }else if panView.frame.intersects(homeBaseView.frame){
+            }else if panView.frame.intersects(homeBaseView.bounds){
                 homeBaseView.backgroundColor = .red
             }else{
-                firstBaseView.backgroundColor = .clear
-                secondBaseView.backgroundColor = .clear
-                thirdBaseView.backgroundColor = .clear
-                homeBaseView.backgroundColor = .clear
+                firstBaseView.backgroundColor = .white
+                secondBaseView.backgroundColor = .blue
+                thirdBaseView.backgroundColor = .green
+                homeBaseView.backgroundColor = .yellow
+                print("DEBUG_PRINT: \(firstBaseView.frame)")
                 
             }
             sender.setTranslation(CGPoint.zero, in: self.view)

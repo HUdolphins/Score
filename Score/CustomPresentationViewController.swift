@@ -74,9 +74,9 @@ class CustomPresentationController: UIPresentationController {
     // overlayViewをタップした時に呼ばれる
     @objc func overlayViewDidTouch(_ sender: UITapGestureRecognizer) {
         //ohashi:初回起動のモーダルでは画面外タッチしても消せない
-        let gameViewController = GameViewController()
-        if gameViewController.isSetPlayers{
+//        let gameViewController = GameViewController()
+//        if gameViewController.isSetPlayers{
             presentedViewController.dismiss(animated: true, completion: nil)
-        }
+//        }
     }
 }

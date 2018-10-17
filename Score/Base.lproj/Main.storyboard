@@ -398,7 +398,7 @@
                                         </constraints>
                                         <state key="normal" image="Combined Shape"/>
                                         <connections>
-                                            <action selector="thirdFlyButton:" destination="VIs-XW-KHK" eventType="touchUpInside" id="i6y-Yo-feY"/>
+                                            <action selector="thirdFlyButton:" destination="YUV-I6-SWL" eventType="touchUpInside" id="YCY-i6-s9v"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U9F-of-k6h">
@@ -408,7 +408,7 @@
                                         </constraints>
                                         <state key="normal" image="Combined Shape"/>
                                         <connections>
-                                            <action selector="firstFlyButton:" destination="VIs-XW-KHK" eventType="touchUpInside" id="Aoq-vn-iAx"/>
+                                            <action selector="firstFlyButton:" destination="YUV-I6-SWL" eventType="touchUpInside" id="RnE-af-Mxc"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -486,7 +486,7 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hW2-tU-x5H">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="50" id="ekV-e1-jYF"/>
                                             <constraint firstAttribute="height" constant="50" id="o7v-gG-Ew9"/>
@@ -551,7 +551,7 @@
                                         </constraints>
                                         <state key="normal" image="Combined Shape"/>
                                         <connections>
-                                            <action selector="leftFlyButton:" destination="VIs-XW-KHK" eventType="touchUpInside" id="Ede-YX-Zev"/>
+                                            <action selector="leftFlyButton:" destination="YUV-I6-SWL" eventType="touchUpInside" id="yb9-oL-c9V"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jIp-XE-Z7r" userLabel="right Button">
@@ -561,6 +561,7 @@
                                         </constraints>
                                         <state key="normal" image="Combined Shape"/>
                                         <connections>
+                                            <action selector="rightFlyButton:" destination="YUV-I6-SWL" eventType="touchUpInside" id="64W-DM-1Ld"/>
                                             <action selector="rightFlyButton:" destination="VIs-XW-KHK" eventType="touchUpInside" id="bhw-po-4qq"/>
                                         </connections>
                                     </button>
@@ -583,7 +584,7 @@
                                         </constraints>
                                         <state key="normal" image="Combined Shape"/>
                                         <connections>
-                                            <action selector="centerFlyButton:" destination="VIs-XW-KHK" eventType="touchUpInside" id="BrA-5R-hZc"/>
+                                            <action selector="centerFlyButton:" destination="YUV-I6-SWL" eventType="touchUpInside" id="21e-cJ-zcU"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ARd-hI-IpD" userLabel="Right Intermediate Hit">
@@ -597,7 +598,7 @@
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o1y-5f-fra">
                                 <rect key="frame" x="182" y="290.33333333333331" width="50" height="50"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="wcb-V2-cZ6"/>
                                     <constraint firstAttribute="width" constant="50" id="x7d-ek-jBg"/>
@@ -610,7 +611,7 @@
                                 </constraints>
                                 <state key="normal" image="Combined Shape"/>
                                 <connections>
-                                    <action selector="catcherFlyButton:" destination="VIs-XW-KHK" eventType="touchUpInside" id="6wx-eY-3A4"/>
+                                    <action selector="catcherFlyButton:" destination="YUV-I6-SWL" eventType="touchUpInside" id="R5Q-Fi-6pO"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="180" translatesAutoresizingMaskIntoConstraints="NO" id="zBg-5Y-Wvc" userLabel="セカンドベースと二遊間">
@@ -623,7 +624,7 @@
                                         </constraints>
                                         <state key="normal" image="Combined Shape"/>
                                         <connections>
-                                            <action selector="shortFlyButton:" destination="VIs-XW-KHK" eventType="touchUpInside" id="djc-0O-bBT"/>
+                                            <action selector="shortFlyButton:" destination="YUV-I6-SWL" eventType="touchUpInside" id="LZy-Yg-ADw"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V6q-1L-rfT">
@@ -633,7 +634,7 @@
                                         </constraints>
                                         <state key="normal" image="Combined Shape"/>
                                         <connections>
-                                            <action selector="secondFlyButton:" destination="VIs-XW-KHK" eventType="touchUpInside" id="qsB-Ip-iRR"/>
+                                            <action selector="secondFlyButton:" destination="YUV-I6-SWL" eventType="touchUpInside" id="nmr-Vt-LkR"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -733,7 +734,7 @@
                                 </constraints>
                                 <state key="normal" image="Combined Shape"/>
                                 <connections>
-                                    <action selector="pictherFlyButton:" destination="VIs-XW-KHK" eventType="touchUpInside" id="hRr-Dp-B4W"/>
+                                    <action selector="pictherFlyButton:" destination="YUV-I6-SWL" eventType="touchUpInside" id="7zs-PU-wZ4"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uys-Mt-Rv5" userLabel="ホームの前">
@@ -824,16 +825,16 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="8F5-fI-Ft6"/>
                     <connections>
-                        <outlet property="catcherPlayerButton" destination="Bxq-X2-Exz" id="i67-PS-Cko"/>
-                        <outlet property="firstBaseView" destination="FL7-fB-lXU" id="uf8-Oc-qXp"/>
-                        <outlet property="firstPlayerButton" destination="U9F-of-k6h" id="QAE-qD-maw"/>
-                        <outlet property="homeBaseView" destination="9en-cx-TGj" id="Td1-Rq-v0d"/>
-                        <outlet property="pitherPlayerButton" destination="MLA-W3-VqF" id="PRb-7n-Z85"/>
-                        <outlet property="secondBaseView" destination="o1y-5f-fra" id="tck-pI-Zh7"/>
-                        <outlet property="secondPlayerButton" destination="V6q-1L-rfT" id="XXk-US-SjQ"/>
-                        <outlet property="shortPlayerButton" destination="A7B-HG-bdh" id="OwN-OJ-8jv"/>
-                        <outlet property="thirdBaseView" destination="hW2-tU-x5H" id="eAS-fX-rW2"/>
-                        <outlet property="thirdPlayerButton" destination="6yt-ZU-7yW" id="5Xa-86-hkA"/>
+                        <outlet property="catcherPlayerButton" destination="Bxq-X2-Exz" id="Srp-jH-DPo"/>
+                        <outlet property="firstBaseView" destination="FL7-fB-lXU" id="gTj-Cq-NmO"/>
+                        <outlet property="firstPlayerButton" destination="U9F-of-k6h" id="Ssw-s6-nQo"/>
+                        <outlet property="homeBaseView" destination="9en-cx-TGj" id="6xg-xl-hbC"/>
+                        <outlet property="pitcherPlayerButton" destination="MLA-W3-VqF" id="qCo-Ur-lEe"/>
+                        <outlet property="secondBaseView" destination="o1y-5f-fra" id="6Vg-N3-lqD"/>
+                        <outlet property="secondPlayerButton" destination="V6q-1L-rfT" id="4CO-sm-wrc"/>
+                        <outlet property="shortPlayerButton" destination="A7B-HG-bdh" id="Tgk-Ct-tr1"/>
+                        <outlet property="thirdBaseView" destination="hW2-tU-x5H" id="Nru-Vz-Uq7"/>
+                        <outlet property="thirdPlayerButton" destination="6yt-ZU-7yW" id="vbi-bv-yUh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YUV-I6-SWL" userLabel="First Responder" sceneMemberID="firstResponder"/>
