@@ -82,6 +82,7 @@ class GameViewController: UIViewController {
         firstBaseViewOrigin = firstBaseView.frame.origin
         print("DEBUG_PRINT: \(firstBaseView.frame)")
     }
+    //Ohashi:gameview表示前に画面遷移できないので、viewdidappearで画面遷移
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         setPlayers()
