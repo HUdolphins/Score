@@ -2262,7 +2262,7 @@ enum ResultEnum: Int{
                 return ("投直", "ピッチャーライナー\n3アウトチェンジ", UIImage(named: "3-1,2,3")!)
             }
         case .catcherFly:
-            return (<#resultTitle#>, <#resultString#>, UIImage(named: <#resultImage#>)! )
+            return ("", "", UIImage(named: "")! )
 
         case .firstFly:
             if Situation.noOutNoRunner {
@@ -2774,17 +2774,17 @@ enum ResultEnum: Int{
                 return ("右直", "ライトライナー\n3アウトチェンジ", UIImage(named: "3-1,2,3")! )
             }
         case .pitcherGoro:
-            return (<#resultTitle#>, <#resultString#>, UIImage(named: <#resultImage#>)! )
+            return ("", "", UIImage(named: "")! )
         case .struckOutSwinging:
-            return (<#resultTitle#>, <#resultString#>, UIImage(named: <#resultImage#>)! )
+            return ("", "", UIImage(named: "")! )
         case .missedStruckOut:
-            return (<#resultTitle#>, <#resultString#>, UIImage(named: <#resultImage#>)! )
+            return ("", "", UIImage(named: "")! )
         case .leftIntermediateHit:
-            return (<#resultTitle#>, <#resultString#>, UIImage(named: <#resultImage#>)! )
+            return ("", "", UIImage(named: "")! )
         case .leftSingleHit:
-            return (<#resultTitle#>, <#resultString#>, UIImage(named: <#resultImage#>)! )
+            return ("", "", UIImage(named: "")! )
         case .rightIntermediateHit:
-            return (<#resultTitle#>, <#resultString#>, UIImage(named: <#resultImage#>)! )
+            return ("", "", UIImage(named: "")! )
         case .pitcherOrCatcherHit:
             if Situation.noOutNoRunner {
                 return ("捕前安", "キャッチャー内野安打\n無死1塁", UIImage(named: "0-1")!)
@@ -2860,35 +2860,35 @@ enum ResultEnum: Int{
                 
             }
         case .firstHit:
-            return (<#resultTitle#>, <#resultString#>, UIImage(named: <#resultImage#>)! )
+            return ("", "", UIImage(named: "")! )
         case .secondHit:
-            return (<#resultTitle#>, <#resultString#>, UIImage(named: <#resultImage#>)! )
+            return ("", "", UIImage(named: "")! )
         case .thirdHit:
-            return (<#resultTitle#>, <#resultString#>, UIImage(named: <#resultImage#>)! )
+            return ("", "", UIImage(named: "")! )
         case .shortHit:
-            return (<#resultTitle#>, <#resultString#>, UIImage(named: <#resultImage#>)! )
+            return ("", "", UIImage(named: "")! )
         case .centerSingleHit:
-            return (<#resultTitle#>, <#resultString#>, UIImage(named: <#resultImage#>)! )
+            return ("", "", UIImage(named: "")! )
         case .rightSingleHit:
-            return (<#resultTitle#>, <#resultString#>, UIImage(named: <#resultImage#>)! )
+            return ("", "", UIImage(named: "")! )
         case .leftOverHit:
-            return (<#resultTitle#>, <#resultString#>, UIImage(named: <#resultImage#>)! )
+            return ("", "", UIImage(named: "")! )
         case .centerOverHit:
-            return (<#resultTitle#>, <#resultString#>, UIImage(named: <#resultImage#>)! )
+            return ("", "", UIImage(named: "")! )
         case .RightOverHit:
-            return (<#resultTitle#>, <#resultString#>, UIImage(named: <#resultImage#>)! )
+            return ("", "", UIImage(named: "")! )
         case .thirdBaseLineHit:
-            return (<#resultTitle#>, <#resultString#>, UIImage(named: <#resultImage#>)! )
+            return ("", "", UIImage(named: "")! )
         case .firstBaselineHit:
-            return (<#resultTitle#>, <#resultString#>, UIImage(named: <#resultImage#>)! )
+            return ("", "", UIImage(named: "")! )
         case .fourBall:
-            return (<#resultTitle#>, <#resultString#>, UIImage(named: <#resultImage#>)! )
+            return ("", "", UIImage(named: "")! )
         case .deadBall:
-            return (<#resultTitle#>, <#resultString#>, UIImage(named: <#resultImage#>)! )
+            return ("", "", UIImage(named: "")! )
         }
         
         //なんかエラーでるから仮置き
-        return ""
+        return ("", "", UIImage(named: "")! )
     }
     
     func childOptionThree() -> String{
@@ -2930,33 +2930,33 @@ enum ResultEnum: Int{
         case .rightIntermediateHit:
             return ""
         case .pitcherOrCatcherHit:
-            <#code#>
+            return ""
         case .firstHit:
-            <#code#>
+            return ""
         case .secondHit:
-            <#code#>
+            return ""
         case .thirdHit:
-            <#code#>
+            return ""
         case .shortHit:
-            <#code#>
+            return ""
         case .centerSingleHit:
-            <#code#>
+            return ""
         case .rightSingleHit:
-            <#code#>
+            return ""
         case .leftOverHit:
-            <#code#>
+            return ""
         case .centerOverHit:
-            <#code#>
+            return ""
         case .RightOverHit:
-            <#code#>
+            return ""
         case .thirdBaseLineHit:
-            <#code#>
+            return ""
         case .firstBaselineHit:
-            <#code#>
+            return ""
         case .fourBall:
-            <#code#>
+            return ""
         case .deadBall:
-            <#code#>
+            return ""
         }
         
         //なんかエラーでるから仮置き
@@ -3197,33 +3197,33 @@ enum ResultEnum: Int{
         case .rightIntermediateHit:
             return 
         case .pitcherOrCatcherHit:
-            <#code#>
+            return
         case .firstHit:
-            <#code#>
+            return
         case .secondHit:
-            <#code#>
+            return
         case .thirdHit:
-            <#code#>
+            return
         case .shortHit:
-            <#code#>
+            return
         case .centerSingleHit:
-            <#code#>
+            return
         case .rightSingleHit:
-            <#code#>
+            return
         case .leftOverHit:
-            <#code#>
+            return
         case .centerOverHit:
-            <#code#>
+            return
         case .RightOverHit:
-            <#code#>
+            return
         case .thirdBaseLineHit:
-            <#code#>
+            return
         case .firstBaselineHit:
-            <#code#>
+            return
         case .fourBall:
-            <#code#>
+            return
         case .deadBall:
-            <#code#>
+            return 
         }
     }
 

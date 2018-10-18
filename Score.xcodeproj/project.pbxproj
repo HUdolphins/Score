@@ -24,7 +24,7 @@
 		873D319F2147B07F007A1EE8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873D319E2147B07F007A1EE8 /* HomeViewController.swift */; };
 		873D31CB214BAC2C007A1EE8 /* HomeCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873D31CA214BAC2C007A1EE8 /* HomeCellViewController.swift */; };
 		879AE1E121638A81003CF4B7 /* Result.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 879AE1E021638A81003CF4B7 /* Result.storyboard */; };
-		87C71BE82166DC65007550E7 /* ResultEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C71BE72166DC65007550E7 /* ResultEnum.swift */; };
+		87C71BE82166DC65007550E7 /* ResultEnum .swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C71BE72166DC65007550E7 /* ResultEnum .swift */; };
 		87C71C0A216D05D9007550E7 /* SetPlayersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C71C09216D05D9007550E7 /* SetPlayersViewController.swift */; };
 		87C71C10217057C4007550E7 /* GameTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C71C0F217057C4007550E7 /* GameTabBarController.swift */; };
 		87E1B9022150A40800803F9E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E1B9012150A40800803F9E /* LoginViewController.swift */; };
@@ -53,7 +53,7 @@
 		873D319E2147B07F007A1EE8 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		873D31CA214BAC2C007A1EE8 /* HomeCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCellViewController.swift; sourceTree = "<group>"; };
 		879AE1E021638A81003CF4B7 /* Result.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Result.storyboard; sourceTree = "<group>"; };
-		87C71BE72166DC65007550E7 /* ResultEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultEnum.swift; sourceTree = "<group>"; };
+		87C71BE72166DC65007550E7 /* ResultEnum .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ResultEnum .swift"; sourceTree = "<group>"; };
 		87C71C09216D05D9007550E7 /* SetPlayersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPlayersViewController.swift; sourceTree = "<group>"; };
 		87C71C0F217057C4007550E7 /* GameTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTabBarController.swift; sourceTree = "<group>"; };
 		87E1B9012150A40800803F9E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -116,7 +116,7 @@
 				8737B33521436039000A628B /* LaunchScreen.storyboard */,
 				8737B33821436039000A628B /* Info.plist */,
 				D450DA082173494900F30BDB /* GoogleService-Info.plist */,
-				87C71BE72166DC65007550E7 /* ResultEnum.swift */,
+				87C71BE72166DC65007550E7 /* ResultEnum .swift */,
 				5F101366214A4C1300DD99CD /* Situation.swift */,
 			);
 			path = Score;
@@ -279,7 +279,7 @@
 				5F101367214A4C1300DD99CD /* Situation.swift in Sources */,
 				873D319721478B26007A1EE8 /* GameViewController.swift in Sources */,
 				87C71C0A216D05D9007550E7 /* SetPlayersViewController.swift in Sources */,
-				87C71BE82166DC65007550E7 /* ResultEnum.swift in Sources */,
+				87C71BE82166DC65007550E7 /* ResultEnum .swift in Sources */,
 				8737B32D21436035000A628B /* AppDelegate.swift in Sources */,
 				873D319F2147B07F007A1EE8 /* HomeViewController.swift in Sources */,
 				5F1013732161DE3800DD99CD /* ResultChildViewController2.swift in Sources */,
