@@ -52,7 +52,7 @@ class ResultChildViewController1: UIViewController {
         self.resultImageView.image = Situation.result.childOptionOne().resultImage
         self.resultTextView.text = Situation.result.childOptionOne().resultString
         //結果テキストの文字の大きさ
-        self.resultTextView.font = resultTextView.font?.withSize(30)
+        self.resultTextView.font = resultTextView.font?.withSize(15)
         //結果表示部分の背景の色
         self.resultTextView.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.0)
         //結果テキストを中央に揃える
