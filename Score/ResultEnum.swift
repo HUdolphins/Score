@@ -2177,8 +2177,8 @@ enum ResultEnum: Int{
                 return ("死球", "デッドボール\n1死満塁", UIImage(named: "1-1,2,3,4_1")! )
             }
             else if Situation.twoOutFullBase{
-                return ("死球", "デッドボール\n2死満塁", UIImage(named: "2-
-
+                return ("死球", "デッドボール\n2死満塁", UIImage(named: "2-1,2,3,4_1")! )
+            }
         default:
              return ("", "", UIImage(named: "")! )
         }
