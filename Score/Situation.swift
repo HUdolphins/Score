@@ -12,7 +12,7 @@ import UIKit
 class Situation: NSObject {
     
     
-    
+    //ohashi : 最終回設定しておく？
     //現在の状況
     internal static var result:ResultEnum!
     //カウント
@@ -35,6 +35,10 @@ class Situation: NSObject {
     internal static var firstRunnerExists = false
     internal static var secondRunnerExists = false
     internal static var thirdRunnerExists = false
+    //ohashi: 誰がランナーか
+    internal static var firstRunner: FIRPlayer!
+    internal static var secondRunner: FIRPlayer!
+    internal static var thirdRunner: FIRPlayer!
     
     //回の表裏
     internal static var inning = 1

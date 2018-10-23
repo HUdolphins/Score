@@ -318,6 +318,71 @@ class GameViewController: UIViewController {
         modalAppear()
     }
     
+    @IBAction func pitcherOrCatcherHitButton(_ sender: Any) {
+        Situation.result = .pitcherOrCatcherHit
+        modalAppear()
+    }
+    
+    @IBAction func firstHitButton(_ sender: Any) {
+        Situation.result = .firstHit
+        modalAppear()
+    }
+    
+    @IBAction func secondHitButton(_ sender: Any) {
+        Situation.result = .secondHit
+        modalAppear()
+    }
+    
+    @IBAction func thirdHitButton(_ sender: Any) {
+        Situation.result = .thirdHit
+        modalAppear()
+    }
+    @IBAction func shortHitButton(_ sender: Any) {
+        Situation.result = .shortHit
+        modalAppear()
+    }
+    @IBAction func leftHitButton(_ sender: Any) {
+        Situation.result = .leftSingleHit
+        modalAppear()
+    }
+    @IBAction func centerHitButton(_ sender: Any) {
+        Situation.result = .centerSingleHit
+        modalAppear()
+    }
+    @IBAction func rightHitButton(_ sender: Any) {
+        Situation.result = .rightSingleHit
+        modalAppear()
+    }
+    @IBAction func firstBaseLineHit(_ sender: Any) {
+        Situation.result = .firstBaseLineHit
+        modalAppear()
+    }
+    @IBAction func thirdBaseLineHit(_ sender: Any) {
+        Situation.result = .thirdBaseLineHit
+        modalAppear()
+    }
+    @IBAction func leftIntermediateHit(_ sender: Any) {
+        Situation.result = .leftIntermediateHit
+        modalAppear()
+    }
+    
+    @IBAction func rightIntermediateHit(_ sender: Any) {
+        Situation.result = .rightIntermediateHit
+        modalAppear()
+    }
+    @IBAction func leftOverHit(_ sender: Any) {
+        Situation.result = .leftOverHit
+        modalAppear()
+    }
+    @IBAction func centerOverHit(_ sender: Any) {
+        Situation.result = .centerOverHit
+        modalAppear()
+    }
+    @IBAction func rightOverHit(_ sender: Any) {
+        Situation.result = .rightOverHit
+        modalAppear()
+    }
+    
 }
 
 

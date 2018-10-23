@@ -435,6 +435,9 @@
                                     <constraint firstAttribute="width" secondItem="PyK-gX-6IY" secondAttribute="height" multiplier="1:1" id="q4O-eO-PPt"/>
                                 </constraints>
                                 <state key="normal" image="Oval 9-1"/>
+                                <connections>
+                                    <action selector="pitcherOrCatcherHitButton:" destination="VIs-XW-KHK" eventType="touchUpInside" id="oby-sD-H2W"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="140" translatesAutoresizingMaskIntoConstraints="NO" id="Fcx-gB-Oe1" userLabel="サード前ピッチャー前ファースト前">
                                 <rect key="frame" x="105.66666666666667" y="535.66666666666663" width="202.66666666666663" height="31.333333333333371"/>
@@ -445,6 +448,9 @@
                                             <constraint firstAttribute="width" secondItem="Hts-ee-1Qa" secondAttribute="height" multiplier="1:1" id="mFe-zP-JWq"/>
                                         </constraints>
                                         <state key="normal" image="Oval 9-1"/>
+                                        <connections>
+                                            <action selector="thirdHitButton:" destination="VIs-XW-KHK" eventType="touchUpInside" id="usb-Ms-Poo"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eic-oO-Zjk" userLabel="First Hit Button">
                                         <rect key="frame" x="171.33333333333331" y="0.0" width="31.333333333333343" height="31.333333333333332"/>
@@ -452,6 +458,9 @@
                                             <constraint firstAttribute="width" secondItem="Eic-oO-Zjk" secondAttribute="height" multiplier="1:1" id="8ea-ar-J9Y"/>
                                         </constraints>
                                         <state key="normal" image="Oval 9-1"/>
+                                        <connections>
+                                            <action selector="firstHitButton:" destination="VIs-XW-KHK" eventType="touchUpInside" id="BYu-GW-YWw"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -464,6 +473,9 @@
                                             <constraint firstAttribute="width" secondItem="dGn-iI-zRj" secondAttribute="height" multiplier="1:1" id="xlg-tm-4PW"/>
                                         </constraints>
                                         <state key="normal" image="Oval 9-1"/>
+                                        <connections>
+                                            <action selector="leftOverHit:" destination="VIs-XW-KHK" eventType="touchUpInside" id="n0c-Yk-uS1"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y4u-jW-mzM" userLabel="Center Over Button">
                                         <rect key="frame" x="172" y="0.0" width="22" height="22"/>
@@ -471,6 +483,9 @@
                                             <constraint firstAttribute="width" secondItem="y4u-jW-mzM" secondAttribute="height" multiplier="1:1" id="Zel-Ip-r0M"/>
                                         </constraints>
                                         <state key="normal" image="Oval 9-1"/>
+                                        <connections>
+                                            <action selector="centerOverHit:" destination="VIs-XW-KHK" eventType="touchUpInside" id="sLI-W2-18Q"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gOw-ad-hRE" userLabel="Right Over Button">
                                         <rect key="frame" x="344" y="0.0" width="22" height="22"/>
@@ -478,6 +493,9 @@
                                             <constraint firstAttribute="width" secondItem="gOw-ad-hRE" secondAttribute="height" multiplier="1:1" id="S69-cX-FrM"/>
                                         </constraints>
                                         <state key="normal" image="Oval 9-1"/>
+                                        <connections>
+                                            <action selector="rightOverHit:" destination="VIs-XW-KHK" eventType="touchUpInside" id="nVV-65-Pf3"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -576,6 +594,9 @@
                                             <constraint firstAttribute="width" secondItem="z9j-rS-OdO" secondAttribute="height" multiplier="1:1" id="iUV-nP-v02"/>
                                         </constraints>
                                         <state key="normal" image="Oval 9-1"/>
+                                        <connections>
+                                            <action selector="leftIntermediateHit:" destination="VIs-XW-KHK" eventType="touchUpInside" id="P6f-6w-8H2"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RQz-m0-llu" userLabel="Center Player Button">
                                         <rect key="frame" x="99.666666666666671" y="0.0" width="30.000000000000014" height="39.333333333333336"/>
@@ -593,6 +614,9 @@
                                             <constraint firstAttribute="width" secondItem="ARd-hI-IpD" secondAttribute="height" multiplier="1:1" id="P1s-8S-rvh"/>
                                         </constraints>
                                         <state key="normal" image="Oval 9-1"/>
+                                        <connections>
+                                            <action selector="rightIntermediateHit:" destination="VIs-XW-KHK" eventType="touchUpInside" id="gvz-pL-GOf"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -648,6 +672,9 @@
                                             <constraint firstAttribute="width" secondItem="pfb-Ec-bRh" secondAttribute="height" multiplier="1:1" id="vPD-yb-2zm"/>
                                         </constraints>
                                         <state key="normal" image="Oval 9-1"/>
+                                        <connections>
+                                            <action selector="thirdBaseLineHit:" destination="VIs-XW-KHK" eventType="touchUpInside" id="Ji1-EV-uJO"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hmb-ki-vs9" userLabel="firstBaseLineHit">
                                         <rect key="frame" x="369.33333333333331" y="0.0" width="31.333333333333314" height="31.333333333333332"/>
@@ -655,6 +682,9 @@
                                             <constraint firstAttribute="width" secondItem="Hmb-ki-vs9" secondAttribute="height" multiplier="1:1" id="D5R-gi-ktr"/>
                                         </constraints>
                                         <state key="normal" image="Oval 9-1"/>
+                                        <connections>
+                                            <action selector="firstBaseLineHit:" destination="VIs-XW-KHK" eventType="touchUpInside" id="DEC-pm-SH7"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -667,6 +697,9 @@
                                             <constraint firstAttribute="width" secondItem="NI8-j0-ovc" secondAttribute="height" multiplier="1:1" constant="1" id="i4Z-dm-qkX"/>
                                         </constraints>
                                         <state key="normal" image="Oval 9-1"/>
+                                        <connections>
+                                            <action selector="leftHitButton:" destination="VIs-XW-KHK" eventType="touchUpInside" id="WyO-xz-oqZ"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fcL-Mg-NAW" userLabel="Center Hit Button">
                                         <rect key="frame" x="152.33333333333331" y="0.0" width="31.666666666666657" height="31.333333333333332"/>
@@ -674,6 +707,9 @@
                                             <constraint firstAttribute="width" secondItem="fcL-Mg-NAW" secondAttribute="height" multiplier="1:1" id="Owg-aM-hlS"/>
                                         </constraints>
                                         <state key="normal" image="Oval 9-1"/>
+                                        <connections>
+                                            <action selector="centerHitButton:" destination="VIs-XW-KHK" eventType="touchUpInside" id="LIa-zy-Bmt"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DfS-VR-8XW" userLabel="Right Hit Button">
                                         <rect key="frame" x="304" y="0.0" width="31.333333333333314" height="31.333333333333332"/>
@@ -681,6 +717,9 @@
                                             <constraint firstAttribute="width" secondItem="DfS-VR-8XW" secondAttribute="height" multiplier="1:1" id="qXk-4q-2V7"/>
                                         </constraints>
                                         <state key="normal" image="Oval 9-1"/>
+                                        <connections>
+                                            <action selector="rightHitButton:" destination="VIs-XW-KHK" eventType="touchUpInside" id="qwl-2C-5SX"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -693,6 +732,9 @@
                                             <constraint firstAttribute="width" secondItem="IXH-xI-jYV" secondAttribute="height" multiplier="1:1" id="M5x-KK-XBT"/>
                                         </constraints>
                                         <state key="normal" image="Oval 9-1"/>
+                                        <connections>
+                                            <action selector="shortHitButton:" destination="VIs-XW-KHK" eventType="touchUpInside" id="DNo-9U-pxJ"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zCi-RF-Nbq" userLabel="Short Hit Button">
                                         <rect key="frame" x="220.66666666666669" y="0.0" width="31.333333333333343" height="31.333333333333332"/>
@@ -700,6 +742,9 @@
                                             <constraint firstAttribute="width" secondItem="zCi-RF-Nbq" secondAttribute="height" multiplier="1:1" id="kny-C7-oii"/>
                                         </constraints>
                                         <state key="normal" image="Oval 9-1"/>
+                                        <connections>
+                                            <action selector="secondHitButton:" destination="VIs-XW-KHK" eventType="touchUpInside" id="ddJ-HH-vZQ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>

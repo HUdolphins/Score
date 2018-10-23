@@ -55,30 +55,27 @@ class ResultViewController: UIViewController, ResultChildDelegate {
     
     //oohashi:childViewControllerで結果ボタンおされたときの処理
     func sendResult() {
-        
-        Situation.result.childButtonTapedOne()
-        SituationUpdate()
         if Situation.topOrBottom == "Top"{
             //ohashi: 打ったバッター
             let batter = Situation.topBattersArray[Situation.topBattingOrder]
             //ohashi:バッターの結果の配列に今の結果を挿入
-            
-            
-            
-            
-            //childTappedOneに結果に返させる？？？？？？？？？？？？？？
-            batter.battingResultsArray.insert("送信する結果", at: 0)
+            batter.battingResultsArray.insert(Situation.result.childButtonTapedOne(), at: 0)
             //ohashi:送信用のデータの形にする
-            //ohashi: 試合のデータ、相手、何球目か、コメント
+            //ohashi: 試合のデータ、相手、何球目か、コメント，得点圏の打席かどうか
             let resultData = ["results":batter.battingResultsArray]
             //ohashi:送信用のデータにデータベース上のデータをアップデート
             playerRef.child(batter.id!).updateChildValues(resultData)
+        }else{
+             //Ohashi:裏のとき
+            let batter = Situation.bottomBattersArray[Situation.bottomBattingOrder]
+            batter.battingResultsArray.insert(Situation.result.childButtonTapedOne(), at: 0)
+            let resultData = ["results": batter.battingResultsArray]
+            playerRef.child(batter.id!).updateChildValues(resultData)
         }
+        SituationUpdate()
         self.dismiss(animated: true, completion: nil)
     }
     
-    
-    //oohashi: 得点圏の打席かどうか
     
     //Situationを更新する関数
     func SituationUpdate(){

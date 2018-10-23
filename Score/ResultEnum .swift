@@ -56,9 +56,9 @@ enum ResultEnum: Int{
     case rightSingleHit
     case leftOverHit
     case centerOverHit
-    case RightOverHit
+    case rightOverHit
     case thirdBaseLineHit
-    case firstBaselineHit
+    case firstBaseLineHit
     case leftIntermediateHit  //左中間
     case rightIntermediateHit //右中間
 //
@@ -1818,7 +1818,7 @@ enum ResultEnum: Int{
                 return ("中越二", "センターオーバーツーベース\n2死2,3塁", UIImage(named: "2-2,3,4_2")!)
                         }
 
-        case .RightOverHit:
+        case .rightOverHit:
             if Situation.noOutNoRunner {
                 return ("右越二", "ライトオーバーツーベース\n無死2塁", UIImage(named: "0-2")!)
             }else if Situation.oneOutNoRunner{
@@ -1963,7 +1963,7 @@ enum ResultEnum: Int{
                 return ("三線二", "三塁線ツーベース\n2死2,3塁", UIImage(named: "2-2,3,4_2")!)
                         }
 
-        case .firstBaselineHit:
+        case .firstBaseLineHit:
             if Situation.noOutNoRunner {
                 return ("一線二", "一塁線ツーベース\n無死2塁", UIImage(named: "0-2")!)
             }else if Situation.oneOutNoRunner{
@@ -2875,11 +2875,11 @@ enum ResultEnum: Int{
             return ("", "", UIImage(named: "")! )
         case .centerOverHit:
             return ("", "", UIImage(named: "")! )
-        case .RightOverHit:
+        case .rightOverHit:
             return ("", "", UIImage(named: "")! )
         case .thirdBaseLineHit:
             return ("", "", UIImage(named: "")! )
-        case .firstBaselineHit:
+        case .firstBaseLineHit:
             return ("", "", UIImage(named: "")! )
         case .fourBall:
             return ("", "", UIImage(named: "")! )
@@ -2947,11 +2947,11 @@ enum ResultEnum: Int{
             return ""
         case .centerOverHit:
             return ""
-        case .RightOverHit:
+        case .rightOverHit:
             return ""
         case .thirdBaseLineHit:
             return ""
-        case .firstBaselineHit:
+        case .firstBaseLineHit:
             return ""
         case .fourBall:
             return ""
@@ -2965,266 +2965,97 @@ enum ResultEnum: Int{
     
     //ボタンを押したときの関数3つ
     //oohashi: 得点入った時アニメーション処理
-    func childButtonTapedOne(){
+    func childButtonTapedOne() -> String{
         switch self{
-        case .pitcherFly:
-            if Situation.noOutNoRunner{
-                Situation.outCounts = 1
-            }
-            else if Situation.oneOutNoRunner{
-                Situation.outCounts = 2
-            }
-            else if Situation.twoOutNoRunner{
-                Situation.outCounts = 0
-                if Situation.topOrBottom == "Top"{
-                    Situation.topOrBottom = "Bottom"
-                }
-                else{
-                    Situation.inning += 1
-                    Situation.topOrBottom = "Top"
-                }
-            }
-            else if Situation.noOutRunnerOnFirst{
-                Situation.outCounts = 1
-            }
-            else if Situation.oneOutRunnerOnFirst{
-                Situation.outCounts = 2
-            }
-            else if Situation.twoOutRunnerOnFirst{
-                Situation.outCounts = 0
-                if Situation.topOrBottom == "Top"{
-                    Situation.topOrBottom = "Bottom"
-                }
-                else{
-                    Situation.inning += 1
-                    Situation.topOrBottom = "Top"
-                }
-            }
-            else if Situation.noOutRunnerOnSecond{
-                Situation.outCounts = 1
-            }
-            else if Situation.oneOutRunnerOnSecond{
-                Situation.outCounts = 2
-            }
-            else if Situation.twoOutRunnerOnFirst{
-                Situation.outCounts = 0
-                if Situation.topOrBottom == "Top"{
-                    Situation.topOrBottom = "Bottom"
-                }
-                else{
-                    Situation.inning += 1
-                    Situation.topOrBottom = "Top"
-                }
-            }
-            else if Situation.noOutRunnerOnThird{
-                Situation.outCounts = 1
-            }
-            else if Situation.oneOutRunnerOnThird{
-                Situation.outCounts = 2
-            }
-            else if Situation.twoOutRunnerOnThird{
-                Situation.outCounts = 0
-                if Situation.topOrBottom == "Top"{
-                    Situation.topOrBottom = "Bottom"
-                }
-                else{
-                    Situation.inning += 1
-                    Situation.topOrBottom = "Top"
-                }
-            }
-            else if Situation.noOutRunnersOnFirstAndSecond{
-                Situation.outCounts = 1
-            }
-            else if Situation.oneOutRunnersOnFirstAndSecond{
-                Situation.outCounts = 2
-            }
-            else if Situation.twoOutRunnersOnFirstAndSecond{
-                Situation.outCounts = 0
-                if Situation.topOrBottom == "Top"{
-                    Situation.topOrBottom = "Bottom"
-                }
-                else{
-                    Situation.inning += 1
-                    Situation.topOrBottom = "Top"
-                }
-            }
-            else if Situation.noOutRunnersOnFirstAndThird{
-                Situation.outCounts = 1
-            }
-            else if Situation.oneOutRunnersOnFirstAndThird{
-                Situation.outCounts = 2
-            }
-            else if Situation.twoOutRunnersOnFirstAndThird{
-                Situation.outCounts = 0
-                if Situation.topOrBottom == "Top"{
-                    Situation.topOrBottom = "Bottom"
-                }
-                else{
-                    Situation.inning += 1
-                    Situation.topOrBottom = "Top"
-                }
-            }
-            else if Situation.noOutRunnersOnSecondAndThird{
-                Situation.outCounts = 1
-            }
-            else if Situation.oneOutRunnersOnSecondAndThird{
-                Situation.outCounts = 2
-            }
-            else if Situation.twoOutRunnersOnSecondAndThird{
-                Situation.outCounts = 0
-                if Situation.topOrBottom == "Top"{
-                    Situation.topOrBottom = "Bottom"
-                }
-                else{
-                    Situation.inning += 1
-                    Situation.topOrBottom = "Top"
-                }
-            }
-            else if Situation.noOutFullBase{
-                Situation.outCounts = 1
-            }
-            else if Situation.oneOutFullBase{
-                Situation.outCounts = 2
-            }
-            else if Situation.twoOutFullBase{
-                Situation.outCounts = 0
-                if Situation.topOrBottom == "Top"{
-                    Situation.topOrBottom = "Bottom"
-                }
-                else{
-                    Situation.inning += 1
-                    Situation.topOrBottom = "Top"
-                }
-            }
-            
-        case .catcherFly:
-            if Situation.noOutNoRunner {
-                
-            }else if Situation.oneOutNoRunner{
-                
-            }
-            else if Situation.twoOutNoRunner{
-                
-            }
-            else if Situation.noOutRunnerOnFirst{
-                
-            }
-            else if Situation.oneOutRunnerOnFirst{
-                
-            }
-            else if Situation.twoOutRunnerOnFirst{
-                
-            }
-            else if Situation.noOutRunnerOnSecond{
-                
-            }
-            else if Situation.oneOutRunnerOnSecond{
-                
-            }
-            else if Situation.twoOutRunnerOnSecond{
-                
-            }
-            else if Situation.noOutRunnerOnThird{
-                
-            }
-            else if Situation.oneOutRunnerOnThird{
-                
-            }
-            else if Situation.twoOutRunnerOnThird{
-                
-            }
-            else if Situation.noOutRunnersOnFirstAndSecond{
-                
-            }
-            else if Situation.oneOutRunnersOnFirstAndSecond{
-                
-            }
-            else if Situation.twoOutRunnersOnFirstAndSecond{
-                
-            }
-            else if Situation.noOutRunnersOnFirstAndThird{
-                
-            }
-            else if Situation.oneOutRunnersOnFirstAndThird{
-                
-            }
-            else if Situation.twoOutRunnersOnFirstAndThird{
-                
-            }
-            else if Situation.noOutRunnersOnSecondAndThird{
-                
-            }
-            else if Situation.oneOutRunnersOnSecondAndThird{
-                
-            }
-            else if Situation.twoOutRunnersOnSecondAndThird{
-                
-            }
-            else if Situation.noOutFullBase{
-                
-            }
-            else if Situation.oneOutFullBase{
-                
-            }
-            else if Situation.twoOutFullBase{
-                
-            }
-        case .firstFly:
-            return
-        case .secondFly:
-            return
-        case .thirdFly:
-            return
-        case .shortFly:
-            return
-        case .leftFly:
-            return
-        case .centerFly:
-            return
-        case .rightFly:
-            return
-        case .pitcherGoro:
-            return
-        case .struckOutSwinging:
-            return
-        case .missedStruckOut:
-            return
-        case .leftIntermediateHit:
-            return
-        case .leftSingleHit:
-            return
-
-        case .rightIntermediateHit:
-            return 
-        case .pitcherOrCatcherHit:
-            return
-        case .firstHit:
-            return
-        case .secondHit:
-            return
-        case .thirdHit:
-            return
-        case .shortHit:
-            return
-        case .centerSingleHit:
-            return
-        case .rightSingleHit:
-            return
-        case .leftOverHit:
-            return
-        case .centerOverHit:
-            return
-        case .RightOverHit:
-            return
-        case .thirdBaseLineHit:
-            return
-        case .firstBaselineHit:
-            return
-        case .fourBall:
-            return
-        case .deadBall:
-            return 
+        case .pitcherFly, .catcherFly, .firstFly, .secondFly, .thirdFly, .shortFly, .leftFly, .centerFly, .rightFly, .struckOutSwinging, .missedStruckOut:
+           batterOut()
+        
+//        case .pitcherGoro:
+//
+//        case .struckOutSwinging:
+//
+//        case .missedStruckOut:
+//
+//        case .leftIntermediateHit:
+//
+//        case .leftSingleHit:
+//
+//
+//        case .rightIntermediateHit:
+//
+//        case .pitcherOrCatcherHit:
+//
+//        case .firstHit:
+//
+//        case .secondHit:
+//
+//        case .thirdHit:
+//
+//        case .shortHit:
+//
+//        case .centerSingleHit:
+//
+//        case .rightSingleHit:
+//
+//        case .leftOverHit:
+//
+//        case .centerOverHit:
+//
+//        case .RightOverHit:
+//            retur
+//        case .thirdBaseLineHit:
+//
+//        case .firstBaselineHit:
+//
+//        case .fourBall:
+//
+//        case .deadBall:
+        default:
+            break
         }
+        return Situation.result.childOptionOne().resultTitle
+    }
+    
+    func batterOut(){
+        if Situation.topOrBottom == "Top"{
+            if Situation.topBattingOrder == 8{
+                Situation.topBattingOrder = 0
+            }else{
+                Situation.topBattingOrder += 1
+            }
+            if Situation.outCounts == 2{
+                Situation.outCounts = 0
+                Situation.topOrBottom = "Bottom"
+            }else{
+                Situation.outCounts += 1
+            }
+        }else{
+            if Situation.bottomBattingOrder == 8{
+                Situation.bottomBattingOrder = 0
+            }else{
+                Situation.bottomBattingOrder += 1
+            }
+            if Situation.outCounts == 2{
+                Situation.outCounts = 0
+                Situation.inning += 1
+                Situation.topOrBottom = "top"
+            }else{
+                Situation.outCounts += 1
+            }
+        }
+    }
+    
+    func batterOnBase(){
+        if Situation.topOrBottom == "Top"{
+            let ranner:FIRPlayer = Situation.topBattersArray[Situation.topBattingOrder]
+            Situation.topBattingOrder += 1
+        }
+    }
+    
+    func noRunner(){
+        
     }
 
 }
+
+
